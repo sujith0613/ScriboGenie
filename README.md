@@ -23,6 +23,9 @@ ScriboGenie addresses these challenges by combining assistive technology and mac
 
 This solution enables inclusive learning and supports foundational literacy development.
 
+---
+
+ScriboGenie is a Python-based handwriting recognition system with real-time character recognition and dyslexia-aware correction. The application provides a GUI for drawing, erasing, and live prediction, making it suitable for handwriting practice, testing, and educational applications.
 
 ---
 
@@ -63,7 +66,7 @@ Install dependencies:
 pip install tensorflow pillow opencv-python spellchecker albumentations matplotlib
 ```
 
-Ensure the pretrained model `myCnn.h5` is in the `models` folder.
+Ensure the pretrained model `myCnn.h5` is present in the project directory.
 
 ---
 
@@ -72,7 +75,7 @@ Ensure the pretrained model `myCnn.h5` is in the `models` folder.
 Run the application:
 
 ```bash
-python handwriting_app_modeA.py
+python app9.py
 ```
 
 Draw on the canvas; recognized and corrected text appears in the side panel.
@@ -97,6 +100,12 @@ Optional data augmentation:
 
 Trained model saved as `myCnn.h5`.
 
+Training notebook:
+- `CNN_Training.ipynb`
+
+Evaluation artifact:
+- `confMat_emnist.png`
+
 ---
 
 ## Demo Video
@@ -111,11 +120,10 @@ Watch the application in action:
 
 ```text
 ScriboGenie/
-├── models/
-│   └── myCnn.h5
-├── handwriting_app_modeA.py
-├── train_emnist_cnn.py
-├── debug_pro/
+├── CNN_Training.ipynb
+├── app9.py
+├── myCnn.h5
+├── confMat_emnist.png
 └── README.md
 ```
 
