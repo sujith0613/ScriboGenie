@@ -131,6 +131,6 @@ ScriboGenie/
 
 ## License
 
-This project is intended for educational and research purposes only.  
-You may use, study, and modify the code for academic or personal projects.  
-Commercial use requires explicit permission from the authors.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+
