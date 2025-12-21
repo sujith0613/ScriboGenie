@@ -15,7 +15,10 @@ from itertools import product
 import hashlib
 
 # --------------------------- CONFIG ---------------------------
-model_path = r"D:\#ifp\models\myCnn.h5"   # <<-- CHANGE THIS to your model
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "models", "myCnn.h5")
+
 DEBUG_SAVE = False
 LIVE_POLL_INTERVAL_MS = 400
 MAX_FPS = 3
@@ -639,3 +642,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = HandwritingApp(root)
     root.mainloop()
+
