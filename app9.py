@@ -17,7 +17,7 @@ import hashlib
 # --------------------------- CONFIG ---------------------------
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(BASE_DIR, "models", "myCnn.h5")
+model_path = os.path.join(BASE_DIR, "myCnn.h5")
 
 DEBUG_SAVE = False
 LIVE_POLL_INTERVAL_MS = 400
@@ -642,4 +642,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = HandwritingApp(root)
     root.mainloop()
+
 
