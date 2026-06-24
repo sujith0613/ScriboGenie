@@ -20,27 +20,18 @@ ScriboGenie is an intelligent handwriting recognition system designed to help le
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    ScriboGenie Desktop App                   │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────────────┐  │
-│  │  Canvas  │→ │   Predictor  │→ │  Correction Engine    │  │
-│  │ (Tkinter)│  │  (CNN/EMNIST)│  │  (SpellChecker +      │  │
-│  │          │  │              │  │   dyslexia rules)     │  │
-│  └──────────┘  └──────────────┘  └───────────────────────┘  │
-│                        │                                     │
-│                        ▼                                     │
-│  ┌──────────────────────────────────────────┐               │
-│  │         WebSocket Server                 │               │
-│  │  (broadcasts prediction state to mobile) │               │
-│  └──────────────────────────────────────────┘               │
-└─────────────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Mobile PWA (phone/tablet browser)              │
-│  Displays: predicted word, level, score, streak             │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph Desktop["ScriboGenie Desktop App"]
+        Canvas["Canvas (Tkinter)"] --> Predictor["Predictor (CNN / EMNIST)"]
+        Predictor --> Correction["Correction Engine (SpellChecker + dyslexia rules)"]
+        Correction --> Audio["TTS Feedback"]
+        Correction --> Scoring["Scoring & Level System"]
+        Correction --> WS["WebSocket Server"]
+    end
+
+    WS --> Mobile["Mobile PWA (phone/tablet browser)"]
+    Mobile -->|"Displays: prediction, level, score, streak"| WS
 ```
 
 ---
