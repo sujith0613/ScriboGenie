@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScriboGenie | Master Writing</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0F0F1A">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            /* Palette - Pro EdTech Dark */
+            --navy-deep: #0F0F1A;
+            --navy-mid: #1A1A2E;
+            --navy-light: #242445;
+            --accent-purple: #7C3AED;
+            --accent-purple-glow: rgba(124, 58, 237, 0.4);
+            --accent-blue: #3B82F6;
+            --accent-green: #10B981;
+            --accent-amber: #F59E0B;
+            --accent-red: #EF4444;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #475569;
+            --white: #FFFFFF;
+            
+            --font-main: 'Inter', sans-serif;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-hero: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            
+            --header-h: 56px;
+            --transition-snappy: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--navy-deep);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- SVG Icons --- */
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* --- Connect Overlay --- */
+        #connectOverlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            transition: opacity var(--transition-snappy);
+        }
+
+        #connectOverlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .logo-mark {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            background: linear-gradient(to bottom right, var(--white), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group {
+            width: 100%;
+            max-width: 320px;
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--navy-light);
+            padding: 12px 0;
+            font-size: 18px;
+            color: var(--white);
+            transition: border-color var(--transition-snappy);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-purple);
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: all var(--transition-snappy);
+        }
+
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+            top: -20px;
+            font-size: 12px;
+            color: var(--accent-purple);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-full {
+            width: 100%;
+            max-width: 320px;
+            height: 56px;
+            background: var(--accent-purple);
+            border: none;
+            border-radius: 16px;
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 14px 0 rgba(124, 58, 237, 0.39);
+            transition: transform 100ms, background-color var(--transition-snappy);
+        }
+
+        .btn-full:active {
+            transform: scale(0.97);
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .help-text {
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--text-muted);
+            max-width: 240px;
+            line-height: 1.5;
+        }
+
+        /* --- Header --- */
+        header {
+            height: var(--header-h);
+            background: var(--navy-deep);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            border-bottom: 1px solid var(--navy-light);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-purple);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-stats {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-chip {
+            background: var(--navy-mid);
+            height: 32px;
+            padding: 0 10px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            border: 1px solid var(--navy-light);
+        }
+
+        .stat-chip.streak { color: var(--accent-amber); }
+        .stat-chip.score { color: var(--accent-purple-light); }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            margin-left: 4px;
+        }
+
+        .status-dot.online {
+            background: var(--accent-green);
+            box-shadow: 0 0 8px var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* --- Main Content --- */
+        main {
+            flex: 1;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- Letter Display --- */
+        .word-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .level-pill {
+            background: var(--navy-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+        }
+
+        #levelSelect {
+            background: var(--navy-light);
+            color: var(--text-primary);
+            border: 1px solid var(--navy-mid);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--font-main);
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: menulist-button;
+            appearance: auto;
+            min-width: 90px;
+            text-align: center;
+        }
+        #levelSelect option {
+            background: var(--navy-mid);
+            color: var(--text-primary);
+        }
+
+        .letter-row {
+            display: flex;
+            gap: 8px;
+            perspective: 1000px;
+        }
+
+        .letter-card {
+            width: 48px;
+            height: 64px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .letter-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .letter-card-front, .letter-card-back {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            box-shadow: var(--shadow-card);
+        }
+
+        .letter-card-front {
+            background: var(--white);
+            color: var(--navy-deep);
+        }
+
+        .letter-card-back {
+            background: var(--accent-green);
+            color: white;
+            transform: rotateY(180deg);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .letter-card.wrong .letter-card-front {
+            background: var(--accent-red);
+            color: white;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .progress-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--navy-light);
+            border-radius: 50%;
+            transition: background-color 300ms;
+        }
+
+        .dot.active {
+            background: var(--accent-purple);
+            width: 12px;
+            border-radius: 4px;
+        }
+
+        /* --- Canvas --- */
+        .canvas-card {
+            background: var(--white);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-hero);
+            aspect-ratio: 2 / 1;
+            touch-action: none;
+            transition: box-shadow 200ms;
+        }
+
+        .canvas-card.active {
+            box-shadow: 0 0 0 4px var(--accent-purple-glow), var(--shadow-hero);
+        }
+
+        /* Ruled Lines */
+        .canvas-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+            background-size: 100% 40px;
+            background-position: 0 39px;
+            opacity: 0.5;
+        }
+
+        .canvas-watermark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: 800;
+            color: rgba(0,0,0,0.03);
+            text-transform: uppercase;
+            pointer-events: none;
+            transition: opacity 300ms;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .stroke-count {
+            position: absolute;
+            bottom: 12px;
+            right: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(0,0,0,0.05);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* --- Recognition Banner --- */
+        #recognitionBanner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--accent-red);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 0;
+            text-align: center;
+            transform: translateY(-100%);
+            transition: transform var(--transition-snappy);
+            z-index: 5;
+        }
+
+        #recognitionBanner.show { transform: translateY(0); }
+
+        /* --- Buttons --- */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+
+        .btn-action {
+            border: none;
+            border-radius: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 100ms;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-action:active { transform: scale(0.95); }
+
+        .btn-clear {
+            flex: 0.8;
+            height: 48px;
+            background: transparent;
+            border: 2px solid rgba(239, 68, 68, 0.2);
+            color: var(--accent-red);
+        }
+
+        .btn-listen {
+            flex: 1;
+            height: 48px;
+            background: transparent;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue);
+        }
+
+        .btn-submit {
+            flex: 1.5;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-purple) 0%, #6D28D9 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        /* --- Progress Bar --- */
+        .xp-container {
+            width: 100%;
+            height: 12px;
+            background: var(--navy-light);
+            border-radius: 6px;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        #xpBar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, var(--accent-purple), #A78BFA);
+            border-radius: 6px;
+            transition: width 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* --- Bottom Sheet --- */
+        #rewardSheet {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy-mid);
+            border-top: 1px solid var(--navy-light);
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            padding: 32px 24px;
+            z-index: 2000;
+            transform: translateY(100%);
+            transition: transform var(--transition-snappy);
+            text-align: center;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+        }
+
+        #rewardSheet.show { transform: translateY(0); }
+
+        .reward-stars {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .star-svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--navy-light);
+            transition: fill 300ms, transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .star-svg.filled {
+            fill: var(--accent-amber);
+            transform: scale(1.1);
+        }
+
+        .reward-msg {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        /* --- Stats Panel --- */
+        #statsPanel {
+            position: fixed;
+            inset: 0;
+            background: var(--navy-deep);
+            z-index: 3000;
+            transform: translateX(100%);
+            transition: transform var(--transition-snappy);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            overflow-y: auto;
+        }
+
+        #statsPanel.show { transform: translateX(0); }
+
+        .stats-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+        }
+
+        /* Activity Grid */
+        .activity-grid {
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+        }
+
+        .activity-day {
+            flex: 1;
+            aspect-ratio: 1;
+            background: var(--navy-mid);
+            border-radius: 8px;
+            border: 1px solid var(--navy-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .activity-day.active {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple-light);
+            color: white;
+        }
+
+        /* Badge Grid */
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .badge-item {
+            aspect-ratio: 1;
+            background: var(--navy-mid);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            border: 1px solid var(--navy-light);
+        }
+
+        .badge-item.locked {
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+
+        .badge-icon {
+            width: 32px;
+            height: 32px;
+            color: var(--accent-purple);
+        }
+
+        .badge-item.earned .badge-icon {
+            color: var(--accent-amber);
+            filter: drop-shadow(0 0 8px var(--accent-amber));
+        }
+
+        .lock-icon {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            color: var(--text-muted);
+        }
+
+        .badge-name {
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            padding: 0 4px;
+        }
+
+        /* --- Live Preview Label --- */
+        #livePreview {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            background: rgba(124, 58, 237, 0.05);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG Sprites -->
+    <svg style="display: none;">
+        <symbol id="icon-clear" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+        <symbol id="icon-listen" viewBox="0 0 24 24">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </symbol>
+        <symbol id="icon-submit" viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </symbol>
+        <symbol id="icon-flame" viewBox="0 0 24 24">
+            <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+        </symbol>
+        <symbol id="icon-trophy" viewBox="0 0 24 24">
+            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM7 10.82C5.84 10.4 5 9.3 5 8V7h2v3.82zM19 8c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+        </symbol>
+        <symbol id="icon-stats" viewBox="0 0 24 24">
+            <path d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"/>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </symbol>
+        <symbol id="icon-lock" viewBox="0 0 24 24">
+            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+        </symbol>
+    </svg>
+
+    <!-- Connect Overlay -->
+    <div id="connectOverlay">
+        <div class="logo-mark">ScriboGenie</div>
+        <div class="tagline">Every letter finds its place</div>
+        
+        <div class="input-group">
+            <input type="text" id="ipInput" placeholder=" " value="192.168.4.1">
+            <label for="ipInput">Laptop IP Address</label>
+        </div>
+
+        <button id="connectBtn" class="btn-full">
+            <span class="btn-text">Connect Device</span>
+            <div class="spinner"></div>
+        </button>
+
+        <p class="help-text">Find your IP address on the ScriboGenie laptop app screen.</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <div class="brand-icon">
+                <svg class="icon" style="width: 20px; height: 20px;"><use href="#icon-trophy"/></svg>
+            </div>
+            <div class="brand-name">ScriboGenie</div>
+        </div>
+        <div class="header-stats">
+            <div class="stat-chip streak">
+                <svg class="icon"><use href="#icon-flame"/></svg>
+                <span id="streakCount">0</span>
+            </div>
+            <div class="stat-chip score">
+                <svg class="icon"><use href="#icon-trophy"/></svg>
+                <span id="scoreVal">0</span>
+            </div>
+            <div id="statusDot" class="status-dot"></div>
+            <button id="openStats" style="background:none; border:none; color:var(--text-secondary); margin-left:8px;">
+                <svg class="icon" style="width:24px; height:24px;"><use href="#icon-stats"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="word-container">
+            <div style="display:flex; align-items:center; gap:8px;">
+                <select id="levelSelect">
+                    <option value="1">Level 1</option>
+                    <option value="2">Level 2</option>
+                    <option value="3">Level 3</option>
+                    <option value="4">Level 4</option>
+                    <option value="5">Level 5</option>
+                    <option value="6">Level 6</option>
+                </select>
+                <span id="modeLabel" class="level-pill">Copy Mode</span>
+            </div>
+            <div id="letterRow" class="letter-row">
+                <!-- Letters injected here -->
+            </div>
+            <div id="progressDots" class="progress-dots">
+                <!-- Dots injected here -->
+            </div>
+        </div>
+
+        <div id="canvasCard" class="canvas-card">
+            <div class="canvas-bg"></div>
+            <div id="canvasWatermark" class="canvas-watermark">CAT</div>
+            <div id="recognitionBanner">You wrote A instead of O</div>
+            <canvas id="writeCanvas"></canvas>
+            <div id="livePreview">Pi sees: ...</div>
+            <div id="strokeCount" class="stroke-count">0 strokes</div>
+        </div>
+
+        <div class="controls">
+            <button id="clearBtn" class="btn-action btn-clear">
+                <svg class="icon"><use href="#icon-clear"/></svg>
+                <span>Clear</span>
+            </button>
+            <button id="audioBtn" class="btn-action btn-listen">
+                <svg class="icon"><use href="#icon-listen"/></svg>
+                <span>Listen</span>
+            </button>
+            <button id="submitBtn" class="btn-action btn-submit">
+                <svg class="icon"><use href="#icon-submit"/></svg>
+                <span>Finish!</span>
+            </button>
+        </div>
+
+        <div class="xp-container">
+            <div id="xpBar"></div>
+        </div>
+    </main>
+
+    <!-- Reward Sheet -->
+    <div id="rewardSheet">
+        <div class="reward-stars">
+            <svg class="star-svg" id="star1"><use href="#icon-star"/></svg>
+            <svg class="star-svg" id="star2"><use href="#icon-star"/></svg>
+            <svg class="star-svg" id="star3"><use href="#icon-star"/></svg>
+        </div>
+        <div id="rewardMsg" class="reward-msg">Amazing work!</div>
+        <button id="continueBtn" class="btn-full" style="max-width:none;">Continue</button>
+    </div>
+
+    <!-- Stats Panel -->
+    <div id="statsPanel">
+        <div class="stats-header">
+            <div class="brand-name">Your Progress</div>
+            <button id="closeStats" style="background:none; border:none; color:var(--text-muted);">
+                <svg class="icon" style="width:28px; height:28px;"><use href="#icon-close"/></svg>
+            </button>
+        </div>
+
+        <div>
+            <div class="section-title" style="margin-bottom:12px;">Activity</div>
+            <div class="activity-grid" id="activityGrid">
+                <!-- Days injected -->
+            </div>
+        </div>
+
+        <div>
+            <div class="section-title" style="margin-bottom:12px;">Badges</div>
+            <div class="badge-grid" id="badgeGrid">
+                <!-- Badges injected -->
+            </div>
+        </div>
+
+        <div>
+            <div class="section-title" style="margin-bottom:12px;">Recent Words</div>
+            <div id="recentWords" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+                <!-- Recent words injected -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const state = {
+            socket: null,
+            connected: false,
+            currentWord: "",
+            currentLevel: 1,
+            attempts: 1,
+            startTime: 0,
+            streak: parseInt(localStorage.getItem('sg_streak') || '0'),
+            totalScore: parseInt(localStorage.getItem('sg_score') || '0'),
+            wordsDone: 0,
+            sessionTotal: 10,
+            lastRecognition: "",
+            badges: JSON.parse(localStorage.getItem('sg_badges') || '[]'),
+            activity: JSON.parse(localStorage.getItem('sg_activity') || '{}')
+        };
+
+        const els = {
+            overlay: document.getElementById('connectOverlay'),
+            ipInput: document.getElementById('ipInput'),
+            connectBtn: document.getElementById('connectBtn'),
+            statusDot: document.getElementById('statusDot'),
+            streakCount: document.getElementById('streakCount'),
+            scoreVal: document.getElementById('scoreVal'),
+            letterRow: document.getElementById('letterRow'),
+            progressDots: document.getElementById('progressDots'),
+            levelSelect: document.getElementById('levelSelect'),
+            modeLabel: document.getElementById('modeLabel'),
+            canvasCard: document.getElementById('canvasCard'),
+            canvas: document.getElementById('writeCanvas'),
+            watermark: document.getElementById('canvasWatermark'),
+            banner: document.getElementById('recognitionBanner'),
+            strokeCount: document.getElementById('strokeCount'),
+            livePreview: document.getElementById('livePreview'),
+            clearBtn: document.getElementById('clearBtn'),
+            audioBtn: document.getElementById('audioBtn'),
+            submitBtn: document.getElementById('submitBtn'),
+            xpBar: document.getElementById('xpBar'),
+            rewardSheet: document.getElementById('rewardSheet'),
+            rewardMsg: document.getElementById('rewardMsg'),
+            continueBtn: document.getElementById('continueBtn'),
+            statsPanel: document.getElementById('statsPanel'),
+            openStats: document.getElementById('openStats'),
+            closeStats: document.getElementById('closeStats'),
+            activityGrid: document.getElementById('activityGrid'),
+            badgeGrid: document.getElementById('badgeGrid'),
+            recentWords: document.getElementById('recentWords')
+        };
+
+        const ctx = els.canvas.getContext('2d');
+        let isDrawing = false;
+        let strokes = 0;
+
+        // --- Canvas Logic ---
+        function initCanvas() {
+            const resize = () => {
+                const rect = els.canvasCard.getBoundingClientRect();
+                els.canvas.width = rect.width * 2;
+                els.canvas.height = rect.height * 2;
+                ctx.scale(2, 2);
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.strokeStyle = '#0F0F1A';
+                ctx.lineWidth = 4;
+            };
+            window.addEventListener('resize', resize);
+            resize();
+        }
+
+        function getPos(e) {
+            const rect = els.canvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        function startDraw(e) {
+            isDrawing = true;
+            els.canvasCard.classList.add('active');
+            els.watermark.style.opacity = '0';
+            const pos = getPos(e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+            // Single tap support
+            ctx.arc(pos.x, pos.y, ctx.lineWidth/4, 0, Math.PI*2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+            strokes++;
+            updateStrokeCount();
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const pos = getPos(e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+        }
+
+        function stopDraw() {
+            isDrawing = false;
+            els.canvasCard.classList.remove('active');
+        }
+
+        els.canvas.addEventListener('mousedown', startDraw);
+        els.canvas.addEventListener('mousemove', draw);
+        window.addEventListener('mouseup', stopDraw);
+        els.canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDraw(e); });
+        els.canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); });
+        els.canvas.addEventListener('touchend', stopDraw);
+
+        function updateStrokeCount() {
+            els.strokeCount.textContent = `${strokes} strokes`;
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, els.canvas.width, els.canvas.height);
+            strokes = 0;
+            updateStrokeCount();
+            els.watermark.style.opacity = '1';
+            els.banner.classList.remove('show');
+        }
+
+        // --- Connection Logic ---
+        function connect() {
+            const ip = els.ipInput.value.trim();
+            if (!ip) return;
+
+            els.connectBtn.querySelector('.btn-text').textContent = "Connecting...";
+            els.connectBtn.querySelector('.spinner').style.display = "block";
+            
+            state.socket = new WebSocket(`ws://${ip}:8765`);
+
+            state.socket.onopen = () => {
+                state.connected = true;
+                els.statusDot.classList.add('online');
+                els.overlay.classList.add('hidden');
+                updateUI();
+                initCanvas();
+            };
+
+            state.socket.onclose = () => {
+                state.connected = false;
+                els.statusDot.classList.remove('online');
+                els.overlay.classList.remove('hidden');
+                els.connectBtn.querySelector('.btn-text').textContent = "Connect Device";
+                els.connectBtn.querySelector('.spinner').style.display = "none";
+            };
+
+            state.socket.onmessage = (e) => {
+                const data = JSON.parse(e.data);
+                handleMessage(data);
+            };
+        }
+
+        function handleMessage(data) {
+            console.log("[DEBUG] handleMessage:", data);
+            if (data.type === 'lesson' || (data.type === 'connected' && data.lesson)) {
+                const lesson = data.lesson || data;
+                setLesson(lesson);
+            } else if (data.type === 'reward') {
+                showReward(data);
+            } else if (data.type === 'recognition') {
+                state.lastRecognition = data.raw || "";
+                els.livePreview.textContent = `Pi sees: ${state.lastRecognition.toUpperCase()}`;
+
+                if (data.correct === true) {
+                    const cards = els.letterRow.querySelectorAll('.letter-card');
+                    cards.forEach((card, i) => {
+                        setTimeout(() => { card.classList.add('flipped'); }, i * 150);
+                    });
+                    state.wordsDone++;
+                    state.totalScore = data.score || state.totalScore;
+                    localStorage.setItem('sg_score', state.totalScore);
+                    updateUI();
+                    setTimeout(() => {
+                        els.rewardMsg.textContent = "Perfect! Well done!";
+                        els.rewardSheet.classList.add('show');
+                        for(let i=1; i<=3; i++) {
+                            document.getElementById(`star${i}`).classList.add('filled');
+                        }
+                        if (typeof confetti === 'function') {
+                            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 },
+                                       colors: ['#7C3AED', '#3B82F6', '#10B981'] });
+                        }
+                    }, cards.length * 100 + 500);
+                } else if (data.wrong_chars && data.wrong_chars.length > 0) {
+                    const cards = els.letterRow.querySelectorAll('.letter-card');
+                    data.wrong_chars.forEach(wc => {
+                        const idx = wc.position - 1;
+                        if (cards[idx]) {
+                            cards[idx].classList.add('wrong');
+                            setTimeout(() => cards[idx].classList.remove('wrong'), 2000);
+                        }
+                    });
+                    els.banner.textContent = data.feedback || "Try again!";
+                    els.banner.classList.add('show');
+                    setTimeout(() => { els.banner.classList.remove('show'); }, 3000);
+                }
+            } else if (data.type === 'wrong_attempt') {
+                handleError(data);
+            } else if (data.type === 'level_up') {
+                state.currentLevel = data.new_level;
+                els.levelSelect.value = String(data.new_level);
+                showBadgeUnlocked(`Level ${data.new_level}`, 'trophy');
+            }
+        }
+
+        // --- UI Updates ---
+        function setLesson(lesson) {
+            state.currentWord = lesson.word.toUpperCase();
+            state.currentLevel = lesson.level;
+            state.attempts = 1;
+            state.startTime = Date.now();
+            
+            els.watermark.textContent = state.currentWord;
+            els.modeLabel.textContent = `${lesson.mode.toUpperCase()} MODE`;
+            els.levelSelect.value = String(lesson.level);
+            
+            // Build letter cards
+            els.letterRow.innerHTML = '';
+            [...state.currentWord].forEach((char, i) => {
+                const card = document.createElement('div');
+                card.className = 'letter-card';
+                card.innerHTML = `
+                    <div class="letter-card-front">${char}</div>
+                    <div class="letter-card-back">${char}</div>
+                `;
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(-20px)';
+                els.letterRow.appendChild(card);
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, i * 100);
+            });
+
+            // Build progress dots
+            els.progressDots.innerHTML = '';
+            for(let i=0; i<state.sessionTotal; i++) {
+                const dot = document.createElement('div');
+                dot.className = `dot ${i === state.wordsDone % state.sessionTotal ? 'active' : ''}`;
+                els.progressDots.appendChild(dot);
+            }
+
+            clearCanvas();
+            updateXP();
+            els.rewardSheet.classList.remove('show');
+        }
+
+        function updateXP() {
+            const progress = (state.wordsDone % state.sessionTotal) / state.sessionTotal * 100;
+            els.xpBar.style.width = `${progress}%`;
+        }
+
+        function updateUI() {
+            els.streakCount.textContent = state.streak;
+            els.scoreVal.textContent = state.totalScore;
+        }
+
+        function showReward(data) {
+            // Flip cards to green one by one
+            const cards = els.letterRow.querySelectorAll('.letter-card');
+            cards.forEach((card, i) => {
+                setTimeout(() => {
+                    card.classList.add('flipped');
+                }, i * 150);
+            });
+
+            // Update stats
+            state.wordsDone++;
+            state.totalScore = data.score || (state.totalScore + data.stars * 10);
+            localStorage.setItem('sg_score', state.totalScore);
+            updateUI();
+
+            // Show Sheet after flips complete
+            setTimeout(() => {
+                els.rewardMsg.textContent = data.message || "Perfect Spacing!";
+                els.rewardSheet.classList.add('show');
+                
+                // Animate stars
+                for(let i=1; i<=3; i++) {
+                    const star = document.getElementById(`star${i}`);
+                    star.classList.remove('filled');
+                    if (i <= data.stars) {
+                        setTimeout(() => star.classList.add('filled'), i * 200);
+                    }
+                }
+                
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#7C3AED', '#3B82F6', '#10B981']
+                });
+            }, cards.length * 100 + 500);
+        }
+
+        function handleError(data) {
+            els.banner.textContent = data.feedback_text || "Try again!";
+            els.banner.classList.add('show');
+            setTimeout(() => {
+                clearCanvas();
+                state.attempts++;
+            }, 1500);
+        }
+
+        // --- Stats Panel Logic ---
+        function openStats() {
+            renderActivity();
+            renderBadges();
+            els.statsPanel.classList.add('show');
+        }
+
+        function renderActivity() {
+            const days = ['S','M','T','W','T','F','S'];
+            els.activityGrid.innerHTML = '';
+            days.forEach((day, i) => {
+                const div = document.createElement('div');
+                div.className = 'activity-day';
+                div.textContent = day;
+                // Simple logic for "active" days (simulated)
+                if (i === new Date().getDay()) div.classList.add('active');
+                els.activityGrid.appendChild(div);
+            });
+        }
+
+        const BADGE_DEFS = [
+            { id: 'first_word', name: 'First Steps', icon: 'trophy' },
+            { id: 'streak_3', name: '3 Day Streak', icon: 'flame' },
+            { id: 'perfect_10', name: 'Perfect 10', icon: 'star' },
+            { id: 'level_2', name: 'Level Up', icon: 'trophy' },
+            { id: 'speed_writer', name: 'Speedy', icon: 'flame' },
+            { id: 'master', name: 'Writing Master', icon: 'star' }
+        ];
+
+        function renderBadges() {
+            els.badgeGrid.innerHTML = '';
+            BADGE_DEFS.forEach(badge => {
+                const isEarned = state.badges.includes(badge.id);
+                const div = document.createElement('div');
+                div.className = `badge-item ${isEarned ? 'earned' : 'locked'}`;
+                div.innerHTML = `
+                    <svg class="badge-icon"><use href="#icon-${badge.icon}"/></svg>
+                    <div class="badge-name">${badge.name}</div>
+                    ${!isEarned ? '<svg class="lock-icon"><use href="#icon-lock"/></svg>' : ''}
+                `;
+                els.badgeGrid.appendChild(div);
+            });
+        }
+
+        function showBadgeUnlocked(name, icon) {
+            // Toast or small notification could go here
+            console.log("BADGE UNLOCKED:", name);
+        }
+
+        // --- Listeners ---
+        els.connectBtn.onclick = connect;
+        els.clearBtn.onclick = () => {
+            clearCanvas();
+            if (state.connected) state.socket.send(JSON.stringify({type: "clear_pi"}));
+        };
+        els.levelSelect.onchange = () => {
+            const lvl = parseInt(els.levelSelect.value);
+            if (state.connected) {
+                state.socket.send(JSON.stringify({type: "get_lesson", level: lvl}));
+            }
+        };
+        els.submitBtn.onclick = () => {
+            if (!state.connected) return;
+            state.socket.send(JSON.stringify({
+                type: 'attempt',
+                written: state.lastRecognition || state.currentWord,
+                raw: state.lastRecognition,
+                word: state.currentWord,
+                timestamp: Date.now()
+            }));
+        };
+        els.audioBtn.onclick = () => {
+            if (!state.connected) return;
+            state.socket.send(JSON.stringify({ type: 'request_audio', word: state.currentWord }));
+        };
+        els.continueBtn.onclick = () => {
+            els.rewardSheet.classList.remove('show');
+            document.querySelectorAll('.letter-card.wrong').forEach(c => c.classList.remove('wrong'));
+            document.querySelectorAll('.letter-card.flipped').forEach(c => c.classList.remove('flipped'));
+            state.socket.send(JSON.stringify({ type: 'get_lesson' }));
+        };
+        els.openStats.onclick = openStats;
+        els.closeStats.onclick = () => els.statsPanel.classList.remove('show');
+
+        // Close stats on escape
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') els.statsPanel.classList.remove('show');
+        });
+
+    </script>
+</body>
+</html>
