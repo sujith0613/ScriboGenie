@@ -1,0 +1,10766 @@
+[
+  {
+    "sentence": "we like a big.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the tap is big.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the big is by the chair.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we get a big hen.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the key is big.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the big is under the floor.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the dog is next to the big.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the goat is big.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you get a big hen.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the duck is next to the big.",
+    "pos": 24,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my big and my doll are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a big and a dog.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my dad wants the big.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom holds a big.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom gets a big bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he finds a big.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a big on the rug.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom wants the big.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a big and a dot.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i want a bad bird.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl finds a bad dog.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she finds a bad cat.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a bad and a doll.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we see a bad duck.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "look at the bad duck.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she sees a bad bird.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they find a bad frog.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bad is near the duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my bad and my desk are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you have a bad hen.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the zebra is by the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the sand on the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the sun to the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a doll on the bed.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a bed.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the dust is under the bed.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my dad can see a bed.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a bed and a duck.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you will get a bed.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i want a bed.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the bed to the step.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the dark is under the bed.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the box on the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the map on the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the zebra on the bed.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the pen is under the bed.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bed is near the do.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the quill on the bed.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my bed and my do are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my dad sees a bed.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the desk is under the bed.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the bed to the rug.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my friend likes a bed.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bed is under the path.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bed is near the dog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom likes the bed.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the pot to the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they have a bed.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my bed and my desk are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he has the bed.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the pen to the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she wants the bed.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you like the bed.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he sees the bed.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl finds the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the pig on the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a bed.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the bed to the table.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bed is near the dot.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the ball is under the step.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl sees the ball.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a ball.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we find the ball.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we get a ball.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom can see a ball.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl holds a ball.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the ball is under the box.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "our ball is there.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you want the ball.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the ball is near the do.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "look at the ball.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the dot is next to the ball.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they find a pink bird.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i want a bad bird.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes a glad bird.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bird is under the box.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they get a fast bird.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl gets a good bird.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he finds a fast bird.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they want a green bird.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she gets a good bird.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you get a kind bird.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i want a fast bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a bird and a dad.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom likes a small bird.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we have a very bird.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a bird on the step.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he gets a sad bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he sees a sad bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you like a black bird.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the doll is next to the bird.",
+    "pos": 24,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "it has a good bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl gets a green bird.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my bird is small.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she sees a bad bird.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we have a sad bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl sees a kind bird.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i have a very bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom gets a big bird.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you have a fun bird.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "it gets a pink bird.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i like a blue bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "that bird looks green.",
+    "pos": 5,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "this is her bird.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we like a deep bird.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl gets a very bird.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we get a pink bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl wants a quiet bird.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom finds a deep bird.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the grass on the box.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bird is under the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a box on the desk.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the duck on the box.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a kite on the box.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a zoo on the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl can see the box.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a box and a duck.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my dad finds the box.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my box and my dad are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the box on the bed.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i hold a box.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "look at the box.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the ball is under the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a ten on the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the door is under the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the box is near the duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the dig is next to the box.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boat is by the box.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a box and a doll.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they want the box.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the toad is by the box.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the doll is next to the box.",
+    "pos": 24,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "it finds a box.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she holds a box.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you want a box.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the zip is under the box.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a desk on the box.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a box on the path.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the box on the shelf.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see a boy and a do.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy finds the pod.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she wants the boy.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes a very hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes a glad bird.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets a cap.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she gets the boy.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy finds a fun dog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes a duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy finds a pink frog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has the desk.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy can see the pan.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes a cap.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a ball.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a bed.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy will get the dot.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy holds a sand.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy sees a very cat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants the queen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants to love.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy finds the vase.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets the girl.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a sun.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they hold a boy.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a pink dog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy will get a gate.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets a green hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy sees a key.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets a bat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy sees a small hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets the fish.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants the desk.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes to sell.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has a quiet pond.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy is near the do.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy holds a pan.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy sees a vest.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my mom can see a boy.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants a zip.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl will get the boy.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants the fox.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy finds a cap.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has a sad hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "look at the boy.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants the peg to be quiet.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy is by the porch.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy wants the goat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has the boy.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has the boy.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy holds a peg.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he holds a boy.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "their boy is there.",
+    "pos": 6,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy likes a pink duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they can see the boy.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy is near the doll.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets the club.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy can see the dust.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets a desk.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has a pup.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has a kind cat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the boy to the floor.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy will get a pip.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy can give.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy has the sand.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy finds a good cat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy holds a fish.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy sees the quick frog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the dad is next to the book.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the book is near the doll.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i find the bun.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bun is by the yard.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i want a bun.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i like a bun.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl finds a bun.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you get the bus.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you find the bus.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i see the bus.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i hold the bus.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "put the bus on the porch.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they want a bus.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they can see the bus.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my dad will get a bus.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the bell is by the step.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my friend gets a bell.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "it finds the bell.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he likes the bell.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boy gets a bat.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i want a bat.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she has the bat.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i hold the bat.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "it sees a bat.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "this bear is very quick.",
+    "pos": 5,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i can see the bear.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl has the bear.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you like a bear.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "this is his bear.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boat is by the box.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the boat is under the mat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "we will get a boat.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the bone to the desk.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "take the boot to the path.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "it wants the bee.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my dad likes the barn.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "there is a barn on the yard.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you like a barn.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "he wants a barn.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you have a black duck.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i like a black duck.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl wants a black hen.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "you like a black bird.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "they see a blue hen.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "the girl finds a blue duck.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "look at the blue fox.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "i like a blue bird.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "she likes a blue cat.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "my friend sees a blob.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "this is his bag.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "d"
+  },
+  {
+    "sentence": "that pig looks fast.",
+    "pos": 5,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "their pig is there.",
+    "pos": 6,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend wants the pig to be quiet.",
+    "pos": 20,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we have the pig.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the mat.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you find the pig.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl wants the pig to be quiet.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad holds the pig.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the desk.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it sees the pig.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he will get a pig.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend has a quiet pig.",
+    "pos": 22,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it wants the pig to be quiet.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you have a quiet pig.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a pig on the chair.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a pig.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom wants the pig.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the porch.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they want the pig.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom has a quiet pig.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i can see a pig.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a pig and a cat.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the bed.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it will get a pig.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the mat.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "give me the pig.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the path.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has a quiet pig.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl finds a pig.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she likes the pen.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i can see the pen.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he wants a pen.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "can you see the pen?",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a pen.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pen is under the bed.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it finds a pen.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it likes the pen.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the pen to the bed.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you get a pen.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad can see a pen.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it wants a pen.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom wants the pet.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "his pet is there.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she likes a pet.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom has a pet.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it can see a pet.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "can you see the pot?",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has the pot.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl can see the pot.",
+    "pos": 21,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they want the pot to be quiet.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you get the pot.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it can see a pot.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pot is by the room.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i like the pot.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we want the pot to be quiet.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the pot to the bed.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets the pot.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "give me the pot.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad finds the pot.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see the pot.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they have a quiet pot.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they have a quiet pan.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy can see the pan.",
+    "pos": 20,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he has a quiet pan.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has a quiet pan.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they want a pan.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has the pan.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pan on the shelf.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you have the pan.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy holds a pan.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she has a quiet pan.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a pan on the rug.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pan is by the desk.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they like a pan.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the pan to the desk.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she has the pan.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pan on the table.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it can see the pan.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom wants the pup to be quiet.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he can see the pup.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she wants the pup to be quiet.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pup is under the rug.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i want the pup to be quiet.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy has a pup.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we want the pup.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom has a quiet pup.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pup is by the table.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the peg is by the table.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it holds the peg.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she has a peg.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he wants the peg to be quiet.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "can you see the peg?",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy wants the peg to be quiet.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they have a quiet peg.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy holds a peg.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they want the peg to be quiet.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl holds the peg.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i have a quiet peg.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she wants the peg to be quiet.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "this is her peg.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they find a pink bird.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy finds a pink frog.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "look at the pink deer.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i get a pink frog.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy wants a pink dog.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes a pink duck.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "his duck is pink.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he has a pink hen.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he gets a pink dog.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my cow is pink.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "this deer is very pink.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom likes a pink frog.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy likes a pink duck.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it gets a pink bird.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we get a pink bird.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she has the park.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you can see a park.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the park on the mat.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "his park is there.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the park is under the path.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i have a quiet pond.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she wants the pond.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you get a pond.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend likes a pond.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you get the pond.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy has a quiet pond.",
+    "pos": 20,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it will get the pond.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i like the pond.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom finds the pond.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he gets a pond.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom will get a pond.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they can see a pond.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl will get a pond.",
+    "pos": 20,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pond on the yard.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he gets the plum.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "our neighbor likes a plum at lunch.",
+    "pos": 21,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl wants the plum.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl has a plum.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "they will get a plum.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "our class likes a plum at lunch.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the plum is under the porch.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he sees a plum.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl gets the plum.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "his plum is here.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom likes a plum at lunch.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she sees the plum.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we like a plum at lunch.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "look at the plum.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she sees a plum.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the queen has a plum.",
+    "pos": 16,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the queen was quiet by the plum.",
+    "pos": 27,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he likes the plum.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "our pad is here.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees a pad.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she sees the pad.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it gets a pad.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it sees a pad.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy finds the pod.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she wants the pod.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend holds the pod.",
+    "pos": 20,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he has a pod.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a pod on the desk.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i can see a pod.",
+    "pos": 12,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "his pod is there.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the pod to the table.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom can see a pod.",
+    "pos": 17,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it can see the pod.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "you have a pod.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pod on the table.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she gets a pod.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has the pod.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it likes a pod.",
+    "pos": 11,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pod is under the desk.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend gets the pip.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he wants the pip.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she finds the pip.",
+    "pos": 14,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i will get the pip.",
+    "pos": 15,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy will get a pip.",
+    "pos": 19,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl wants to pat.",
+    "pos": 18,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "he can pat.",
+    "pos": 7,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she will pat today.",
+    "pos": 9,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl can pat.",
+    "pos": 13,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i want to pat.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we will pull today.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "she did pull it.",
+    "pos": 8,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i did pull it.",
+    "pos": 6,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the grass on the box.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the sand on the bed.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the kid on the path.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the grass on the yard.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the doll on the shelf.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the mat.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the duck on the box.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the rib on the mat.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "it did put it.",
+    "pos": 7,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the truck on the desk.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the desk on the path.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the toad on the yard.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the box on the bed.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the map on the bed.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the desk.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the zebra on the bed.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the park on the mat.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the dot on the floor.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the foot on the mat.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pan on the shelf.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the sun on the room.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the zip on the chair.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the quill on the bed.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the bus on the porch.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the zebra on the path.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the lap on the floor.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the top on the path.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the dark on the table.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "i like to put.",
+    "pos": 10,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pod on the table.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the porch.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pan on the table.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the girl on the desk.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the king on the shelf.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the bed.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the mat.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the dot on the porch.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the web on the porch.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the gas on the porch.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the path.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the box on the shelf.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pond on the yard.",
+    "pos": 0,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pop can fizz a lot.",
+    "pos": 4,
+    "correct": "p",
+    "alt": "q"
+  },
+  {
+    "sentence": "we like a big.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the tap is big.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the big is by the chair.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "we get a big hen.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the key is big.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the big is under the floor.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the dog is next to the big.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the goat is big.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "you get a big hen.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the duck is next to the big.",
+    "pos": 24,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my big and my doll are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a big and a dog.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my dad wants the big.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my mom holds a big.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my mom gets a big bird.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "he finds a big.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a big on the rug.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my mom wants the big.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a big and a dot.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i want a bad bird.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl finds a bad dog.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she finds a bad cat.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a bad and a doll.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "we see a bad duck.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "look at the bad duck.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she sees a bad bird.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "they find a bad frog.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bad is near the duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my bad and my desk are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "you have a bad hen.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the zebra is by the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the sand on the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the sun to the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a doll on the bed.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a bed.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the dust is under the bed.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my dad can see a bed.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a bed and a duck.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "you will get a bed.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i want a bed.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the bed to the step.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the dark is under the bed.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the box on the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the map on the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the zebra on the bed.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the pen is under the bed.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bed is near the do.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the quill on the bed.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my bed and my do are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my dad sees a bed.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the desk is under the bed.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the bed to the rug.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my friend likes a bed.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bed is under the path.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bed is near the dog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my mom likes the bed.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the pot to the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "they have a bed.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my bed and my desk are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "he has the bed.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the pen to the bed.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she wants the bed.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "you like the bed.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "he sees the bed.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl finds the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the pig on the bed.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a bed.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the bed to the table.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bed is near the dot.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the ball is under the step.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl sees the ball.",
+    "pos": 18,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a ball.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "we find the ball.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "we get a ball.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my mom can see a ball.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl holds a ball.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the ball is under the box.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "our ball is there.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "you want the ball.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the ball is near the do.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "look at the ball.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the dot is next to the ball.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a boy and a do.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy finds the pod.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she wants the boy.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy likes a very hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy likes a glad bird.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets a cap.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she gets the boy.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy finds a fun dog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy likes a duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy finds a pink frog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has the desk.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy can see the pan.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy likes a cap.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a ball.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a bed.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy will get the dot.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy holds a sand.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy sees a very cat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants the queen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants to love.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy finds the vase.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets the girl.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a sun.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "they hold a boy.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a pink dog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy will get a gate.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets a green hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy sees a key.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets a bat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy sees a small hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets the fish.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants the desk.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy likes to sell.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has a quiet pond.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy is near the do.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy holds a pan.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy sees a vest.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my mom can see a boy.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants a zip.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl will get the boy.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants the fox.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy finds a cap.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has a sad hen.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "look at the boy.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants the peg to be quiet.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy is by the porch.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy wants the goat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has the boy.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has the boy.",
+    "pos": 16,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy holds a peg.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "he holds a boy.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "their boy is there.",
+    "pos": 6,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy likes a pink duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "they can see the boy.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy is near the doll.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets the club.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy can see the dust.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets a desk.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has a pup.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has a kind cat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the boy to the floor.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy will get a pip.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy can give.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy has the sand.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy finds a good cat.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy holds a fish.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy sees the quick frog.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the grass on the box.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bird is under the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a box on the desk.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the duck on the box.",
+    "pos": 20,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a kite on the box.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a zoo on the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl can see the box.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a box and a duck.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my dad finds the box.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my box and my dad are here.",
+    "pos": 3,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the box on the bed.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i hold a box.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "look at the box.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the ball is under the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a ten on the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the door is under the box.",
+    "pos": 22,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the box is near the duck.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the dig is next to the box.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boat is by the box.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i see a box and a doll.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "they want the box.",
+    "pos": 14,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the toad is by the box.",
+    "pos": 19,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the doll is next to the box.",
+    "pos": 24,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "it finds a box.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she holds a box.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "you want a box.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the zip is under the box.",
+    "pos": 21,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a desk on the box.",
+    "pos": 23,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "there is a box on the path.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "put the box on the shelf.",
+    "pos": 8,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the boy gets a bat.",
+    "pos": 15,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i want a bat.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "she has the bat.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i hold the bat.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "it sees a bat.",
+    "pos": 10,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i find the bun.",
+    "pos": 11,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bun is by the yard.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i want a bun.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "i like a bun.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the girl finds a bun.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "this is his bag.",
+    "pos": 12,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "the bell is by the step.",
+    "pos": 4,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "my friend gets a bell.",
+    "pos": 17,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "it finds the bell.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "he likes the bell.",
+    "pos": 13,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the bone to the desk.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "take the boot to the path.",
+    "pos": 9,
+    "correct": "b",
+    "alt": "p"
+  },
+  {
+    "sentence": "it has a deep dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you find a quick dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy finds a fun dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he will get the dog.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he likes a small dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dog is under the porch.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the dog to the yard.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl finds a bad dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom likes a small dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy wants a pink dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you see a very dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they want a very dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dog is next to the big.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend gets a glad dog.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl will get a dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she can see the dog.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl can see a dog.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he gets a good dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he finds a small dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he gets a pink dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a quick dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she has a dog.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the bed is near the dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "can you see the dog?",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "look at the kind dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a big and a dog.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has the dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the dog to the chair.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she sees a very dog.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they hold the dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they like a glad dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you find the dog.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the dog to the step.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we get a deep dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he has a dog.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl sees a sad dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i want a good dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they want a fast dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants to dig.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dig is next to the box.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they did dig it.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dot is under the chair.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy will get the dot.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they will get the dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it finds the dot.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom finds a dot.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend can see a dot.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the dot on the floor.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a dot on the floor.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom will get a dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get a dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dot is by the porch.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dot is next to the ball.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom can see a dot.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get the dot.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a big and a dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the dot on the porch.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he likes the dot.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they have the dot.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we like the dot.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the bed is near the dot.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad finds the quill.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes the vet.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants the fish.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees a cup.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets the lid.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes the grass.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad holds a map.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a web.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes a kid.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad can see a bed.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad finds the box.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad holds the pig.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes a pink duck.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has the pan.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my box and my dad are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a pen.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get a fan.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a dad on the table.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dad is under the shelf.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a bird and a dad.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes the barn.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets a deep frog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes to visit.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants the cub.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes the quick frog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes a zip.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees a pad.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees a bed.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants to dig.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has a sun.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees a tub.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a quick dog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad finds a goat.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad can see a vase.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dad is next to the book.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets the pot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes to sing.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get a goat.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get a dot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants the big.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes a sock.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has the dog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets the train.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a zebra.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad is there.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants a pig.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad finds the pot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets the gate.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad can see the van.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad can see a zebra.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad can see a pen.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees the vet.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants the lid.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets a fast hen.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad wants to look.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get the dot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad has the pod.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad holds the tap.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get a zebra.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad sees the fan.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad did live it.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad will get a bus.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "our door is here.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the door is under the box.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they see the door.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the door to the table.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend holds a door.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a doll on the bed.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the doll on the shelf.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the doll is under the shelf.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the doll is next to the bird.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a bad and a doll.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my big and my doll are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a box and a doll.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "give me the doll.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the book is near the doll.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the doll is next to the box.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy is near the doll.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a box on the desk.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy has the desk.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the sock to the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the truck on the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the desk on the path.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the desk to the path.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you get the desk.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl can see a desk.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the pig on the desk.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom has a desk.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you find a desk.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom holds a desk.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a pod on the desk.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy wants the desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend finds a desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the desk is under the bed.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pan is by the desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the grass to the desk.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my bed and my desk are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the bone to the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the pan to the desk.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the van is under the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the tin is by the desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the girl on the desk.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my bad and my desk are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy gets a desk.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we have a desk at home.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a desk on the box.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the pod is under the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she holds a drum.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "their drum is there.",
+    "pos": 6,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it sees the drum.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom will get a drum.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i like a dirt.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom finds the dirt.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they will get a dust.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dust is under the bed.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i find the dust.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they find the dust.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy can see the dust.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we hold the dime.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dime is by the shelf.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "there is a deer on the chair.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "look at the pink deer.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "this deer is very fun.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "take the deer to the step.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "this deer is very pink.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you can see the deer.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "that deer looks small.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you like a deer.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the deer is by the path.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it sees a quick duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "their duck likes to quack.",
+    "pos": 6,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy likes a duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i have a small duck.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you have a black duck.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i like a black duck.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the duck on the box.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he has the duck.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i want a fast duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a box and a duck.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom sees a quick duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a bed and a duck.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we like a quiet duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has a kind duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad likes a pink duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "his duck is pink.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "our duck likes to quack.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "our yellow duck likes to quack.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she finds a fast duck.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend has a sad duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the box is near the duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i see a kind duck.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we like a small duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i want a glad duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we see a bad duck.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "look at the bad duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she finds a very duck.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the duck is next to the big.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl finds a blue duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom wants a fast duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my duck likes to quack.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "he gets a glad duck.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend gets a very duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl likes a good duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend finds a duck.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the boy likes a pink duck.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "their yellow duck likes to quack.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the bad is near the duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl gets a very duck.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend likes a quiet duck.",
+    "pos": 24,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "their duck is quiet.",
+    "pos": 6,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "this duck is very dark.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend has a small duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has a fast duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom has a dark cat.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "i like the dark.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it likes a dark frog.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my friend finds a dark cat.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we have a dark at home.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the girl gets the dark.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dark is under the bed.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "they will get a dark.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "you have a dark cat.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "put the dark on the table.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it can see a dark.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she finds the dark.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "this duck is very dark.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "the dark is under the floor.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has a deep dog.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom wants a deep frog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my dad gets a deep frog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "she likes a deep frog.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we get a deep dog.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "we like a deep bird.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "my mom finds a deep bird.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "look at the deep goat.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "q"
+  },
+  {
+    "sentence": "it has a deep dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you find a quick dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy finds a fun dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he will get the dog.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he likes a small dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dog is under the porch.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the dog to the yard.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl finds a bad dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom likes a small dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy wants a pink dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you see a very dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they want a very dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dog is next to the big.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend gets a glad dog.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl will get a dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she can see the dog.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl can see a dog.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he gets a good dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he finds a small dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he gets a pink dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants a quick dog.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she has a dog.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the bed is near the dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "can you see the dog?",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "look at the kind dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a big and a dog.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad has the dog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the dog to the chair.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she sees a very dog.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they hold the dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they like a glad dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you find the dog.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the dog to the step.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we get a deep dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he has a dog.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl sees a sad dog.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i want a good dog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they want a fast dog.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants to dig.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dig is next to the box.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they did dig it.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dot is under the chair.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy will get the dot.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they will get the dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it finds the dot.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom finds a dot.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend can see a dot.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the dot on the floor.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a dot on the floor.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom will get a dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get a dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dot is by the porch.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dot is next to the ball.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom can see a dot.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get the dot.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a big and a dot.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the dot on the porch.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he likes the dot.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they have the dot.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we like the dot.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the bed is near the dot.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad finds the quill.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes the vet.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants the fish.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad sees a cup.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets the lid.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes the grass.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad holds a map.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants a web.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes a kid.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad can see a bed.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad finds the box.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad holds the pig.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes a pink duck.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad has the pan.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my box and my dad are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants a pen.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get a fan.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a dad on the table.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dad is under the shelf.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a bird and a dad.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes the barn.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets a deep frog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes to visit.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants the cub.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes the quick frog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes a zip.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad sees a pad.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad sees a bed.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants to dig.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad has a sun.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad sees a tub.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants a quick dog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad finds a goat.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad can see a vase.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dad is next to the book.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets the pot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes to sing.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get a goat.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get a dot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants the big.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes a sock.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad has the dog.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets the train.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants a zebra.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad is there.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants a pig.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad finds the pot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets the gate.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad can see the van.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad can see a zebra.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad can see a pen.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad sees the vet.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants the lid.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets a fast hen.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad wants to look.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get the dot.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad has the pod.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad holds the tap.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get a zebra.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad sees the fan.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad did live it.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad will get a bus.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "our door is here.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the door is under the box.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they see the door.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the door to the table.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend holds a door.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a doll on the bed.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the doll on the shelf.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the doll is under the shelf.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the doll is next to the bird.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a bad and a doll.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my big and my doll are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a box and a doll.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "give me the doll.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the book is near the doll.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the doll is next to the box.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy is near the doll.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a box on the desk.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy has the desk.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the sock to the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the truck on the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the desk on the path.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the desk to the path.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you get the desk.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl can see a desk.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the pig on the desk.",
+    "pos": 19,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom has a desk.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you find a desk.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom holds a desk.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a pod on the desk.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy wants the desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend finds a desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the desk is under the bed.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the pan is by the desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the grass to the desk.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my bed and my desk are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the bone to the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the pan to the desk.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the van is under the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the tin is by the desk.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the girl on the desk.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my bad and my desk are here.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy gets a desk.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we have a desk at home.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a desk on the box.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the pod is under the desk.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she holds a drum.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "their drum is there.",
+    "pos": 6,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it sees the drum.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom will get a drum.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i like a dirt.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom finds the dirt.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they will get a dust.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dust is under the bed.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i find the dust.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they find the dust.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy can see the dust.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we hold the dime.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dime is by the shelf.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "there is a deer on the chair.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "look at the pink deer.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "this deer is very fun.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "take the deer to the step.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "this deer is very pink.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you can see the deer.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "that deer looks small.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you like a deer.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the deer is by the path.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it sees a quick duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "their duck likes to quack.",
+    "pos": 6,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy likes a duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i have a small duck.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you have a black duck.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i like a black duck.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the duck on the box.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he has the duck.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i want a fast duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a box and a duck.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom sees a quick duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a bed and a duck.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we like a quiet duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it has a kind duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad likes a pink duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "his duck is pink.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "our duck likes to quack.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "our yellow duck likes to quack.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she finds a fast duck.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend has a sad duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the box is near the duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i see a kind duck.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we like a small duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i want a glad duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we see a bad duck.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "look at the bad duck.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she finds a very duck.",
+    "pos": 17,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the duck is next to the big.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl finds a blue duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom wants a fast duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my duck likes to quack.",
+    "pos": 3,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "he gets a glad duck.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend gets a very duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl likes a good duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend finds a duck.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the boy likes a pink duck.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "their yellow duck likes to quack.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the bad is near the duck.",
+    "pos": 20,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl gets a very duck.",
+    "pos": 21,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend likes a quiet duck.",
+    "pos": 24,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "their duck is quiet.",
+    "pos": 6,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "this duck is very dark.",
+    "pos": 5,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend has a small duck.",
+    "pos": 22,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it has a fast duck.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom has a dark cat.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "i like the dark.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it likes a dark frog.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my friend finds a dark cat.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we have a dark at home.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the girl gets the dark.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dark is under the bed.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "they will get a dark.",
+    "pos": 16,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "you have a dark cat.",
+    "pos": 11,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "put the dark on the table.",
+    "pos": 8,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it can see a dark.",
+    "pos": 13,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she finds the dark.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "this duck is very dark.",
+    "pos": 18,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "the dark is under the floor.",
+    "pos": 4,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "it has a deep dog.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom wants a deep frog.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my dad gets a deep frog.",
+    "pos": 14,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "she likes a deep frog.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we get a deep dog.",
+    "pos": 9,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "we like a deep bird.",
+    "pos": 10,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "my mom finds a deep bird.",
+    "pos": 15,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "look at the deep goat.",
+    "pos": 12,
+    "correct": "d",
+    "alt": "t"
+  },
+  {
+    "sentence": "go and fit with us.",
+    "pos": 0,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it can go.",
+    "pos": 7,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get a kite.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a small cat.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a fast bird.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get a quiz.",
+    "pos": 2,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get a plum.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a pond.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a green hen.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the bus.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a king.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he will get the dog.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy will get the dot.",
+    "pos": 13,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get the sun.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get the dot.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get a dust.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a big hen.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get a sad cat.",
+    "pos": 2,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the pot.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get a pink frog.",
+    "pos": 2,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i will get a fan.",
+    "pos": 7,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you will get a bed.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a green frog.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get the sand.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the van.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend will get a kite.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the pond.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the desk.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a kind bird.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy will get a gate.",
+    "pos": 13,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a ball.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a gas.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get a fan.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend will get a sand.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i will get the fox.",
+    "pos": 7,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we will get a friend.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get a very frog.",
+    "pos": 2,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get a dark.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a grass.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will get a dog.",
+    "pos": 14,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get the map.",
+    "pos": 2,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get a grass.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the sun.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get the kit.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom will get a dot.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a sad frog.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend will get the quiz.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get the pond.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he will get a pig.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we will get the kid.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will get the boy.",
+    "pos": 14,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i will get the tin.",
+    "pos": 7,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a sun.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a big hen.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a cap.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom will get a pond.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get the friend.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get the gate.",
+    "pos": 2,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get a goat.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get a dot.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we will get a zip.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a quick hen.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get the cab.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i will get a cup.",
+    "pos": 7,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will get a pond.",
+    "pos": 14,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we will get the zebra.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get the goat.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a pen.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "she will get a tap.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom will get a drum.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i will get the pip.",
+    "pos": 7,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he will get the sled.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend will get a zoo.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he likes to get.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get the fan.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get the dot.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get a zebra.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy will get a pip.",
+    "pos": 13,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get a pig.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get a fish.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend will get a lap.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom will get a vet.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a deep dog.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a pink bird.",
+    "pos": 3,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we will get a boat.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a very cat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get a bus.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a fish.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "give me the toe.",
+    "pos": 0,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will give today.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "give me the doll.",
+    "pos": 0,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "give me the pot.",
+    "pos": 0,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy can give.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "give me the pig.",
+    "pos": 0,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "give me the kit.",
+    "pos": 0,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a good bird.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he finds a good hen.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "she gets a good bird.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you have a good hen.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he gets a good dog.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it has a good bird.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes a good duck.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy finds a good cat.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i want a good dog.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the gate is by the mat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they hold the gate.",
+    "pos": 14,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy will get a gate.",
+    "pos": 19,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i get the gate.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad gets the gate.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom gets the gate.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the gate is mine.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "this goat is very very.",
+    "pos": 5,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the goat is yellow and calm.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "can you see the goat?",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you want a goat.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the goat is big.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "she has the goat.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad finds a goat.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "our goat has yellow on its coat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the goat is under the path.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom has the goat.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy wants the goat.",
+    "pos": 18,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad will get a goat.",
+    "pos": 18,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they will get the goat.",
+    "pos": 18,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you have a goat.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i like the goat.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "look at the deep goat.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "take the gum to the mat.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "there is a gum on the table.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i can see a gun.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it has the gun.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it gets a gun.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom holds the gun.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl holds the quilt.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you hold a girl.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl wants the plum.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl has a plum.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl sees the ball.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they like a girl.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can see the cap.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a good bird.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can see the pot.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl wants a black hen.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets the vet.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds the kit.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets the zoo.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl wants to pat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds the sock.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can see the box.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds a bad dog.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy gets the girl.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl wants the pig to be quiet.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets the dark.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can see a desk.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl sees a zip.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "there is a girl on the yard.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl holds a ball.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl holds a quill.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will get a dog.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can see a dog.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets the plum.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a green bird.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl is by the path.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds a quiz.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes a sad cat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will get the boy.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl holds a sun.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can see a fan.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will keep today.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds a blue duck.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl has the bear.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl sees a kind bird.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes a dress.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds a kid.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl did cook it.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl sees a web.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl has a fast frog.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl has the vest.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes a good duck.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl did have it.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes a cab.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl will get a pond.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds the king.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "put the girl on the desk.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl sees the quick swan.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl did sing it.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds a bun.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl wants the fan.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend sees a girl.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds the bed.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl holds the peg.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes the king.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a zip.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a very duck.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl can pat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a very bird.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl likes to send.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl wants a quiet bird.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl sees a sad dog.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl finds a pig.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy likes a glad bird.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend gets a glad dog.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i want a glad duck.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "that cow looks glad.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he gets a glad duck.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "look at the glad cow.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they like a glad dog.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you like a glad hen.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a green hen.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they want a green bird.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my mom likes a green hen.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "you get a green frog.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy gets a green hen.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they want a green hen.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "she has a green frog.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the girl gets a green bird.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he likes a green cat.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "that bird looks green.",
+    "pos": 16,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "put the grass on the box.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my dad likes the grass.",
+    "pos": 17,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "put the grass on the yard.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they see a grass.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they get a grass.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "it will get a grass.",
+    "pos": 14,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the grass is by the mat.",
+    "pos": 4,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "they can see a grass.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he likes a grass.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "take the grass to the desk.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "she holds a grass.",
+    "pos": 12,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he finds a grass.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "i want a grass.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "my friend likes a gas.",
+    "pos": 18,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we get a gas.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he has a gas.",
+    "pos": 9,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "we can see the gas.",
+    "pos": 15,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "here is a gas.",
+    "pos": 10,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "he finds the gas.",
+    "pos": 13,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "put the gas on the porch.",
+    "pos": 8,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the mouse is gray and calm.",
+    "pos": 13,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the cat is gray and calm.",
+    "pos": 11,
+    "correct": "g",
+    "alt": "k"
+  },
+  {
+    "sentence": "the boy finds a fun dog.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "his frog is fun.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "this deer is very fun.",
+    "pos": 18,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you have a fun bird.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a fun hen.",
+    "pos": 18,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom wants a fun hen.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom sees the fan.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom gets the fan.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i will get a fan.",
+    "pos": 13,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my dad will get a fan.",
+    "pos": 18,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it can see the fan.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the girl can see a fan.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "can you see the fan?",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend wants the fan.",
+    "pos": 20,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the girl wants the fan.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we get the fan.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my dad sees the fan.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "that pig looks fast.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "they get a fast bird.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "he finds a fast bird.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i want a fast duck.",
+    "pos": 9,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i want a fast bird.",
+    "pos": 9,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom sees a fast cat.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom wants a fast hen.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "she finds a fast duck.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom wants a fast duck.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the girl has a fast frog.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you find a fast frog.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my dad gets a fast hen.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it has a fast duck.",
+    "pos": 9,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "they want a fast dog.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my dad wants the fish.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the boy gets the fish.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "there is a fish on the shelf.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it will get a fish.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the boy holds a fish.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you get a fish.",
+    "pos": 10,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "go and fit with us.",
+    "pos": 7,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we will fit today.",
+    "pos": 8,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it likes to fit.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom can see a fox.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i will get the fox.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the boy wants the fox.",
+    "pos": 18,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the fox is under the yard.",
+    "pos": 4,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "that fox looks quick.",
+    "pos": 5,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "look at the blue fox.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "that fox looks very.",
+    "pos": 5,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you want a foot.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "take the foot to the step.",
+    "pos": 9,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "his foot is there.",
+    "pos": 4,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom can see a foot.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "put the foot on the mat.",
+    "pos": 8,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom holds a foot.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "he sees the foot.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom can see the foot.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "she likes the foot.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it gets the foot.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we find a sad frog.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a kind frog.",
+    "pos": 23,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the boy finds a pink frog.",
+    "pos": 21,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we like a frog.",
+    "pos": 10,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it holds the frog.",
+    "pos": 13,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend has the frog.",
+    "pos": 18,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it likes a dark frog.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i get a pink frog.",
+    "pos": 13,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a frog.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you get a green frog.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i like a very frog.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom wants a deep frog.",
+    "pos": 20,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "there is a frog on the room.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "his frog is fun.",
+    "pos": 4,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you like the quick frog.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "i get a very frog.",
+    "pos": 13,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "she has a green frog.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom gets a kind frog.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my dad gets a deep frog.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my dad likes the quick frog.",
+    "pos": 23,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "they get a sad frog.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "she likes a deep frog.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "it likes a frog.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "they find a bad frog.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my mom likes a pink frog.",
+    "pos": 20,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the girl has a fast frog.",
+    "pos": 20,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my frog is small.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the frog is by the floor.",
+    "pos": 4,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "they want a very frog.",
+    "pos": 17,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "you find a fast frog.",
+    "pos": 16,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the frog is under the table.",
+    "pos": 4,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we find a kind frog.",
+    "pos": 15,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a kind frog.",
+    "pos": 23,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the boy sees the quick frog.",
+    "pos": 23,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a kite.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a kind frog.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend can see a queen.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend can see the kit.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend wants the pig to be quiet.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend can see a kite.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the friend is by the room.",
+    "pos": 4,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets the pip.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend has the frog.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a pond.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a dark cat.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend holds the pod.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend can see a dot.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets a bell.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a frog.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets a zebra.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a gas.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend wants the sock.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend will get a kite.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend wants a tap.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend can see the kite.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend will get a sand.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we will get a friend.",
+    "pos": 14,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets a glad dog.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a blob.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets a map.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend wants to kiss.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend will get the quiz.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend holds the crab.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a desk.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees the friend.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees the friend.",
+    "pos": 19,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a tree.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend has a sad duck.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend has a quiet pig.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a quick cat.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees the quick hen.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a bed.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend did swim it.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a kit.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes the quick goose.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a van.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "they get the friend.",
+    "pos": 13,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend will keep today.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend can see a zoo.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend wants the fan.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend has a tub.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets a very duck.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a duck.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we want the friend.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a fun hen.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend gets a vest.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend sees a girl.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend will get a zoo.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "we find the friend.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend holds the top.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend will get a lap.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a quiet duck.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "he finds a friend.",
+    "pos": 11,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend finds a kid.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend has a small duck.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend likes a kind frog.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "my friend holds a door.",
+    "pos": 3,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "the pop can fizz a lot.",
+    "pos": 12,
+    "correct": "f",
+    "alt": "v"
+  },
+  {
+    "sentence": "take the sun to the bed.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the sun is by the step.",
+    "pos": 4,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the sun is mine.",
+    "pos": 4,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we get the sun.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he has the sun.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy wants a sun.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see the sun.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "put the sun on the room.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you get the sun.",
+    "pos": 12,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we find a sun.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad has a sun.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you get a sun.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl holds a sun.",
+    "pos": 17,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we can see the sun.",
+    "pos": 15,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we find a sad frog.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a sad hen.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i get a sad cat.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he gets a sad bird.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he sees a sad bird.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they get a sad frog.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl likes a sad cat.",
+    "pos": 17,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend has a sad duck.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy has a sad hen.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we have a sad bird.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl sees a sad dog.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the meadow at noon.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the orchard each evening.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the room at three.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i want to sit.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the path at noon.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can sit.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the hill each evening.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the courtyard each morning.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we sit near the alley at noon.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "there is a sock on the table.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we have a sock at home.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl finds the sock.",
+    "pos": 19,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "take the sock to the desk.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the sock is under the yard.",
+    "pos": 4,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you hold the sock.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend wants the sock.",
+    "pos": 20,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they have the sock.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad likes a sock.",
+    "pos": 15,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see the sock.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he has the sock.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see a gun.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a boy and a do.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see the vest.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend can see a queen.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the pot?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend can see the kit.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see the pen.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl can see the cap.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy can see the pan.",
+    "pos": 12,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the pen?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a sad hen.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see the map.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl can see the pot.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend can see a kite.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the goat?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl can see the box.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you can see a park.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a box and a duck.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad can see a bed.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see the bus.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see a pot.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a bed and a duck.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see a vase.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see a blue hen.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend can see a dot.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you can see the toe.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see the club.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl can see a desk.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a fox.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he can see the pup.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a foot.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a small hen.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend can see the kite.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a ball.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see the zip.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see the sun.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see the zip.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you see a very dog.",
+    "pos": 4,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see a grass.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a bird and a dad.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a vase.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the map?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the peg?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you can see the vest.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see the fan.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see the dog.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl can see a dog.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they can see the tub.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a vet.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see a pod.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a boy.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see a vase.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see the quick chick.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a top.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a lid.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see the bear.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a bad and a doll.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see a van.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a kind duck.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see the door.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they can see a grass.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a kind cat.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a bad duck.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we can see a mud.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see the foot.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we can see a vest.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl can see a fan.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad can see a vase.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a pod.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they can see the kid.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the fan?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see the pod.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the dog?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we can see the gas.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a box and a doll.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend can see a zoo.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a big and a dog.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see a zip.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you can see the deer.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see a sand.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they can see a pond.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we can see the sun.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they can see the boy.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you see the kite.",
+    "pos": 4,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see a dark.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see a key.",
+    "pos": 5,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad can see the van.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she can see the zip.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy can see the dust.",
+    "pos": 12,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see the crab.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad can see a zebra.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see a pig.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad can see a pen.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom can see a dot.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see the pot.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they can see the bus.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a pig and a cat.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "can you see the queen?",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i can see the sock.",
+    "pos": 6,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a big and a dot.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we can see a vet.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he can see the zoo.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a bed.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see the pan.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see the quill.",
+    "pos": 3,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it can see a pet.",
+    "pos": 7,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see a cub.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i see the kid.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "put the sand on the bed.",
+    "pos": 8,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "take the sand to the floor.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy holds a sand.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they will get the sand.",
+    "pos": 18,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend will get a sand.",
+    "pos": 21,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i find a sand.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they see a sand.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy has the sand.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy likes to sell.",
+    "pos": 17,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "you want to sell.",
+    "pos": 12,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "it likes to send.",
+    "pos": 12,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom did send it.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl likes to send.",
+    "pos": 18,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we want to send.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my dad likes to sing.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the girl did sing it.",
+    "pos": 13,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they get a small cat.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i have a small duck.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he likes a small dog.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom likes a small dog.",
+    "pos": 15,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they have a small hen.",
+    "pos": 12,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we see a small hen.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "she has a small cat.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my mom likes a small bird.",
+    "pos": 15,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the boy sees a small hen.",
+    "pos": 15,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he finds a small dog.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my bird is small.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "we like a small duck.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my frog is small.",
+    "pos": 11,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "that deer looks small.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend has a small duck.",
+    "pos": 16,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "they will stop today.",
+    "pos": 10,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "my friend did swim it.",
+    "pos": 14,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a purple ant at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a brown cat at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a tan mouse at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a orange snail at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a purple mouse at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a yellow cow at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a yellow owl at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "i saw a purple cow at noon.",
+    "pos": 2,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "the wasp likes to say buzz.",
+    "pos": 18,
+    "correct": "s",
+    "alt": "z"
+  },
+  {
+    "sentence": "he has a seed.",
+    "pos": 9,
+    "correct": "s",
+    "alt": "z"
+  }
+]

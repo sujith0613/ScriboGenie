@@ -30,6 +30,10 @@ import http.server
 import socketserver
 import tensorflow as tf
 
+import confusions
+import recognizer
+import recommend
+
 try:
     import evdev
     from evdev import ecodes
@@ -271,6 +275,7 @@ class PredictorWorker(threading.Thread):
                 indices = [i for i in range(1, num) if stats[i][4] >= 12]
                 indices.sort(key=lambda i: stats[i][0])
                 arrays = []
+                x_boxes = []
                 for i in indices:
                     x, y, w, h = stats[i][:4]
                     crop = gray[y:y+h, x:x+w]
@@ -278,14 +283,40 @@ class PredictorWorker(threading.Thread):
                     arr = np.zeros((28, 28), dtype=np.float32)
                     arr[4:24, 4:24] = (255.0 - resized) / 255.0
                     arrays.append(arr.reshape(1, 28, 28, 1))
-                recognized = []
+                    x_boxes.append((int(x), int(x + w)))
+                per_letter = []
                 if arrays:
                     batch = np.vstack(arrays)
                     preds = model.predict_on_batch(batch)
-                    for p in preds:
-                        recognized.append(CHAR_LIST[np.argmax(p)])
+                    per_letter = [recognizer.letter_probs_from_scores(p)
+                                  for p in preds]
+                recognized = [max(pos, key=pos.get) for pos in per_letter]
                 raw = apply_emnist_context_correction("".join(recognized))
-                self.rq.put((ts, {"raw": raw, "corrected": dyslexia_aware_correction(raw), "gen": gen}))
+
+                # recommendation layer: group into words, combine recognizer
+                # probs with the char-LM context, surface suggested spellings
+                suggestions = []
+                try:
+                    rec_all = recommend.recommend_all(per_letter, x_boxes)
+                    for w_ in rec_all["words"]:
+                        if w_["best"] != w_["spelling"] and \
+                           w_["margin"] >= recommend.SUGGEST_MARGIN:
+                            suggestions.append({
+                                "word": w_["best"],
+                                "alternatives": w_["alternatives"],
+                                "margin": w_["margin"],
+                                "offsets": w_["offsets"],
+                            })
+                    rec_sentence = rec_all["sentence"]
+                except Exception:
+                    rec_sentence = ""
+                    log.error("Recommendation failed", exc_info=True)
+
+                self.rq.put((ts, {"raw": raw,
+                                  "corrected": dyslexia_aware_correction(raw),
+                                  "gen": gen,
+                                  "sentence": rec_sentence,
+                                  "suggestions": suggestions}))
                 if self.result_callback:
                     self.result_callback()
             except queue.Empty:
@@ -538,7 +569,9 @@ class HandwritingApp:
                             "corrected": corrected_text,
                             "correct": True,
                             "score": lesson_state["score"],
-                            "streak": lesson_state["streak"]
+                            "streak": lesson_state["streak"],
+                            "sentence": latest.get("sentence", ""),
+                            "suggestions": latest.get("suggestions", [])
                         })
                         self.root.after(1500, self.next_word)
                         return
@@ -557,7 +590,9 @@ class HandwritingApp:
                             "corrected": corrected_text,
                             "correct": False,
                             "wrong_chars": wrong_chars,
-                            "feedback": feedback
+                            "feedback": feedback,
+                            "sentence": latest.get("sentence", ""),
+                            "suggestions": latest.get("suggestions", [])
                         })
 
         now = time.time()
