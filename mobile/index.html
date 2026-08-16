@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ScriboGenie | Master Writing</title>
+    <title>ScriboGenie | Companion</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0F0F1A">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -24,11 +24,11 @@
             --text-secondary: #94A3B8;
             --text-muted: #475569;
             --white: #FFFFFF;
-            
+
             --font-main: 'Inter', sans-serif;
             --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-hero: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-            
+
             --header-h: 56px;
             --transition-snappy: 300ms cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -51,7 +51,6 @@
             flex-direction: column;
         }
 
-        /* --- SVG Icons --- */
         .icon {
             width: 20px;
             height: 20px;
@@ -191,6 +190,7 @@
             justify-content: space-between;
             padding: 0 16px;
             border-bottom: 1px solid var(--navy-light);
+            flex-shrink: 0;
         }
 
         .brand {
@@ -237,7 +237,7 @@
         }
 
         .stat-chip.streak { color: var(--accent-amber); }
-        .stat-chip.score { color: var(--accent-purple-light); }
+        .stat-chip.score { color: #A78BFA; }
 
         .status-dot {
             width: 10px;
@@ -269,271 +269,176 @@
             max-width: 600px;
             margin: 0 auto;
             width: 100%;
+            overflow-y: auto;
         }
 
-        /* --- Letter Display --- */
-        .word-container {
+        /* --- Sentence Progress Card --- */
+        .sentence-card {
+            background: linear-gradient(160deg, var(--navy-mid) 0%, #221A3F 100%);
+            border-radius: 24px;
+            padding: 28px 20px;
+            border: 1px solid var(--navy-light);
+            box-shadow: var(--shadow-hero);
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 16px;
         }
 
-        .level-pill {
-            background: var(--navy-light);
-            padding: 4px 12px;
-            border-radius: 20px;
+        .sentence-card .card-label {
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--text-secondary);
         }
 
-        #levelSelect {
-            background: var(--navy-light);
-            color: var(--text-primary);
-            border: 1px solid var(--navy-mid);
-            border-radius: 20px;
-            padding: 4px 12px;
-            font-size: 14px;
-            font-weight: 700;
-            font-family: var(--font-main);
-            outline: none;
-            cursor: pointer;
-            -webkit-appearance: menulist-button;
-            appearance: auto;
-            min-width: 90px;
-            text-align: center;
-        }
-        #levelSelect option {
-            background: var(--navy-mid);
-            color: var(--text-primary);
-        }
-
-        .letter-row {
-            display: flex;
-            gap: 8px;
-            perspective: 1000px;
-        }
-
-        .letter-card {
-            width: 48px;
-            height: 64px;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .letter-card.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .letter-card-front, .letter-card-back {
-            position: absolute;
-            inset: 0;
-            backface-visibility: hidden;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
+        #sentenceText {
+            font-size: 28px;
             font-weight: 800;
-            box-shadow: var(--shadow-card);
+            line-height: 1.35;
+            min-height: 76px;
+            color: var(--text-primary);
+            word-break: break-word;
         }
 
-        .letter-card-front {
-            background: var(--white);
-            color: var(--navy-deep);
-        }
-
-        .letter-card-back {
-            background: var(--accent-green);
-            color: white;
-            transform: rotateY(180deg);
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .letter-card.wrong .letter-card-front {
-            background: var(--accent-red);
-            color: white;
-            animation: shake 0.4s ease;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .progress-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--navy-light);
-            border-radius: 50%;
-            transition: background-color 300ms;
-        }
-
-        .dot.active {
-            background: var(--accent-purple);
-            width: 12px;
-            border-radius: 4px;
-        }
-
-        /* --- Canvas --- */
-        .canvas-card {
-            background: var(--white);
-            border-radius: 24px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-hero);
-            aspect-ratio: 2 / 1;
-            touch-action: none;
-            transition: box-shadow 200ms;
-        }
-
-        .canvas-card.active {
-            box-shadow: 0 0 0 4px var(--accent-purple-glow), var(--shadow-hero);
-        }
-
-        /* Ruled Lines */
-        .canvas-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
-            background-size: 100% 40px;
-            background-position: 0 39px;
-            opacity: 0.5;
-        }
-
-        .canvas-watermark {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            font-weight: 800;
-            color: rgba(0,0,0,0.03);
-            text-transform: uppercase;
-            pointer-events: none;
-            transition: opacity 300ms;
-        }
-
-        canvas {
-            display: block;
-            width: 100%;
-            height: 100%;
-            cursor: crosshair;
-        }
-
-        .stroke-count {
-            position: absolute;
-            bottom: 12px;
-            right: 16px;
-            font-size: 12px;
-            font-weight: 600;
+        #sentenceText.empty {
             color: var(--text-muted);
-            background: rgba(0,0,0,0.05);
-            padding: 2px 8px;
-            border-radius: 10px;
+            font-weight: 600;
+            font-size: 20px;
         }
 
-        /* --- Recognition Banner --- */
+        #nextWordHint {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            min-height: 22px;
+        }
+
+        #nextWordHint.empty {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* --- Recognition Feedback Banner --- */
         #recognitionBanner {
-            position: absolute;
-            top: 0;
+            position: fixed;
+            top: calc(var(--header-h) + 8px);
             left: 0;
             right: 0;
+            margin: 0 16px;
             background: var(--accent-red);
             color: white;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
-            padding: 4px 0;
+            padding: 10px 14px;
             text-align: center;
-            transform: translateY(-100%);
+            border-radius: 12px;
+            transform: translateY(-120%);
             transition: transform var(--transition-snappy);
-            z-index: 5;
+            z-index: 500;
+            box-shadow: var(--shadow-card);
         }
 
         #recognitionBanner.show { transform: translateY(0); }
 
-        /* --- Buttons --- */
-        .controls {
+        /* --- Rating Row --- */
+        .rating-section {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 12px;
-            margin-top: auto;
-            padding-bottom: 20px;
         }
 
-        .btn-action {
+        .rating-label {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+        }
+
+        .rating-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-rate {
+            flex: 1;
+            height: 56px;
             border: none;
             border-radius: 16px;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 15px;
+            color: white;
+            cursor: pointer;
+            transition: transform 100ms, opacity var(--transition-snappy);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            cursor: pointer;
-            transition: all 100ms;
-            position: relative;
-            overflow: hidden;
         }
 
-        .btn-action:active { transform: scale(0.95); }
+        .btn-rate:active { transform: scale(0.94); }
 
-        .btn-clear {
-            flex: 0.8;
-            height: 48px;
-            background: transparent;
-            border: 2px solid rgba(239, 68, 68, 0.2);
-            color: var(--accent-red);
+        .btn-rate:disabled {
+            opacity: 0.35;
+            transform: scale(0.98);
         }
 
-        .btn-listen {
-            flex: 1;
-            height: 48px;
-            background: transparent;
-            border: 2px solid rgba(59, 130, 246, 0.2);
-            color: var(--accent-blue);
+        .btn-rate.awesome {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
         }
 
-        .btn-submit {
-            flex: 1.5;
-            height: 56px;
-            background: linear-gradient(135deg, var(--accent-purple) 0%, #6D28D9 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        .btn-rate.great {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
         }
 
-        /* --- Progress Bar --- */
-        .xp-container {
-            width: 100%;
-            height: 12px;
-            background: var(--navy-light);
-            border-radius: 6px;
-            position: relative;
-            margin-top: 10px;
+        .btn-rate.try-again {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #2563EB 100%);
         }
 
-        #xpBar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, var(--accent-purple), #A78BFA);
-            border-radius: 6px;
-            transition: width 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* --- Recent Recognitions --- */
+        .recent-card {
+            background: var(--navy-mid);
+            border-radius: 16px;
+            padding: 16px;
+            border: 1px solid var(--navy-light);
+        }
+
+        .recent-card .section-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        #recentRatings {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rating-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-primary);
+            padding: 8px 12px;
+            background: var(--navy-deep);
+            border-radius: 10px;
+        }
+
+        .rating-line .word {
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .rating-line .tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-amber);
         }
 
         /* --- Bottom Sheet --- */
@@ -556,30 +461,25 @@
 
         #rewardSheet.show { transform: translateY(0); }
 
-        .reward-stars {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .star-svg {
-            width: 48px;
-            height: 48px;
-            fill: var(--navy-light);
-            transition: fill 300ms, transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .star-svg.filled {
-            fill: var(--accent-amber);
-            transform: scale(1.1);
+        .reward-badge-icon {
+            width: 72px;
+            height: 72px;
+            color: var(--accent-amber);
+            filter: drop-shadow(0 0 12px var(--accent-amber));
+            margin-bottom: 16px;
         }
 
         .reward-msg {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 8px;
             line-height: 1.3;
+        }
+
+        .reward-sub {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
         }
 
         /* --- Stats Panel --- */
@@ -637,7 +537,7 @@
 
         .activity-day.active {
             background: var(--accent-purple);
-            border-color: var(--accent-purple-light);
+            border-color: #A78BFA;
             color: white;
         }
 
@@ -692,39 +592,20 @@
             text-align: center;
             padding: 0 4px;
         }
-
-        /* --- Live Preview Label --- */
-        #livePreview {
-            position: absolute;
-            bottom: 12px;
-            left: 16px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--accent-purple);
-            background: rgba(124, 58, 237, 0.05);
-            padding: 2px 8px;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
 
     <!-- SVG Sprites -->
     <svg style="display: none;">
-        <symbol id="icon-clear" viewBox="0 0 24 24">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-        </symbol>
-        <symbol id="icon-listen" viewBox="0 0 24 24">
-            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-        </symbol>
-        <symbol id="icon-submit" viewBox="0 0 24 24">
-            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        <symbol id="icon-trophy" viewBox="0 0 24 24">
+            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM7 10.82C5.84 10.4 5 9.3 5 8V7h2v3.82zM19 8c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
         </symbol>
         <symbol id="icon-flame" viewBox="0 0 24 24">
             <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
         </symbol>
-        <symbol id="icon-trophy" viewBox="0 0 24 24">
-            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM7 10.82C5.84 10.4 5 9.3 5 8V7h2v3.82zM19 8c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+        <symbol id="icon-star" viewBox="0 0 24 24">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
         </symbol>
         <symbol id="icon-stats" viewBox="0 0 24 24">
             <path d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"/>
@@ -732,11 +613,14 @@
         <symbol id="icon-close" viewBox="0 0 24 24">
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
         </symbol>
-        <symbol id="icon-star" viewBox="0 0 24 24">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </symbol>
         <symbol id="icon-lock" viewBox="0 0 24 24">
             <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+        </symbol>
+        <symbol id="icon-mic" viewBox="0 0 24 24">
+            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+        </symbol>
+        <symbol id="icon-thumb" viewBox="0 0 24 24">
+            <path d="M1 21h4V9H1v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
         </symbol>
     </svg>
 
@@ -744,7 +628,7 @@
     <div id="connectOverlay">
         <div class="logo-mark">ScriboGenie</div>
         <div class="tagline">Every letter finds its place</div>
-        
+
         <div class="input-group">
             <input type="text" id="ipInput" placeholder=" " value="192.168.4.1">
             <label for="ipInput">Laptop IP Address</label>
@@ -782,65 +666,56 @@
         </div>
     </header>
 
+    <!-- Recognition Feedback Banner -->
+    <div id="recognitionBanner">You wrote A instead of O</div>
+
     <!-- Main Content -->
     <main>
-        <div class="word-container">
-            <div style="display:flex; align-items:center; gap:8px;">
-                <select id="levelSelect">
-                    <option value="1">Level 1</option>
-                    <option value="2">Level 2</option>
-                    <option value="3">Level 3</option>
-                    <option value="4">Level 4</option>
-                    <option value="5">Level 5</option>
-                    <option value="6">Level 6</option>
-                </select>
-                <span id="modeLabel" class="level-pill">Copy Mode</span>
-            </div>
-            <div id="letterRow" class="letter-row">
-                <!-- Letters injected here -->
-            </div>
-            <div id="progressDots" class="progress-dots">
-                <!-- Dots injected here -->
+        <div class="sentence-card">
+            <div class="card-label">What I've written</div>
+            <div id="sentenceText" class="empty">Write anything on the big screen!</div>
+            <div id="nextWordHint" class="empty">Next word will appear here...</div>
+        </div>
+
+        <div class="rating-section" id="ratingSection" style="display:none;">
+            <div class="rating-label">How did they do?</div>
+            <div class="rating-row">
+                <button class="btn-rate awesome" data-rating="awesome">
+                    <svg class="icon"><use href="#icon-star"/></svg>
+                    Awesome!
+                </button>
+                <button class="btn-rate great" data-rating="great">
+                    <svg class="icon"><use href="#icon-thumb"/></svg>
+                    Great!
+                </button>
             </div>
         </div>
 
-        <div id="canvasCard" class="canvas-card">
-            <div class="canvas-bg"></div>
-            <div id="canvasWatermark" class="canvas-watermark">CAT</div>
-            <div id="recognitionBanner">You wrote A instead of O</div>
-            <canvas id="writeCanvas"></canvas>
-            <div id="livePreview">Pi sees: ...</div>
-            <div id="strokeCount" class="stroke-count">0 strokes</div>
+        <div class="rating-section" id="retrySection" style="display:none;">
+            <div class="rating-label">That wasn't quite a word</div>
+            <div class="rating-row">
+                <button class="btn-rate try-again" data-rating="try_again">
+                    <svg class="icon"><use href="#icon-mic"/></svg>
+                    Try again
+                </button>
+            </div>
         </div>
 
-        <div class="controls">
-            <button id="clearBtn" class="btn-action btn-clear">
-                <svg class="icon"><use href="#icon-clear"/></svg>
-                <span>Clear</span>
-            </button>
-            <button id="audioBtn" class="btn-action btn-listen">
-                <svg class="icon"><use href="#icon-listen"/></svg>
-                <span>Listen</span>
-            </button>
-            <button id="submitBtn" class="btn-action btn-submit">
-                <svg class="icon"><use href="#icon-submit"/></svg>
-                <span>Finish!</span>
-            </button>
-        </div>
-
-        <div class="xp-container">
-            <div id="xpBar"></div>
+        <div class="recent-card">
+            <div class="section-title">Recent Recognitions</div>
+            <div id="recentRatings">
+                <div class="rating-line" style="justify-content:center; color:var(--text-muted);">
+                    No recognitions yet
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- Reward Sheet -->
     <div id="rewardSheet">
-        <div class="reward-stars">
-            <svg class="star-svg" id="star1"><use href="#icon-star"/></svg>
-            <svg class="star-svg" id="star2"><use href="#icon-star"/></svg>
-            <svg class="star-svg" id="star3"><use href="#icon-star"/></svg>
-        </div>
-        <div id="rewardMsg" class="reward-msg">Amazing work!</div>
+        <svg class="reward-badge-icon" id="rewardBadgeIcon"><use href="#icon-trophy"/></svg>
+        <div id="rewardMsg" class="reward-msg">Badge Unlocked!</div>
+        <div id="rewardSub" class="reward-sub">Keep going!</div>
         <button id="continueBtn" class="btn-full" style="max-width:none;">Continue</button>
     </div>
 
@@ -866,30 +741,21 @@
                 <!-- Badges injected -->
             </div>
         </div>
-
-        <div>
-            <div class="section-title" style="margin-bottom:12px;">Recent Words</div>
-            <div id="recentWords" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
-                <!-- Recent words injected -->
-            </div>
-        </div>
     </div>
 
     <script>
         const state = {
             socket: null,
             connected: false,
+            currentSentence: "",
+            nextWords: [],
             currentWord: "",
-            currentLevel: 1,
-            attempts: 1,
-            startTime: 0,
-            streak: parseInt(localStorage.getItem('sg_streak') || '0'),
-            totalScore: parseInt(localStorage.getItem('sg_score') || '0'),
-            wordsDone: 0,
-            sessionTotal: 10,
-            lastRecognition: "",
-            badges: JSON.parse(localStorage.getItem('sg_badges') || '[]'),
-            activity: JSON.parse(localStorage.getItem('sg_activity') || '{}')
+            streak: 0,
+            totalScore: 0,
+            badges: [],
+            activeDays: [],
+            ratings: [],
+            ratingPending: false
         };
 
         const els = {
@@ -899,107 +765,23 @@
             statusDot: document.getElementById('statusDot'),
             streakCount: document.getElementById('streakCount'),
             scoreVal: document.getElementById('scoreVal'),
-            letterRow: document.getElementById('letterRow'),
-            progressDots: document.getElementById('progressDots'),
-            levelSelect: document.getElementById('levelSelect'),
-            modeLabel: document.getElementById('modeLabel'),
-            canvasCard: document.getElementById('canvasCard'),
-            canvas: document.getElementById('writeCanvas'),
-            watermark: document.getElementById('canvasWatermark'),
+            sentenceText: document.getElementById('sentenceText'),
+            nextWordHint: document.getElementById('nextWordHint'),
             banner: document.getElementById('recognitionBanner'),
-            strokeCount: document.getElementById('strokeCount'),
-            livePreview: document.getElementById('livePreview'),
-            clearBtn: document.getElementById('clearBtn'),
-            audioBtn: document.getElementById('audioBtn'),
-            submitBtn: document.getElementById('submitBtn'),
-            xpBar: document.getElementById('xpBar'),
+            ratingSection: document.getElementById('ratingSection'),
+            retrySection: document.getElementById('retrySection'),
+            recentRatings: document.getElementById('recentRatings'),
             rewardSheet: document.getElementById('rewardSheet'),
+            rewardBadgeIcon: document.getElementById('rewardBadgeIcon'),
             rewardMsg: document.getElementById('rewardMsg'),
+            rewardSub: document.getElementById('rewardSub'),
             continueBtn: document.getElementById('continueBtn'),
             statsPanel: document.getElementById('statsPanel'),
             openStats: document.getElementById('openStats'),
             closeStats: document.getElementById('closeStats'),
             activityGrid: document.getElementById('activityGrid'),
-            badgeGrid: document.getElementById('badgeGrid'),
-            recentWords: document.getElementById('recentWords')
+            badgeGrid: document.getElementById('badgeGrid')
         };
-
-        const ctx = els.canvas.getContext('2d');
-        let isDrawing = false;
-        let strokes = 0;
-
-        // --- Canvas Logic ---
-        function initCanvas() {
-            const resize = () => {
-                const rect = els.canvasCard.getBoundingClientRect();
-                els.canvas.width = rect.width * 2;
-                els.canvas.height = rect.height * 2;
-                ctx.scale(2, 2);
-                ctx.lineCap = 'round';
-                ctx.lineJoin = 'round';
-                ctx.strokeStyle = '#0F0F1A';
-                ctx.lineWidth = 4;
-            };
-            window.addEventListener('resize', resize);
-            resize();
-        }
-
-        function getPos(e) {
-            const rect = els.canvas.getBoundingClientRect();
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-            return {
-                x: clientX - rect.left,
-                y: clientY - rect.top
-            };
-        }
-
-        function startDraw(e) {
-            isDrawing = true;
-            els.canvasCard.classList.add('active');
-            els.watermark.style.opacity = '0';
-            const pos = getPos(e);
-            ctx.beginPath();
-            ctx.moveTo(pos.x, pos.y);
-            // Single tap support
-            ctx.arc(pos.x, pos.y, ctx.lineWidth/4, 0, Math.PI*2);
-            ctx.fill();
-            ctx.beginPath();
-            ctx.moveTo(pos.x, pos.y);
-            strokes++;
-            updateStrokeCount();
-        }
-
-        function draw(e) {
-            if (!isDrawing) return;
-            const pos = getPos(e);
-            ctx.lineTo(pos.x, pos.y);
-            ctx.stroke();
-        }
-
-        function stopDraw() {
-            isDrawing = false;
-            els.canvasCard.classList.remove('active');
-        }
-
-        els.canvas.addEventListener('mousedown', startDraw);
-        els.canvas.addEventListener('mousemove', draw);
-        window.addEventListener('mouseup', stopDraw);
-        els.canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDraw(e); });
-        els.canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); });
-        els.canvas.addEventListener('touchend', stopDraw);
-
-        function updateStrokeCount() {
-            els.strokeCount.textContent = `${strokes} strokes`;
-        }
-
-        function clearCanvas() {
-            ctx.clearRect(0, 0, els.canvas.width, els.canvas.height);
-            strokes = 0;
-            updateStrokeCount();
-            els.watermark.style.opacity = '1';
-            els.banner.classList.remove('show');
-        }
 
         // --- Connection Logic ---
         function connect() {
@@ -1008,7 +790,7 @@
 
             els.connectBtn.querySelector('.btn-text').textContent = "Connecting...";
             els.connectBtn.querySelector('.spinner').style.display = "block";
-            
+
             state.socket = new WebSocket(`ws://${ip}:8765`);
 
             state.socket.onopen = () => {
@@ -1016,7 +798,6 @@
                 els.statusDot.classList.add('online');
                 els.overlay.classList.add('hidden');
                 updateUI();
-                initCanvas();
             };
 
             state.socket.onclose = () => {
@@ -1035,103 +816,73 @@
 
         function handleMessage(data) {
             console.log("[DEBUG] handleMessage:", data);
-            if (data.type === 'lesson' || (data.type === 'connected' && data.lesson)) {
-                const lesson = data.lesson || data;
-                setLesson(lesson);
-            } else if (data.type === 'reward') {
-                showReward(data);
+            if (data.type === 'sync') {
+                applyState(data.state);
+                if (data.sentence !== undefined && data.sentence !== null) {
+                    setSentence(data.sentence);
+                }
             } else if (data.type === 'recognition') {
-                state.lastRecognition = data.raw || "";
-                els.livePreview.textContent = `Pi sees: ${state.lastRecognition.toUpperCase()}`;
+                setSentence(data.sentence || "");
+                state.currentWord = (data.corrected || data.raw || "").trim().split(/\s+/).pop() || "";
+
+                if (data.complete === true) {
+                    state.nextWords = [];
+                    els.nextWordHint.textContent = "Sentence complete!";
+                    els.nextWordHint.classList.remove('empty');
+                    showBanner("What a great sentence! Press Next Word for a new one.");
+                } else if (data.next_words && data.next_words.length) {
+                    state.nextWords = data.next_words;
+                    const top = data.next_words[0].word;
+                    els.nextWordHint.textContent = `Try: ${top}`;
+                    els.nextWordHint.classList.remove('empty');
+                } else {
+                    state.nextWords = [];
+                    els.nextWordHint.textContent = "";
+                    els.nextWordHint.classList.add('empty');
+                }
 
                 if (data.correct === true) {
-                    const cards = els.letterRow.querySelectorAll('.letter-card');
-                    cards.forEach((card, i) => {
-                        setTimeout(() => { card.classList.add('flipped'); }, i * 150);
-                    });
-                    state.wordsDone++;
-                    state.totalScore = data.score || state.totalScore;
-                    localStorage.setItem('sg_score', state.totalScore);
-                    updateUI();
-                    setTimeout(() => {
-                        els.rewardMsg.textContent = "Perfect! Well done!";
-                        els.rewardSheet.classList.add('show');
-                        for(let i=1; i<=3; i++) {
-                            document.getElementById(`star${i}`).classList.add('filled');
-                        }
-                        if (typeof confetti === 'function') {
-                            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 },
-                                       colors: ['#7C3AED', '#3B82F6', '#10B981'] });
-                        }
-                    }, cards.length * 100 + 500);
-                } else if (data.wrong_chars && data.wrong_chars.length > 0) {
-                    const cards = els.letterRow.querySelectorAll('.letter-card');
-                    data.wrong_chars.forEach(wc => {
-                        const idx = wc.position - 1;
-                        if (cards[idx]) {
-                            cards[idx].classList.add('wrong');
-                            setTimeout(() => cards[idx].classList.remove('wrong'), 2000);
-                        }
-                    });
-                    els.banner.textContent = data.feedback || "Try again!";
-                    els.banner.classList.add('show');
-                    setTimeout(() => { els.banner.classList.remove('show'); }, 3000);
+                    showRatingRow();
+                } else if (data.correct === false) {
+                    showBanner(data.feedback || "Try again!");
+                    showRetryRow();
                 }
-            } else if (data.type === 'wrong_attempt') {
-                handleError(data);
-            } else if (data.type === 'level_up') {
-                state.currentLevel = data.new_level;
-                els.levelSelect.value = String(data.new_level);
-                showBadgeUnlocked(`Level ${data.new_level}`, 'trophy');
+
+                if (data.state) {
+                    applyState(data.state);
+                }
+            } else if (data.type === 'badge') {
+                showBadge(data.badge);
+            } else if (data.type === 'clear_sentence') {
+                setSentence("");
+                state.nextWords = [];
+                els.nextWordHint.textContent = "Next word will appear here...";
+                els.nextWordHint.classList.add('empty');
+                hideAllRatings();
+                if (data.state) applyState(data.state);
             }
         }
 
-        // --- UI Updates ---
-        function setLesson(lesson) {
-            state.currentWord = lesson.word.toUpperCase();
-            state.currentLevel = lesson.level;
-            state.attempts = 1;
-            state.startTime = Date.now();
-            
-            els.watermark.textContent = state.currentWord;
-            els.modeLabel.textContent = `${lesson.mode.toUpperCase()} MODE`;
-            els.levelSelect.value = String(lesson.level);
-            
-            // Build letter cards
-            els.letterRow.innerHTML = '';
-            [...state.currentWord].forEach((char, i) => {
-                const card = document.createElement('div');
-                card.className = 'letter-card';
-                card.innerHTML = `
-                    <div class="letter-card-front">${char}</div>
-                    <div class="letter-card-back">${char}</div>
-                `;
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(-20px)';
-                els.letterRow.appendChild(card);
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, i * 100);
-            });
-
-            // Build progress dots
-            els.progressDots.innerHTML = '';
-            for(let i=0; i<state.sessionTotal; i++) {
-                const dot = document.createElement('div');
-                dot.className = `dot ${i === state.wordsDone % state.sessionTotal ? 'active' : ''}`;
-                els.progressDots.appendChild(dot);
-            }
-
-            clearCanvas();
-            updateXP();
-            els.rewardSheet.classList.remove('show');
+        function applyState(progress) {
+            if (!progress) return;
+            state.streak = progress.streak || 0;
+            state.totalScore = progress.score || 0;
+            state.badges = progress.badges || [];
+            state.activeDays = progress.active_days || [];
+            state.ratings = progress.ratings || state.ratings;
+            updateUI();
+            renderRecentRatings();
         }
 
-        function updateXP() {
-            const progress = (state.wordsDone % state.sessionTotal) / state.sessionTotal * 100;
-            els.xpBar.style.width = `${progress}%`;
+        function setSentence(sentence) {
+            state.currentSentence = sentence || "";
+            if (state.currentSentence.trim()) {
+                els.sentenceText.textContent = state.currentSentence.trim();
+                els.sentenceText.classList.remove('empty');
+            } else {
+                els.sentenceText.textContent = "Write anything on the big screen!";
+                els.sentenceText.classList.add('empty');
+            }
         }
 
         function updateUI() {
@@ -1139,51 +890,79 @@
             els.scoreVal.textContent = state.totalScore;
         }
 
-        function showReward(data) {
-            // Flip cards to green one by one
-            const cards = els.letterRow.querySelectorAll('.letter-card');
-            cards.forEach((card, i) => {
-                setTimeout(() => {
-                    card.classList.add('flipped');
-                }, i * 150);
-            });
-
-            // Update stats
-            state.wordsDone++;
-            state.totalScore = data.score || (state.totalScore + data.stars * 10);
-            localStorage.setItem('sg_score', state.totalScore);
-            updateUI();
-
-            // Show Sheet after flips complete
-            setTimeout(() => {
-                els.rewardMsg.textContent = data.message || "Perfect Spacing!";
-                els.rewardSheet.classList.add('show');
-                
-                // Animate stars
-                for(let i=1; i<=3; i++) {
-                    const star = document.getElementById(`star${i}`);
-                    star.classList.remove('filled');
-                    if (i <= data.stars) {
-                        setTimeout(() => star.classList.add('filled'), i * 200);
-                    }
-                }
-                
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 },
-                    colors: ['#7C3AED', '#3B82F6', '#10B981']
-                });
-            }, cards.length * 100 + 500);
+        // --- Rating ---
+        function showRatingRow() {
+            hideAllRatings();
+            els.ratingSection.style.display = 'flex';
+            els.ratingSection.querySelectorAll('.btn-rate').forEach(b => { b.disabled = false; });
         }
 
-        function handleError(data) {
-            els.banner.textContent = data.feedback_text || "Try again!";
+        function showRetryRow() {
+            hideAllRatings();
+            els.retrySection.style.display = 'flex';
+            els.retrySection.querySelector('.btn-rate').disabled = false;
+        }
+
+        function hideAllRatings() {
+            els.ratingSection.style.display = 'none';
+            els.retrySection.style.display = 'none';
+        }
+
+        function sendRating(ratingId) {
+            if (!state.connected) return;
+            document.querySelectorAll('.btn-rate').forEach(b => { b.disabled = true; });
+            state.socket.send(JSON.stringify({
+                type: 'rate',
+                rating: ratingId,
+                word: state.currentWord
+            }));
+            if (ratingId === 'try_again') {
+                setTimeout(hideAllRatings, 600);
+            }
+        }
+
+        // --- Recent Ratings ---
+        function renderRecentRatings() {
+            const ratings = state.ratings;
+            els.recentRatings.innerHTML = '';
+            if (!ratings.length) {
+                const div = document.createElement('div');
+                div.className = 'rating-line';
+                div.style.justifyContent = 'center';
+                div.style.color = 'var(--text-muted)';
+                div.textContent = 'No recognitions yet';
+                els.recentRatings.appendChild(div);
+                return;
+            }
+            const labels = { awesome: 'Awesome!', great: 'Great!', try_again: 'Try again' };
+            ratings.slice(-8).reverse().forEach(r => {
+                const div = document.createElement('div');
+                div.className = 'rating-line';
+                div.innerHTML = `<span class="word">${(r.word || '').toUpperCase()}</span>` +
+                                `<span class="tag">${labels[r.rating] || r.rating}</span>`;
+                els.recentRatings.appendChild(div);
+            });
+        }
+
+        // --- Feedback Banner ---
+        let bannerTimer = null;
+        function showBanner(text) {
+            els.banner.textContent = text;
             els.banner.classList.add('show');
-            setTimeout(() => {
-                clearCanvas();
-                state.attempts++;
-            }, 1500);
+            clearTimeout(bannerTimer);
+            bannerTimer = setTimeout(() => els.banner.classList.remove('show'), 3000);
+        }
+
+        // --- Badge Sheet ---
+        function showBadge(badge) {
+            els.rewardBadgeIcon.querySelector('use').setAttribute('href', `#icon-${badge.icon || 'trophy'}`);
+            els.rewardMsg.textContent = badge.name || 'Badge Unlocked!';
+            els.rewardSub.textContent = 'Great job! Keep it up!';
+            els.rewardSheet.classList.add('show');
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 120, spread: 75, origin: { y: 0.6 },
+                           colors: ['#7C3AED', '#F59E0B', '#10B981', '#3B82F6'] });
+            }
         }
 
         // --- Stats Panel Logic ---
@@ -1196,29 +975,35 @@
         function renderActivity() {
             const days = ['S','M','T','W','T','F','S'];
             els.activityGrid.innerHTML = '';
-            days.forEach((day, i) => {
+            const today = new Date();
+            // Build last-7-day labels ending today
+            const dayNames = ['S','M','T','W','T','F','S'];
+            for (let i = 6; i >= 0; i--) {
+                const d = new Date(today);
+                d.setDate(today.getDate() - i);
+                const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
                 const div = document.createElement('div');
-                div.className = 'activity-day';
-                div.textContent = day;
-                // Simple logic for "active" days (simulated)
-                if (i === new Date().getDay()) div.classList.add('active');
+                div.className = 'activity-day' + (state.activeDays.includes(key) ? ' active' : '');
+                div.textContent = dayNames[d.getDay()];
                 els.activityGrid.appendChild(div);
-            });
+            }
         }
 
         const BADGE_DEFS = [
             { id: 'first_word', name: 'First Steps', icon: 'trophy' },
-            { id: 'streak_3', name: '3 Day Streak', icon: 'flame' },
-            { id: 'perfect_10', name: 'Perfect 10', icon: 'star' },
-            { id: 'level_2', name: 'Level Up', icon: 'trophy' },
-            { id: 'speed_writer', name: 'Speedy', icon: 'flame' },
-            { id: 'master', name: 'Writing Master', icon: 'star' }
+            { id: 'words_10', name: 'Perfect 10', icon: 'star' },
+            { id: 'words_50', name: 'Super Writer', icon: 'star' },
+            { id: 'rating_1', name: 'First Cheer', icon: 'trophy' },
+            { id: 'rating_10', name: 'Cheer Leader', icon: 'flame' },
+            { id: 'rating_25', name: 'Super Fan', icon: 'flame' },
+            { id: 'streak_3', name: '3 Word Streak', icon: 'flame' }
         ];
 
         function renderBadges() {
             els.badgeGrid.innerHTML = '';
+            const earnedIds = new Set(state.badges.map(b => b.id));
             BADGE_DEFS.forEach(badge => {
-                const isEarned = state.badges.includes(badge.id);
+                const isEarned = earnedIds.has(badge.id);
                 const div = document.createElement('div');
                 div.className = `badge-item ${isEarned ? 'earned' : 'locked'}`;
                 div.innerHTML = `
@@ -1230,43 +1015,12 @@
             });
         }
 
-        function showBadgeUnlocked(name, icon) {
-            // Toast or small notification could go here
-            console.log("BADGE UNLOCKED:", name);
-        }
-
         // --- Listeners ---
         els.connectBtn.onclick = connect;
-        els.clearBtn.onclick = () => {
-            clearCanvas();
-            if (state.connected) state.socket.send(JSON.stringify({type: "clear_pi"}));
-        };
-        els.levelSelect.onchange = () => {
-            const lvl = parseInt(els.levelSelect.value);
-            if (state.connected) {
-                state.socket.send(JSON.stringify({type: "get_lesson", level: lvl}));
-            }
-        };
-        els.submitBtn.onclick = () => {
-            if (!state.connected) return;
-            state.socket.send(JSON.stringify({
-                type: 'attempt',
-                written: state.lastRecognition || state.currentWord,
-                raw: state.lastRecognition,
-                word: state.currentWord,
-                timestamp: Date.now()
-            }));
-        };
-        els.audioBtn.onclick = () => {
-            if (!state.connected) return;
-            state.socket.send(JSON.stringify({ type: 'request_audio', word: state.currentWord }));
-        };
-        els.continueBtn.onclick = () => {
-            els.rewardSheet.classList.remove('show');
-            document.querySelectorAll('.letter-card.wrong').forEach(c => c.classList.remove('wrong'));
-            document.querySelectorAll('.letter-card.flipped').forEach(c => c.classList.remove('flipped'));
-            state.socket.send(JSON.stringify({ type: 'get_lesson' }));
-        };
+        document.querySelectorAll('.btn-rate').forEach(btn => {
+            btn.onclick = () => sendRating(btn.dataset.rating);
+        });
+        els.continueBtn.onclick = () => els.rewardSheet.classList.remove('show');
         els.openStats.onclick = openStats;
         els.closeStats.onclick = () => els.statsPanel.classList.remove('show');
 

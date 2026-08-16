@@ -21,6 +21,11 @@ import context_lm
 ALPHA = 1.0            # LM weight in the combine (P_lm^alpha)
 SUGGEST_MARGIN = 0.15  # min log-score margin to surface a suggestion
 TOP_K = 5
+# Cap the char-LM fallback candidate list: each candidate costs one ONNX
+# char-LM pass (~1ms), so scoring the full ~3000-word bank stalls prediction
+# for seconds. _WORD_BANK is frequency-ordered, so the first slice holds the
+# common words and is a good cheap fallback.
+_FALLBACK_MAX = 120
 
 
 def _log_rec(candidate: str, per_letter_probs) -> float:
@@ -72,12 +77,70 @@ def candidate_spellings(greedy: str, per_letter_probs,
     return list(cands)
 
 
+# The child's mirror confusions: b<->d and p<->q. Unlike the generic confusion
+# neighbours above, these two pairs are so shape-identical that a confident
+# recognizer reading is not trusted: the mirror reading is ALWAYS considered a
+# candidate, and when the recognizer has no probability for it, the recognizer
+# evidence is floored to the greedy letter's so the LM sentence context becomes
+# the tiebreaker ("I have a big _og" resolves d over b purely from context).
+MIRROR_PAIRS = {"b": "d", "d": "b", "p": "q", "q": "p"}
+
+
+def mirror_candidates(greedy: str) -> list[str]:
+    """Single-position b<->d and p<->q mirror readings of `greedy`.
+
+    Generated regardless of the recognizer's per-position top-K: the child
+    confuses these letter shapes, so a confident recognizer reading must not
+    silently hide the mirror candidate from the LM context.
+    """
+    cands: set[str] = set()
+    for i, ch in enumerate(greedy):
+        alt = MIRROR_PAIRS.get(ch)
+        if alt:
+            cands.add(greedy[:i] + alt + greedy[i + 1:])
+    return list(cands)
+
+
+def _log_rec_context(candidate: str, greedy: str, per_letter_probs) -> float:
+    """Recognizer log-prob for `candidate`, flooring a b/d or p/q mirror
+    letter the recognizer did not even list to the greedy letter's prob.
+
+    This makes the two mirror readings equally credible on handwriting alone,
+    so the LM sentence context (not a possibly-confident-but-wrong recognizer)
+    decides between them. Non-mirror positions use the recognizer's own prob.
+    """
+    logp = 0.0
+    for pos, letter in enumerate(candidate):
+        p = per_letter_probs[pos].get(letter, 0.0)
+        if p <= 0.0 and MIRROR_PAIRS.get(greedy[pos]) == letter:
+            p = per_letter_probs[pos].get(greedy[pos], 0.0)
+        if p <= 0.0:
+            return -1e9
+        logp += math.log(p)
+    return logp
+
+
+# Dictionary bonus applied to a mirror candidate that is a real English word.
+# The char-LM is a weak signal on p/q and similar pairs (it can even rank the
+# nonsense "qig" above "pig"), so a real-word reading gets a strong prior; when
+# BOTH readings are real words (bog/dog, big/dig) the bonus cancels out and the
+# sentence context still decides.
+_DICT_BONUS = 3.0
+
+
+def _is_known(candidate: str, known: set[str] | None) -> bool:
+    return known is not None and candidate.strip().lower() in known
+
+
 def recommend(sentence: str, ws: int, we: int, per_letter_probs,
               alpha: float = ALPHA, margin: float = SUGGEST_MARGIN,
-              top_k: int = TOP_K) -> dict:
+              top_k: int = TOP_K, known: set[str] | None = None) -> dict:
     """Pick the best spelling for the word at [ws, we) in `sentence`.
 
     per_letter_probs: list of {letter: prob} per char position of the word.
+    known: optional set of known dictionary words (lowercase); mirror b/d and
+        p/q readings that are real words get a strong prior so a weak LM
+        signal cannot keep a nonsense reading.
 
     Returns {"best": str, "alternatives": [str,...], "margin": float} where
     `best` is the combined-score winner. If `best` differs from the recognizer
@@ -89,23 +152,32 @@ def recommend(sentence: str, ws: int, we: int, per_letter_probs,
     if len(per_letter_probs) == 0:
         return {"best": greedy, "alternatives": [], "margin": 0.0}
 
-    # ensure the greedy spelling has non-zero recognizer prob (dict is top-K,
-    # so the argmax is always present)
     best = greedy
-    best_score = combine_log_score(greedy, sentence, ws, we,
-                                   per_letter_probs, alpha)
+    cands = [greedy] + candidate_spellings(greedy, per_letter_probs, top_k)
+    # Always consider the child's mirror b/d and p/q readings too, even when
+    # the recognizer never listed the mirror letter in its top-K.
+    for m in mirror_candidates(greedy):
+        if m not in cands:
+            cands.append(m)
+    # one masked-LM forward pass scores every candidate of this word region
+    lm_scores = context_lm.score_word_candidates(sentence, ws, we, cands)
+
+    def _score(cand):
+        return (_log_rec_context(cand, greedy, per_letter_probs)
+                + alpha * lm_scores.get(cand, _log_lm(cand, sentence, ws, we))
+                + (_DICT_BONUS if _is_known(cand, known) else 0.0))
+
+    best_score = _score(greedy)
     alternatives = []
 
-    for cand in candidate_spellings(greedy, per_letter_probs, top_k):
-        sc = combine_log_score(cand, sentence, ws, we, per_letter_probs, alpha)
+    for cand in cands[1:]:
+        sc = _score(cand)
         if sc > best_score:
             best_score = sc
             best = cand
 
-    margin = best_score - combine_log_score(
-        greedy, sentence, ws, we, per_letter_probs, alpha)
-    alternatives = [c for c in candidate_spellings(greedy, per_letter_probs,
-                                                   top_k) if c != best]
+    margin = best_score - _score(greedy)
+    alternatives = [c for c in cands[1:] if c != best]
     return {"best": best, "alternatives": alternatives, "margin": margin}
 
 
@@ -116,38 +188,119 @@ def should_surface(result: dict, margin: float = SUGGEST_MARGIN,
     return result["best"] != greedy and result["margin"] >= margin
 
 
+def next_word(sentence: str, candidates: list[str] | None = None,
+              k: int = 5) -> list[dict]:
+    """Top-k next-word suggestions for `sentence`.
+
+    Uses the causal decoder LM (TinyStories) for open-vocabulary generation;
+    falls back to scoring a bounded subset of `candidates` with the masked
+    char-LM when the causal model is unavailable or returns nothing. Returns
+    [{"word": str, "score": float}] best first.
+    """
+    causal = context_lm.get_causal()
+    if causal is not None:
+        gen = causal.next_word(sentence, k=k)
+        if gen:
+            return [{"word": w, "score": s} for w, s in gen]
+    if not candidates:
+        return []
+    # Full-bank scoring is one ONNX char-LM pass per candidate (~3000 words),
+    # which stalls the prediction for seconds. Bound it: common words come
+    # first in _WORD_BANK (frequency-ordered), so the first slice is the
+    # best cheap approximation for a fallback list.
+    scored = context_lm.next_word_scores(sentence, candidates[:_FALLBACK_MAX])
+    return [{"word": w, "score": s} for w, s in scored[:k]]
+
+
+def predict_current_word(context: str, prefix: str,
+                         candidates: list[str], k: int = 5,
+                         full_sentence: str | None = None) -> list[dict]:
+    """Top-k predictions for the word the child is currently writing.
+
+    Words from `candidates` that start with the letters already recognized for
+    the current word (`prefix`) are ranked with the masked char-LM given the
+    words written before it (`context`); remaining slots are filled with the
+    causal LM's context-based next-word guesses (for `full_sentence` when given,
+    else `context`) so the list is never empty. Returns
+    [{"word": str, "score": float}] best first.
+    """
+    p = prefix.strip().lower()
+    matched = [c for c in candidates if c.lower().startswith(p)] if p else []
+    if not matched:
+        return next_word(full_sentence or context, candidates, k=k)
+    scored = context_lm.next_word_scores(context, matched)
+    out = [{"word": w, "score": s} for w, s in
+           sorted(scored, key=lambda ws: ws[1], reverse=True)][:k]
+    if len(out) < k:
+        filled = next_word(full_sentence or context, candidates, k=k)
+        seen = {d["word"] for d in out}
+        out += [d for d in filled if d["word"] not in seen]
+    return out[:k]
+
+
+def is_meaningful(word: str, word_bank: set[str] | None = None) -> bool:
+    """Heuristic: is `word` a plausible real word?
+
+    Uses the LM vocab as a floor (letters only) and, when a word_bank of known
+    words is supplied, requires membership in it so gibberish like "qzxv" is
+    not treated as meaningful.
+    """
+    w = word.strip().lower()
+    if not w:
+        return False
+    if not all(ch.isalpha() for ch in w):
+        return False
+    if word_bank is not None and w not in word_bank:
+        return False
+    return True
+
+
 def recommend_all(per_letter_probs_list: list[dict],
-                  x_boxes: list[tuple[int, int]],
+                  boxes: list[tuple[int, int, int, int]],
+                  lines: list[list[int]] | None = None,
                   alpha: float = ALPHA, margin: float = SUGGEST_MARGIN,
-                  top_k: int = TOP_K) -> dict:
-    """Run the full recommendation pipeline over all recognized components.
+                  top_k: int = TOP_K, known: set[str] | None = None) -> dict:
+    """Run the full recommendation pipeline over all recognized letters.
 
-    Groups components into words by x-gap, builds the sentence from each word's
-    greedy recognizer spelling, then recommends a spelling for every word.
+    Groups letters into words by x-gap within each line, builds the sentence
+    from each word's greedy recognizer spelling, then recommends a spelling for
+    every word.
 
-    per_letter_probs_list: one {letter: prob} dict per component (ordered).
-    x_boxes: per-component (x0, x1) in logical px.
+    per_letter_probs_list: one {letter: prob} dict per letter (ordered by line
+        then x). boxes: per-letter (x0, y0, x1, y1) in logical px, aligned with
+        probs. lines: list of lines, each a list of indices into
+        per_letter_probs_list; when omitted, inferred via rec.segment_components
+        (used when the caller has already merged letter strokes).
 
     Returns {"sentence": str, "words": [{"spelling","best","alternatives",
-    "margin","offsets"}]}.
+    "margin","offsets"}], "lines": [[idx,...],...]}.
     """
     import recognizer as rec
+    if lines is None:
+        x_boxes = [(bx[0], bx[2]) for bx in boxes]
+        y_boxes = [(bx[1], bx[3]) for bx in boxes]
+        lines = rec.segment_components(x_boxes, y_boxes)
+
     greedy_flat = "".join(max(pos, key=pos.get) for pos in per_letter_probs_list)
-    groups = rec.group_words(x_boxes)
     word_spellings: list[str] = []
-    word_probs: list[list[dict]] = []
-    for g in groups:
-        probs = [per_letter_probs_list[i] for i in g]
-        word_probs.append(probs)
-        word_spellings.append("".join(max(pos, key=pos.get) for pos in probs))
+    word_letter_idxs: list[list[int]] = []
+    for line in lines:
+        line_x_boxes = [(boxes[i][0], boxes[i][2]) for i in line]
+        line_y_boxes = [(boxes[i][1], boxes[i][3]) for i in line]
+        word_groups = rec.group_words(line_x_boxes, line_y_boxes)
+        for wg in word_groups:
+            idxs = [line[j] for j in wg]
+            probs = [per_letter_probs_list[i] for i in idxs]
+            word_letter_idxs.append(idxs)
+            word_spellings.append("".join(max(pos, key=pos.get) for pos in probs))
     sentence, offsets = rec.build_sentence_and_offsets(word_spellings)
 
     words: list[dict] = []
-    for wi, g in enumerate(groups):
-        probs = [per_letter_probs_list[i] for i in g]
+    for wi, idxs in enumerate(word_letter_idxs):
+        probs = [per_letter_probs_list[i] for i in idxs]
         ws, we = offsets[wi]
         r = recommend(sentence, ws, we, probs, alpha=alpha, margin=margin,
-                      top_k=top_k)
+                      top_k=top_k, known=known)
         r["_greedy"] = word_spellings[wi]
         words.append({
             "spelling": word_spellings[wi],
@@ -155,7 +308,13 @@ def recommend_all(per_letter_probs_list: list[dict],
             "alternatives": r["alternatives"],
             "margin": r["margin"],
             "offsets": [ws, we],
-            "indices": list(g),
+            "indices": idxs,
         })
+    # Rebuild the sentence from the resolved best spellings (mirror b/d, p/q
+    # and other context-corrected letters) so the sentence shown and the LM
+    # context fed to next-word prediction reflect the resolution. Lengths are
+    # unchanged (single-letter swaps), so offsets stay valid.
+    best_spellings = [w["best"] for w in words]
+    sentence, _ = rec.build_sentence_and_offsets(best_spellings)
     return {"sentence": sentence, "words": words,
-            "greedy_flat": greedy_flat}
+            "greedy_flat": greedy_flat, "lines": lines}

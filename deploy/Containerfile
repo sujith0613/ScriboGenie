@@ -1,0 +1,92 @@
+# ScriboGenie — self-contained container for the modern ONNX + KittenTTS app.
+# Zero runtime dependencies on the host: app, recognizer models, LM models, and
+# the KittenTTS HF cache are all baked into the image. Runs offline.
+#
+# Raspberry Pi host prep (installs podman + rootless deps, non-interactive):
+#   sudo python3 deploy/podmansetup.py            # install/verify podman
+#   sudo python3 deploy/podmansetup.py --check    # pre-flight only
+#   deploy/setup_hotspot.sh                       # host-level WiFi AP (ScriboGenie / scribogenie)
+#
+# Build (on the Pi, or on any machine then save+load):
+#   podman build -t scribogenie -f deploy/Containerfile .
+#   # transfer: podman save scribogenie | gzip > scribogenie.tar.gz
+#   #           (on Pi) podman load < scribogenie.tar.gz
+#
+# Run (host networking so phone reaches 8765/8000; X11 for the 800x480 display;
+# /dev/snd for audio; /dev/input for the Wacom):
+#   podman run --rm --network host \
+#       -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix \
+#       -e XAUTHORITY=$HOME/.Xauthority -v $HOME/.Xauthority:$HOME/.Xauthority \
+#       -v $PWD/logs:/app/logs \
+#       -v $PWD/data:/app/data \
+#       scribogenie
+#
+# Multi-arch: build with `--platform linux/arm64` for the Pi, or use buildah
+# with buildx-style emulation to produce both amd64 and arm64 variants.
+
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    TF_CPP_MIN_LOG_LEVEL=3 \
+    HF_HOME=/app/tts_cache \
+    HF_HUB_OFFLINE=1 \
+    KITTENTTS_CACHE=/app/tts_cache
+
+# System deps (minimal, arch-neutral):
+#   tk            — GUI
+#   libglib2.0-0  — OpenCV
+#   libgomp1      — onnxruntime (OpenMP)
+#   libgcc-s1     — onnxruntime
+#   libportaudio2 — sounddevice (KittenTTS output)
+#   libasound2    — audio backend for portaudio
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        tk \
+        libglib2.0-0 \
+        libgomp1 \
+        libgcc-s1 \
+        libportaudio2 \
+        libasound2 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Python deps. KittenTTS is a GitHub-release wheel (arch-independent);
+# it pulls misaki, phonemizer(+fork), espeakng-loader, num2words, soundfile.
+# espeakng-loader bundles libespeak-ng, so NO system espeak is required.
+RUN pip install --no-cache-dir \
+        "numpy<2.3" \
+        websockets \
+        pyspellchecker \
+        opencv-python-headless \
+        pillow \
+        onnxruntime \
+        sounddevice \
+        soundfile \
+        "kittentts @ https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py3-none-any.whl"
+
+# Application sources.
+COPY app.py /app/app.py
+COPY progress_store.py /app/progress_store.py
+COPY confusions.py /app/confusions.py
+COPY recognizer.py /app/recognizer.py
+COPY context_lm.py /app/context_lm.py
+COPY bpe_tokenizer.py /app/bpe_tokenizer.py
+COPY recommend.py /app/recommend.py
+COPY mobile /app/mobile
+COPY models /app/models
+
+# Bake the KittenTTS model cache at build time so the image runs fully offline.
+# (Build-time network is required once; runtime is HF_HUB_OFFLINE=1.)
+# NOTE: no cache_dir here — with HF_HOME=/app/tts_cache, snapshot_download
+# caches under /app/tts_cache/hub, which is exactly where hf_hub_download
+# (KittenTTS passes cache_dir=None) looks at runtime. This keeps the image
+# fully offline-capable via HF_HUB_OFFLINE=1.
+RUN HF_HOME=/app/tts_cache HF_HUB_OFFLINE=0 python -c "from huggingface_hub import snapshot_download; snapshot_download('KittenML/kitten-tts-micro-0.8')" \
+    && find /app/tts_cache -type f | wc -l | xargs echo "tts cache files:"
+
+RUN mkdir -p /app/logs /app/data
+
+WORKDIR /app
+
+EXPOSE 8765 8000
+
+CMD ["python", "app.py"]

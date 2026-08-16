@@ -1,0 +1,54 @@
+{
+  "score": 3170,
+  "streak": 594,
+  "best_streak": 594,
+  "total_words": 634,
+  "ratings": [
+    {
+      "ts": 1786779853,
+      "rating": "awesome",
+      "word": "cat"
+    },
+    {
+      "ts": 1786781427,
+      "rating": "great",
+      "word": "apple"
+    }
+  ],
+  "badges": [
+    {
+      "id": "first_word",
+      "name": "First Steps",
+      "icon": "trophy",
+      "earned_at": 1786779844
+    },
+    {
+      "id": "rating_1",
+      "name": "First Cheer",
+      "icon": "trophy",
+      "earned_at": 1786779853
+    },
+    {
+      "id": "streak_3",
+      "name": "3 Word Streak",
+      "icon": "flame",
+      "earned_at": 1786780099
+    },
+    {
+      "id": "words_10",
+      "name": "Perfect 10",
+      "icon": "star",
+      "earned_at": 1786781456
+    },
+    {
+      "id": "words_50",
+      "name": "Super Writer",
+      "icon": "star",
+      "earned_at": 1786816099
+    }
+  ],
+  "active_days": [
+    "2026-08-15",
+    "2026-08-16"
+  ]
+}

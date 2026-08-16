@@ -17,6 +17,7 @@ import queue
 import time
 import json
 import random
+import hashlib
 import tkinter as tk
 from tkinter import Canvas, Frame, Button, Label
 from PIL import Image, ImageDraw, ImageOps
@@ -28,11 +29,12 @@ from websockets.exceptions import ConnectionClosed
 import subprocess
 import http.server
 import socketserver
-import tensorflow as tf
 
-import confusions
+import confusions as confusion_lib
 import recognizer
 import recommend
+import context_lm
+
 
 try:
     import evdev
@@ -42,6 +44,7 @@ except ImportError:
 
 LOG_DIR = os.path.join(PI_HOME, "logs")
 os.makedirs(LOG_DIR, exist_ok=True)
+DEBUG_CAPTURE = os.environ.get("SCRIBO_DEBUG") == "1"
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
@@ -52,11 +55,62 @@ logging.basicConfig(
 )
 log = logging.getLogger("ScriboGenie")
 
-MODEL_PATH = os.path.join(PI_HOME, "models", "myCnn.h5")
+
+def _install_exception_hooks():
+    """Capture every unhandled exception (main thread, background threads and
+    tkinter UI callbacks) into the log so a crash is never silent."""
+    import traceback as _tb
+
+    def _log(tb):
+        try:
+            log.error("UNHANDLED EXCEPTION\n%s", "".join(_tb.format_list(tb)))
+        except Exception:
+            pass
+
+    def _thread_hook(args):
+        _log(args.exc_traceback)
+
+    def _tk_hook(exc, val, tb):
+        log.error("UNHANDLED Tkinter CALLBACK EXCEPTION: %s: %s",
+                  exc.__name__, val)
+        _log(tb)
+
+    threading.excepthook = _thread_hook
+    sys.excepthook = lambda t, v, tb: _log(tb)
+    try:
+        tk.Tk.report_callback_exception = _tk_hook
+    except Exception:
+        pass
+
+
+if DEBUG_CAPTURE:
+    DEBUG_DIR = os.path.join(LOG_DIR, "debug", f"run_{int(time.time())}")
+    os.makedirs(DEBUG_DIR, exist_ok=True)
+    log.info("Debug capture ON -> %s", DEBUG_DIR)
+else:
+    DEBUG_DIR = None
+
+MODEL_PATH = os.path.join(PI_HOME, "models", "recog", "model.onnx")
 LOGICAL_W, LOGICAL_H = 800, 370
 CHAR_LIST = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 EMNIST_CORRECTIONS = {'0': 'o', '8': 'r', '5': 's', '1': 'l', '2': 'z', '6': 'b', '9': 'g'}
-confusions = {'b':'d','d':'b','p':'q','q':'p','i':'l','l':'i','1':'l','l':'1','0':'o','o':'0','r':'8','8':'r'}
+# Full dyslexia confusion map: research pairs (confusions module) + digit/letter
+# look-alikes from EMNIST. Used by dyslexia_aware_correction() to expand a
+# recognized word into every plausible variant before SpellChecker filtering.
+# Maps each letter to a STRING of all alternative letters (the correction loop
+# iterates its characters), so a letter can have several look-alikes at once.
+confusions: dict[str, str] = {}
+for _a, _b in confusion_lib.all_pairs():
+    confusions[_a] = confusions.get(_a, "") + _b
+    confusions[_b] = confusions.get(_b, "") + _a
+for _a, _b in [('1', 'l'), ('l', '1'), ('0', 'o'), ('o', '0'),
+               ('8', 'r'), ('r', '8'), ('5', 's'), ('s', '5'),
+               ('2', 'z'), ('z', '2'), ('6', 'b'), ('b', '6'),
+               ('9', 'g'), ('g', '9')]:
+    if _b not in confusions.get(_a, ""):
+        confusions[_a] = confusions.get(_a, "") + _b
+    if _a not in confusions.get(_b, ""):
+        confusions[_b] = confusions.get(_b, "") + _a
 spell = SpellChecker()
 
 try:
@@ -84,10 +138,67 @@ except Exception as e:
         6: ["BEAUTIFUL", "DIFFICULT", "WONDERFUL", "REMEMBER", "CHILDREN", "EDUCATION"]
     }
 
+# Lowercased pool of known words used for next-word prediction and the
+# "meaningful word" gate. Kept modest so one LM forward pass per candidate
+# stays fast on the desktop.
+_WORD_BANK = sorted({w.lower() for words in LESSON_WORDS.values() for w in words})
+
+# Dyslexia-confusion correction: bound the number of letter substitutions tried
+# per word. The naive full enumeration is 2^len(word); capping at 2 keeps it
+# ~len^2 instead of exponential, so long words don't stall the prediction loop.
+MAX_SUBSTITUTIONS = 2
+
+# Full SpellChecker dictionary (the "is this a real word?" gate). Much larger
+# than _WORD_BANK so common words like "wow" are accepted in sentence mode.
+_KNOWN_WORDS = sorted(w.lower() for w, _ in _SORTED if w.isalpha())
+
+# Common-word gate for the b/d and p/q mirror disambiguation: a mirror reading
+# only gets the dictionary bonus if it is a word the child is expected to know
+# (top-frequency bank). The full dictionary would also admit obscure words like
+# "gob", making "gob" and "god" equally "real" and letting the weak char-LM
+# (which happens to prefer "gob is great") win.
+_WORD_BANK_SET = set(w.lower() for w in _WORD_BANK)
+
+# When True the app runs in sentence mode: the child writes words freely, the
+# recognized words are sent to the char-LM, which then suggests the most likely
+# next word. If a written word is not meaningful, the child is asked to rewrite.
+SENTENCE_MODE = True
+
 mobile_clients = set()
 mobile_loop = None
 lesson_state = {"level": 1, "word": "BAT", "score": 0, "streak": 0}
 _APP_INSTANCE = None
+
+# ---------------------------------------------------------------------------
+# Persistent progress store (score, streak, ratings, badges, active days).
+# Stored as a JSON file so badges/awards/recognitions survive restarts and are
+# consistent between the desktop and the mobile companion.
+# ---------------------------------------------------------------------------
+PROGRESS_FILE = os.path.join(PI_HOME, "data", "progress.json")
+
+from progress_store import ProgressStore  # noqa: E402
+
+_progress = ProgressStore(PROGRESS_FILE)
+
+
+def save_progress():
+    _progress.save()
+
+
+def progress_state():
+    return _progress.state()
+
+
+def record_word_accepted():
+    return _progress.record_word_accepted()
+
+
+def record_word_rejected():
+    _progress.record_word_rejected()
+
+
+def record_rating(rating_id, word):
+    return _progress.record_rating(rating_id, word)
 
 def get_next_lesson(level=None):
     global lesson_state
@@ -117,35 +228,20 @@ async def ws_handler(websocket):
     mobile_clients.add(websocket)
     try:
         await websocket.send(json.dumps({
-            "type": "lesson", "word": lesson_state["word"],
-            "level": lesson_state["level"], "mode": "copy",
-            "score": lesson_state["score"]
+            "type": "sync",
+            "state": progress_state(),
+            "sentence": getattr(_APP_INSTANCE, "_last_full_sentence", "")
         }))
         async for message in websocket:
             data = json.loads(message)
             msg_type = data.get("type", "")
-            if msg_type == "attempt":
-                written = data.get("written", "")
-                target = lesson_state["word"]
-                result, msg = analyze_attempt(written, target)
-                if result == "correct":
-                    stars = min(lesson_state["streak"], 3)
-                    await broadcast({
-                        "type": "reward", "stars": stars, "message": msg,
-                        "score": lesson_state["score"], "level": lesson_state["level"]
-                    })
-                else:
-                    await broadcast({
-                        "type": "wrong_attempt", "feedback_text": msg,
-                        "expected": target, "got": written
-                    })
-            elif msg_type == "get_lesson":
-                level = data.get("level", lesson_state["level"])
-                word = get_next_lesson(level)
-                await websocket.send(json.dumps({
-                    "type": "lesson", "word": word, "level": level,
-                    "mode": "copy", "score": lesson_state["score"]
-                }))
+            if msg_type == "rate":
+                rating = data.get("rating", "great")
+                word = data.get("word", "")
+                unlocked = record_rating(rating, word)
+                await broadcast({"type": "sync", "state": progress_state()})
+                for b in unlocked:
+                    await broadcast({"type": "badge", "badge": b})
             elif msg_type in ("request_audio", "speak"):
                 t = data.get("text") or data.get("word", "")
                 if t and _tts_queue_global is not None:
@@ -187,34 +283,137 @@ def send_to_mobile_sync(data):
         return
     asyncio.run_coroutine_threadsafe(broadcast(data), mobile_loop)
 
+
+def dump_debug(name, payload, gray=None):
+    """Persist a debug snapshot under logs/debug/run_<ts>/ when SCRIBO_DEBUG=1.
+
+    When `gray` (HxW uint8 canvas) is given, the source image is also saved as
+    a PNG beside the JSON so real-handwriting localization can be inspected.
+    """
+    if not DEBUG_DIR:
+        return
+    try:
+        fname = os.path.join(DEBUG_DIR,
+                             f"{int(time.time() * 1000)}_{name}.json")
+        with open(fname, "w") as f:
+            json.dump(payload, f, indent=2, default=str)
+        log.info("debug dump: %s", os.path.relpath(fname, LOG_DIR))
+        if gray is not None:
+            pname = os.path.join(DEBUG_DIR,
+                                 f"{int(time.time() * 1000)}_{name}.png")
+            import cv2 as _cv2
+            _cv2.imwrite(pname, gray)
+            log.info("debug dump: %s", os.path.relpath(pname, LOG_DIR))
+    except Exception as e:
+        log.error("debug dump failed: %s", e)
+
 def apply_emnist_context_correction(chars_str):
     if not chars_str or not any(c.isalpha() for c in chars_str): return chars_str
     return "".join([EMNIST_CORRECTIONS.get(c, c) for c in chars_str])
 
 def dyslexia_aware_correction(word):
     if len(word) <= 1: return word
-    variants = [''.join(p) for p in product(*[[c, confusions[c]] if c in confusions else [c] for c in word])]
-    valid = [w for w in variants if spell.correction(w) == w]
-    return valid[0] if valid else (spell.correction(word) or word)
+    # Fast path: already a dictionary word -> keep it. known() is a cheap dict
+    # lookup, unlike correction() which runs an expensive edit-distance-2 search
+    # over the whole dictionary.
+    if spell.known([word]):
+        return word
+    # Bounded dyslexia-confusion search. The naive 2^len(word) enumeration
+    # explodes for words over ~4-5 letters (product over every confusion +
+    # spell.correction per variant), stalling the prediction loop. Instead try
+    # only a bounded number of letter substitutions (k <= MAX_SUB) and return
+    # the first variant the spellchecker accepts, so cost is ~len*2^MAX_SUB
+    # worst case, not 2^len. Each variant is tested with known() (a dict
+    # lookup) rather than correction() (an edit-distance-2 scan of the whole
+    # dictionary, ~0.6s per call), which is what actually blew up the loop.
+    pos = [i for i, ch in enumerate(word) if ch in confusions]
+    import itertools as _it
+    for k in range(1, min(len(pos), MAX_SUBSTITUTIONS) + 1):
+        for combo in _it.combinations(pos, k):
+            for subs in _it.product(*[confusions[word[i]] for i in combo]):
+                cand = list(word)
+                for i, ch in zip(combo, subs):
+                    cand[i] = ch
+                c = "".join(cand)
+                if spell.known([c]):
+                    return c
+    return spell.correction(word) or word
 
 class TTSSpeaker:
+    TTS_MODEL = "KittenML/kitten-tts-micro-0.8"
+    TTS_VOICE = "Bella"
+    TTS_SPEED = 0.9
     def __init__(self):
         self.q = queue.Queue(maxsize=3)
+        self._model = None
+        self._model_err = None
+        self._last_enqueue = 0.0
         threading.Thread(target=self._run, daemon=True).start()
     def _run(self):
         while True:
-            t = self.q.get()
-            self._say(t)
+            try:
+                t = self.q.get()
+                self._say(t)
+            except Exception:
+                log.warning("TTS thread error", exc_info=True)
+    def _get_model(self):
+        if self._model is not None or self._model_err is not None:
+            return self._model
+        try:
+            from kittentts import KittenTTS
+            self._model = KittenTTS(self.TTS_MODEL)
+            log.info("Loaded TTS model %s", self.TTS_MODEL)
+        except Exception as e:
+            self._model_err = e
+            log.warning("TTS engine unavailable (%s); skipping speech", e)
+            return None
+        return self._model
     def _say(self, text):
-        if os.name == 'nt':
-            subprocess.run(["powershell", "-Command",
-                f"Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('{text}')"],
-                stderr=subprocess.DEVNULL)
-        else:
-            subprocess.run(["espeak", "-s", "140", text], stderr=subprocess.DEVNULL)
-    def speak(self, text):
-        if text:
-            self.q.put(str(text))
+        if not text:
+            return
+        model = self._get_model()
+        if model is not None:
+            try:
+                import sounddevice as sd
+                audio = model.generate(text, voice=self.TTS_VOICE,
+                                       speed=self.TTS_SPEED)
+                sd.play(audio, 24000)
+                sd.wait()
+                return
+            except Exception:
+                log.warning("KittenTTS speech failed; falling back", exc_info=True)
+        try:
+            if os.name == 'nt':
+                subprocess.run(["powershell", "-Command",
+                    f"Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('{text}')"],
+                    stderr=subprocess.DEVNULL, timeout=15)
+            else:
+                subprocess.run(["espeak", "-s", "140", text],
+                               stderr=subprocess.DEVNULL, timeout=15)
+        except Exception:
+            log.warning("TTS unavailable (espeak missing); skipping speech")
+    def speak(self, text, throttle=0.0):
+        """Queue `text` for the TTS thread without ever blocking the caller.
+
+        `throttle` seconds: skip if a speak was enqueued more recently than
+        that (used for clue speech so the child isn't talked at every stroke).
+        When the queue is full the oldest pending item is dropped, so the UI
+        thread can never stall waiting for TTS to finish playing.
+        """
+        if not text:
+            return
+        now = time.time()
+        if throttle > 0 and (now - self._last_enqueue) < throttle:
+            return
+        self._last_enqueue = now
+        try:
+            self.q.put_nowait(str(text))
+        except queue.Full:
+            try:
+                self.q.get_nowait()
+                self.q.put_nowait(str(text))
+            except (queue.Empty, queue.Full):
+                pass
 
 _tts_queue_global = None
 
@@ -224,80 +423,80 @@ class PredictorWorker(threading.Thread):
         self.tq, self.rq, self.stop = tq, rq, stop
         self.result_callback = None
     def run(self):
-        inputs = tf.keras.layers.Input(shape=(28, 28, 1))
-
-        x = tf.keras.layers.Conv2D(64, 3, padding='same', activation='relu', name='conv2d')(inputs)
-        x = tf.keras.layers.BatchNormalization(name='batch_normalization')(x)
-        x = tf.keras.layers.Conv2D(64, 3, padding='same', activation='relu', name='conv2d_1')(x)
-        x = tf.keras.layers.BatchNormalization(name='batch_normalization_1')(x)
-        shortcut = tf.keras.layers.Conv2D(64, 1, padding='same', name='conv2d_2')(inputs)
-        x = tf.keras.layers.Add(name='add')([x, shortcut])
-        x = tf.keras.layers.MaxPooling2D(2, name='max_pooling2d')(x)
-        x = tf.keras.layers.Dropout(0.25, name='dropout')(x)
-
-        x_res = tf.keras.layers.Conv2D(128, 3, padding='same', activation='relu', name='conv2d_3')(x)
-        x_res = tf.keras.layers.BatchNormalization(name='batch_normalization_2')(x_res)
-        x_res = tf.keras.layers.Conv2D(128, 3, padding='same', activation='relu', name='conv2d_4')(x_res)
-        x_res = tf.keras.layers.BatchNormalization(name='batch_normalization_3')(x_res)
-        shortcut_1 = tf.keras.layers.Conv2D(128, 1, padding='same', name='conv2d_5')(x)
-        x = tf.keras.layers.Add(name='add_1')([x_res, shortcut_1])
-        x = tf.keras.layers.MaxPooling2D(2, name='max_pooling2d_1')(x)
-        x = tf.keras.layers.Dropout(0.25, name='dropout_1')(x)
-
-        x_res = tf.keras.layers.Conv2D(256, 3, padding='same', activation='relu', name='conv2d_6')(x)
-        x_res = tf.keras.layers.BatchNormalization(name='batch_normalization_4')(x_res)
-        x_res = tf.keras.layers.Conv2D(256, 3, padding='same', activation='relu', name='conv2d_7')(x_res)
-        x_res = tf.keras.layers.BatchNormalization(name='batch_normalization_5')(x_res)
-        shortcut_2 = tf.keras.layers.Conv2D(256, 1, padding='same', name='conv2d_8')(x)
-        x = tf.keras.layers.Add(name='add_2')([x_res, shortcut_2])
-        x = tf.keras.layers.MaxPooling2D(2, name='max_pooling2d_2')(x)
-        x = tf.keras.layers.Dropout(0.25, name='dropout_2')(x)
-
-        x = tf.keras.layers.GlobalAveragePooling2D(name='global_average_pooling2d')(x)
-        x = tf.keras.layers.Dense(512, activation='relu', name='dense')(x)
-        x = tf.keras.layers.Dropout(0.5, name='dropout_3')(x)
-        outputs = tf.keras.layers.Dense(62, activation='softmax', name='dense_1')(x)
-
-        model = tf.keras.Model(inputs, outputs)
-        model.load_weights(MODEL_PATH, by_name=True)
-        log.info("Loaded model weights from %s", MODEL_PATH)
+        recognizer._get_session()  # warm the ONNX recognizer session
+        log.info("Loaded recognizer model from %s", MODEL_PATH)
         while not self.stop.is_set():
             try:
                 task = self.tq.get(timeout=0.2)
                 if not task:
                     break
-                pil_img, cw, ch, ts, scale, gen = task
+                pil_img, cw, ch, ts, scale, gen, sentence_prefix = task
                 img = np.array(pil_img)
                 gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-                thr = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                           cv2.THRESH_BINARY_INV, 15, 8)
+
+                _T = {"prep": 0.0, "comp": 0.0, "segment": 0.0,
+                      "crop": 0.0, "recognize": 0.0, "correct": 0.0,
+                      "recommend": 0.0, "lm": 0.0}
+                _t0 = time.time()
+                _t = _t0
+
+                # connected components are the cheap ground-truth of ink blobs:
+                # they always find every blob, but merge touching letters. Use
+                # them both as the fallback box source and as a sanity floor
+                # for the YOLO box count.
+                thr = cv2.adaptiveThreshold(
+                    gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                    cv2.THRESH_BINARY_INV, 15, 8)
                 num, labs, stats, cents = cv2.connectedComponentsWithStats(thr)
-                indices = [i for i in range(1, num) if stats[i][4] >= 12]
-                indices.sort(key=lambda i: stats[i][0])
-                arrays = []
-                x_boxes = []
-                for i in indices:
-                    x, y, w, h = stats[i][:4]
-                    crop = gray[y:y+h, x:x+w]
-                    resized = cv2.resize(crop, (20, 20)).astype(np.float32)
-                    arr = np.zeros((28, 28), dtype=np.float32)
-                    arr[4:24, 4:24] = (255.0 - resized) / 255.0
-                    arrays.append(arr.reshape(1, 28, 28, 1))
-                    x_boxes.append((int(x), int(x + w)))
-                per_letter = []
-                if arrays:
-                    batch = np.vstack(arrays)
-                    preds = model.predict_on_batch(batch)
-                    per_letter = [recognizer.letter_probs_from_scores(p)
-                                  for p in preds]
+                comp_boxes = [(int(stats[i][0]), int(stats[i][1]),
+                               int(stats[i][0] + stats[i][2]),
+                               int(stats[i][1] + stats[i][3]))
+                              for i in range(1, num) if stats[i][4] >= 12]
+                x_boxes = [(b[0], b[2]) for b in comp_boxes]
+                y_boxes = [(b[1], b[3]) for b in comp_boxes]
+                _T["comp"] = time.time() - _t; _t = time.time()
+
+                # Segmentation is purely component-based (YOLO was removed):
+                # connectedComponents always finds every ink blob, then
+                # segment_components groups them into lines and merge_letters
+                # fuses multi-stroke letters (dot+stem, two-stroke w/y, ...)
+                # into one crop per real letter. The gap-based merge never
+                # splits letters that physically touch (e.g. rn -> m).
+                lines = recognizer.segment_components(x_boxes, y_boxes)
+                letter_boxes = []
+                line_letter_idxs = []
+                for line in lines:
+                    merged = recognizer.merge_letters(line, x_boxes, y_boxes)
+                    start = len(letter_boxes)
+                    letter_boxes.extend(merged)
+                    line_letter_idxs.append(
+                        list(range(start, len(letter_boxes))))
+
+                crops = [gray[y0:y1, x0:x1] for (x0, y0, x1, y1) in letter_boxes]
+                _T["segment"] = time.time() - _t; _t = time.time()
+                per_letter = recognizer.recognize_crops(crops)
                 recognized = [max(pos, key=pos.get) for pos in per_letter]
-                raw = apply_emnist_context_correction("".join(recognized))
+                _T["recognize"] = time.time() - _t; _t = time.time()
 
                 # recommendation layer: group into words, combine recognizer
                 # probs with the char-LM context, surface suggested spellings
                 suggestions = []
+                words_info = []
+                next_words = []
+                rec_sentence = ""
+                full_sentence = ""
+                # flat fallback kept for when word-grouping fails below.
+                # Correct word-by-word (not the whole joined string): the
+                # dyslexia-confusion search is ~2^len and explodes on a
+                # multi-word string with spaces, stalling the prediction loop.
+                raw = apply_emnist_context_correction("".join(recognized))
+                corrected = " ".join(
+                    dyslexia_aware_correction(w)
+                    for w in raw.split()) if raw else raw
                 try:
-                    rec_all = recommend.recommend_all(per_letter, x_boxes)
+                    rec_all = recommend.recommend_all(
+                        per_letter, letter_boxes, lines=line_letter_idxs,
+                        known=_WORD_BANK_SET)
                     for w_ in rec_all["words"]:
                         if w_["best"] != w_["spelling"] and \
                            w_["margin"] >= recommend.SUGGEST_MARGIN:
@@ -307,16 +506,87 @@ class PredictorWorker(threading.Thread):
                                 "margin": w_["margin"],
                                 "offsets": w_["offsets"],
                             })
+                        words_info.append({
+                            "spelling": w_["spelling"],
+                            "best": w_["best"],
+                            "margin": w_["margin"],
+                            "offsets": w_["offsets"],
+                            "indices": w_["indices"],
+                        })
                     rec_sentence = rec_all["sentence"]
+                    # raw/corrected reflect word spacing: join each word's
+                    # greedy spelling with a space instead of flattening the
+                    # whole string (which produced "iam" for "i am").
+                    # `corrected` uses the CONTEXT-RESOLVED best spelling per
+                    # word (recommend_all rebuilds sentence from `best`, so a
+                    # b/d or p/q mirror confusion is already resolved there),
+                    # with the dictionary correction as a last resort for words
+                    # the recommendation layer left untouched.
+                    spellings = [w_["spelling"] for w_ in rec_all["words"]]
+                    bests = [w_["best"] for w_ in rec_all["words"]]
+                    raw = apply_emnist_context_correction(" ".join(spellings))
+                    corrected = " ".join(
+                        b if b != s else dyslexia_aware_correction(s)
+                        for s, b in zip(spellings, bests))
+                    # next-word prediction: the current (last) word's recognized
+                    # letters constrain the candidates; the words before it are
+                    # the LM context. Remaining slots fill with context-based
+                    # guesses so the list is never empty.
+                    try:
+                        full_sentence = (sentence_prefix + " " + rec_sentence).strip()
+                        if rec_all["words"]:
+                            current = rec_all["words"][-1]
+                            prefix = current["spelling"]
+                            context = " ".join(
+                                w_["spelling"] for w_ in rec_all["words"][:-1])
+                            next_words = recommend.predict_current_word(
+                                context, prefix, _WORD_BANK, k=5,
+                                full_sentence=full_sentence)
+                        else:
+                            next_words = recommend.next_word(
+                                full_sentence, _WORD_BANK, k=5)
+                    except Exception:
+                        next_words = []
+                        log.error("Next-word prediction failed", exc_info=True)
+                    _T["lm"] = time.time() - _t; _t = time.time()
+                    # sentence-completion gate: does the model assign high
+                    # probability to a period/EOS? Strict, so it under-triggers.
+                    complete = False
+                    try:
+                        causal = context_lm.get_causal()
+                        if causal is not None and full_sentence:
+                            complete = causal.sentence_is_complete(full_sentence)
+                    except Exception:
+                        log.error("Sentence-end scoring failed", exc_info=True)
                 except Exception:
                     rec_sentence = ""
                     log.error("Recommendation failed", exc_info=True)
 
+                dump_debug("prediction", {
+                    "raw": raw,
+                    "corrected": corrected,
+                    "sentence": rec_sentence,
+                    "words": words_info,
+                    "suggestions": suggestions,
+                    "next_words": next_words,
+                    "complete": complete,
+                    "per_letter": per_letter,
+                    "x_boxes": x_boxes,
+                    "y_boxes": y_boxes,
+                    "lines": line_letter_idxs,
+                    "letter_boxes": letter_boxes,
+                    "timings_ms": {k: round(v * 1000) for k, v in _T.items()},
+                    "wall_ms": round((time.time() - _t0) * 1000),
+                }, gray=gray)
                 self.rq.put((ts, {"raw": raw,
-                                  "corrected": dyslexia_aware_correction(raw),
+                                  "corrected": corrected,
                                   "gen": gen,
                                   "sentence": rec_sentence,
-                                  "suggestions": suggestions}))
+                                  "words": words_info,
+                                  "suggestions": suggestions,
+                                  "next_words": next_words,
+                                  "complete": complete,
+                                  "lines": line_letter_idxs}))
                 if self.result_callback:
                     self.result_callback()
             except queue.Empty:
@@ -324,11 +594,6 @@ class PredictorWorker(threading.Thread):
             except Exception:
                 import traceback
                 log.error(f"Prediction error:\n{traceback.format_exc()}")
-
-def draw_overlay(canvas, raw_text):
-    canvas.delete("overlay")
-    canvas.create_text(10, 10, text=f"Recognized: {raw_text}", anchor="nw",
-                       font=("Arial", 14, "bold"), fill="green", tags="overlay")
 
 class HandwritingApp:
     def __init__(self, root):
@@ -341,6 +606,7 @@ class HandwritingApp:
         self._focused = True
         self._last_draw_time = 0.0
         self._last_pred_timer = time.time()
+        self._last_enqueued_sig = None
         self.root.bind("<FocusIn>", lambda e: setattr(self, '_focused', True))
         self.root.bind("<FocusOut>", lambda e: setattr(self, '_focused', False))
         self.root.bind("<Control-z>", lambda e: self.undo())
@@ -352,16 +618,30 @@ class HandwritingApp:
                                 anchor="w", fg="green")
         self.status_bar.pack(side="bottom", fill="x")
 
-        lesson_frame = Frame(root, bg="#E8F5E9")
-        lesson_frame.pack(fill="x", padx=10, pady=(5, 0))
-        self.lbl_lesson = Label(lesson_frame,
-            text=f"Lesson: {lesson_state['word']} (Level {lesson_state['level']})",
-            font=("Arial", 11, "bold"), bg="#E8F5E9", fg="#2E7D32")
-        self.lbl_lesson.pack(side="left", padx=10)
-        self.lbl_score = Label(lesson_frame,
-            text=f"Score: {lesson_state['score']}",
-            font=("Arial", 11), bg="#E8F5E9", fg="#1565C0")
-        self.lbl_score.pack(side="right", padx=10)
+        if not SENTENCE_MODE:
+            lesson_frame = Frame(root, bg="#E8F5E9")
+            lesson_frame.pack(fill="x", padx=10, pady=(5, 0))
+            self.lbl_lesson = Label(lesson_frame,
+                text=f"Lesson: {lesson_state['word']} (Level {lesson_state['level']})",
+                font=("Arial", 11, "bold"), bg="#E8F5E9", fg="#2E7D32")
+            self.lbl_lesson.pack(side="left", padx=10)
+            self.lbl_score = Label(lesson_frame,
+                text=f"Score: {lesson_state['score']}",
+                font=("Arial", 11), bg="#E8F5E9", fg="#1565C0")
+            self.lbl_score.pack(side="right", padx=10)
+
+        sentence_frame = Frame(root, bg="#FFF8E1")
+        sentence_frame.pack(fill="x", padx=10, pady=(5, 0))
+        self.lbl_sentence = Label(sentence_frame,
+            text="Sentence: --",
+            font=("Arial", 11, "bold"), bg="#FFF8E1", fg="#B26A00",
+            anchor="w")
+        self.lbl_sentence.pack(side="left", padx=10)
+        self.lbl_next = Label(sentence_frame,
+            text="Next word: --",
+            font=("Arial", 11, "italic"), bg="#FFF8E1", fg="#6A1B9A",
+            anchor="w")
+        self.lbl_next.pack(side="left", padx=10)
 
         self.controls = Frame(root)
         self.controls.pack(side="bottom", fill="x", pady=5)
@@ -387,12 +667,12 @@ class HandwritingApp:
         self.canvas = Canvas(self.canvas_frame, bg="white",
                              width=LOGICAL_W, height=LOGICAL_H, highlightthickness=0)
         self.canvas.pack(fill="both", expand=True)
-        self.lbl_raw = Label(self.result_panel, text="Raw: --",
-                             font=("Arial", 12), bg="#F3F0FF")
-        self.lbl_raw.pack(side="left", padx=20)
         self.lbl_cor = Label(self.result_panel, text="Corrected: --",
                              font=("Arial", 12, "bold"), bg="#F3F0FF", fg="#2E7D32")
         self.lbl_cor.pack(side="left", padx=20)
+        self.lbl_raw = Label(self.result_panel, text="Raw: --",
+                             font=("Arial", 12), bg="#F3F0FF", fg="#555555")
+        self.lbl_raw.pack(side="left", padx=20)
 
         self.image = Image.new("RGB", (LOGICAL_W, LOGICAL_H), "white")
         self.draw = ImageDraw.Draw(self.image)
@@ -405,8 +685,14 @@ class HandwritingApp:
         self.stop = threading.Event()
         self.worker = PredictorWorker(self.tq, self.rq, self.stop)
         self.worker.start()
-        self.worker.result_callback = lambda: self.root.after(0, self._check_results)
+        self.worker.result_callback = lambda: self._wake_ui()
         self._word_gen = 0
+        self._ui_poll_after_id = None
+        self._ui_poll_interval = 50  # ms; main-thread rq poller
+        self._start_ui_poller()
+        self.sentence_words = []
+        self._sentence_accepted = False
+        self._last_full_sentence = ""
         self._predict_after_id = None
         self._stroke_groups = []
         self._undone_strokes = []
@@ -419,9 +705,17 @@ class HandwritingApp:
         self._wacom_found = False
         self._init_wacom()
         if not self._wacom_found:
+            self.canvas.bind("<ButtonPress-1>", self._mouse_press)
             self.canvas.bind("<B1-Motion>", self._mouse_draw)
             self.canvas.bind("<ButtonRelease-1>", self._mouse_release)
-        self.speaker.speak(f"Write the word {lesson_state['word']}")
+        if SENTENCE_MODE:
+            self.speaker.speak("Write any word to start your sentence.")
+        else:
+            self.speaker.speak(f"Write the word {lesson_state['word']}")
+
+    def _mouse_press(self, e):
+        self._last_draw_time = time.time()
+        self._last_x, self._last_y = e.x, e.y
 
     def _mouse_draw(self, e):
         self._last_draw_time = time.time()
@@ -443,7 +737,7 @@ class HandwritingApp:
     def _mouse_release(self, e):
         self._last_x = None
         self._finalize_stroke()
-        self._schedule_prediction(2.0)
+        self._schedule_prediction(0.2)
 
     def _init_wacom(self):
         if not evdev:
@@ -488,7 +782,7 @@ class HandwritingApp:
     def _wacom_pen_up(self):
         self._wacom_last = None
         self._finalize_stroke()
-        self._schedule_prediction(2.0)
+        self._schedule_prediction(0.2)
 
     def _wacom_draw_raw(self, raw_x, raw_y):
         if not self._focused:
@@ -517,7 +811,144 @@ class HandwritingApp:
             self.draw.ellipse([local_x-r, local_y-r, local_x+r, local_y+r], fill=color)
         self._wacom_last = (local_x, local_y)
 
+    def _sentence_lines(self, latest) -> list[str]:
+        """Group recognized words into display lines (one row per written
+        line). Uses the worker's per-line letter indices and each word's letter
+        indices; falls back to a single flat sentence.
+        """
+        lines = latest.get("lines") or []
+        words = latest.get("words") or []
+        if not lines or not words:
+            return [latest.get("sentence", "")]
+        line_of_word: list[int] = []
+        for wi, w in enumerate(words):
+            w_idxs = w.get("indices") or []
+            found = -1
+            for li, lidx in enumerate(lines):
+                if lidx and any(i in lidx for i in w_idxs):
+                    found = li
+                    break
+            line_of_word.append(found if found >= 0 else max(len(lines) - 1, 0))
+        rows: list[list[str]] = [[] for _ in lines]
+        for wi, w in enumerate(words):
+            li = line_of_word[wi]
+            if li < len(rows):
+                rows[li].append(w.get("best") or w.get("spelling") or "")
+        return [" ".join(r) for r in rows]
+
+    def _render_sentence(self, latest):
+        rows = self._sentence_lines(latest)
+        shown = "\n".join(rows) if rows else latest.get("sentence", "")
+        shown = shown.strip() or "--"
+        self.lbl_sentence.config(text=f"Sentence: {shown}")
+        next_words = latest.get("next_words", [])
+        if next_words:
+            nw_text = " | ".join(f"{w['word']}" for w in next_words)
+        else:
+            nw_text = "--"
+        self.lbl_next.config(text=f"Next word: {nw_text}")
+
+    def _handle_sentence_result(self, latest, raw_text, corrected_text):
+        """Accept recognized words into the running sentence.
+
+        The recognized words are already sent to the char-LM, which returns the
+        next-word suggestions. Every recognized word is accepted so prediction
+        continues for the next character rather than early-stopping on a single
+        "meaningful" letter.
+        """
+        words_info = latest.get("words", [])
+        sentence = latest.get("sentence", "")
+        next_words = latest.get("next_words", [])
+        running = list(self.sentence_words)
+
+        if words_info:
+            accepted = [w["best"] for w in words_info]
+        else:
+            # fall back to the whole corrected string when segmentation failed
+            accepted = [t for t in corrected_text.lower().split() if t.isalpha()]
+
+        # accept the words, add to the running sentence, persist
+        for accepted_word in accepted:
+            if accepted_word and (not running or
+                                  running[-1].lower() != accepted_word.lower()):
+                running.append(accepted_word)
+        self.sentence_words = running
+        self._last_full_sentence = " ".join(running)
+        unlocked = record_word_accepted()
+
+        # always keep suggesting the next word so prediction never stops early
+        complete = False
+        if next_words:
+            top = next_words[0]["word"]
+            self.speaker.speak(f"Good! Try {top}.", throttle=4.0)
+            accept_msg = f"Good! Try: {top}"
+        else:
+            self.speaker.speak("Good!", throttle=4.0)
+            accept_msg = "Good!"
+        self.lbl_cor.config(text=f"Corrected: {corrected_text} — {accept_msg}",
+                            fg="#2E7D32")
+        send_to_mobile_sync({
+            "type": "recognition",
+            "raw": raw_text,
+            "corrected": corrected_text,
+            "correct": True,
+            "complete": complete,
+            "feedback": accept_msg,
+            "sentence": " ".join(running).strip(),
+            "lines": self._sentence_lines(latest),
+            "suggestions": latest.get("suggestions", []),
+            "next_words": next_words,
+            "state": progress_state(),
+        })
+        for b in unlocked:
+            send_to_mobile_sync({"type": "badge", "badge": b})
+
+    def _current_raw_display(self):
+        return getattr(self, '_raw_display', "Raw: --")
+
+    def _set_raw_display(self, raw_text, sentence):
+        self._raw_display = f"Raw: {raw_text}  |  Recognized: {sentence}"
+        self.lbl_raw.config(text=self._raw_display)
+
+    def _wake_ui(self):
+        """Called from the worker thread whenever a result lands on rq.
+
+        The old code did root.after(0, self._check_results) here, but calling
+        after() from a non-main thread is unreliable in tkinter (callbacks get
+        lost/coalesced), so the UI only repainted at word boundaries. Instead we
+        just touch a flag; the always-running main-thread poller below picks it
+        up immediately and drains rq.
+        """
+        self._ui_dirty = True
+
+    def _start_ui_poller(self):
+        """Continuously drain rq on the MAIN thread so the sentence/prediction
+        UI repaints as results arrive, not only when a stroke is released.
+
+        Runs on a short fixed timer regardless of worker activity. Whenever the
+        worker signals dirty, we schedule an immediate drain; otherwise we keep
+        the steady cadence so nothing is ever missed.
+        """
+        self._ui_dirty = True
+
+        def _poll():
+            if self.stop.is_set():
+                return
+            if self._ui_dirty or not self.rq.empty():
+                self._ui_dirty = False
+                try:
+                    self._check_results()
+                except Exception:
+                    import traceback
+                    log.error("UI poller error:\n%s", traceback.format_exc())
+            self._ui_poll_after_id = self.root.after(
+                self._ui_poll_interval, _poll)
+
+        self.root.after(0, _poll)
+
     def _check_results(self):
+        log.debug("CHECK_RESULTS fired, rq size=%d _word_gen=%d",
+                  self.rq.qsize(), getattr(self, '_word_gen', -1))
         latest = None
         while not self.rq.empty():
             _, res = self.rq.get()
@@ -533,9 +964,18 @@ class HandwritingApp:
                     log.debug("Skipping duplicate prediction result")
                 else:
                     self._last_result = corrected_text
-                    self.lbl_raw.config(text=f"Raw: {raw_text}")
                     self.lbl_cor.config(text=f"Corrected: {corrected_text}")
-                    draw_overlay(self.canvas, raw_text)
+                    self._set_raw_display(raw_text, latest.get("sentence", ""))
+                    log.debug("UI update: raw=%r cor=%r", raw_text, corrected_text)
+
+                    # sentence mode: render the recognized sentence and the
+                    # char-LM's next-word suggestions for the child
+                    self._render_sentence(latest)
+
+                    if SENTENCE_MODE:
+                        self._handle_sentence_result(latest, raw_text, corrected_text)
+                        self._requeue_prediction()
+                        return
 
                     target = lesson_state["word"].upper()
                     corrected = corrected_text.strip().upper()
@@ -595,22 +1035,48 @@ class HandwritingApp:
                             "suggestions": latest.get("suggestions", [])
                         })
 
-        now = time.time()
-        if now - self._last_draw_time < 1.0:
-            return
-        if self._stroke_groups and (not hasattr(self, '_last_pred_timer') or now - self._last_pred_timer >= 2.0) and self.tq.qsize() < 2:
-            self._last_pred_timer = now
-            self.tq.put((self.image.copy(), 0, 0, now, 1.0, self._word_gen))
-            log.debug(f"Prediction queued (queue size: {self.tq.qsize()})")
+        self._requeue_prediction()
 
-    def _schedule_prediction(self, delay=2.0):
+    def _requeue_prediction(self):
+        now = time.time()
+        if not self._stroke_groups:
+            return
+        # Wait for the pen to settle (>=0.2s idle) so we predict a stable image.
+        # Reschedule instead of returning when throttled: if we returned here,
+        # nothing would wake the loop again until the next pen-up, which is why
+        # erase/rewrite edits sometimes never re-predicted. Cancel the previous
+        # timer first so repeated callers don't stack duplicate after()s.
+        if now - self._last_draw_time < 0.2:
+            remaining = max(0.0, 0.2 - (now - self._last_draw_time))
+            self._schedule_prediction(remaining + 0.001)
+            return
+        if now - self._last_pred_timer < 0.2:
+            remaining = max(0.0, 0.2 - (now - self._last_pred_timer))
+            self._schedule_prediction(remaining + 0.001)
+            return
+        if self.tq.qsize() >= 2:
+            self._schedule_prediction(0.05)
+            return
+        # Don't re-enqueue a prediction for an unchanged canvas: once the pen is
+        # idle the image is stable, so returning here stops the loop (the next
+        # pen-up re-enters it via _schedule_prediction). Without this guard the
+        # reschedule above would re-run the worker on the same image forever.
+        sig = hashlib.md5(self.image.tobytes()).hexdigest()
+        if sig == getattr(self, '_last_enqueued_sig', None):
+            return
+        self._last_enqueued_sig = sig
+        self._last_pred_timer = now
+        prefix = " ".join(self.sentence_words)
+        self.tq.put((self.image.copy(), 0, 0, now, 1.0, self._word_gen, prefix))
+        log.debug(f"Prediction queued (queue size: {self.tq.qsize()})")
+
+    def _schedule_prediction(self, delay=1.0):
         try:
             self.root.after_cancel(self._predict_after_id)
         except: pass
         self._predict_after_id = self.root.after(int(delay * 1000), self._check_results)
 
     def clear(self):
-        self.canvas.delete("overlay")
         self.canvas.delete("stroke")
         self.image = Image.new("RGB", (LOGICAL_W, LOGICAL_H), "white")
         self.draw = ImageDraw.Draw(self.image)
@@ -623,16 +1089,26 @@ class HandwritingApp:
             try: self.tq.get_nowait()
             except queue.Empty: break
         self._last_pred_timer = 0
+        self._last_enqueued_sig = None
         self._word_gen += 1
+        self._last_result = ""
+        self.sentence_words = []
+        self._last_full_sentence = ""
+        self.lbl_sentence.config(text="Sentence: --")
         self._stroke_groups.clear()
         self._undone_strokes.clear()
         self._current_segments = []
         self._stroke_first_point = None
-        self.lbl_raw.config(text="Raw: --")
         self.lbl_cor.config(text="Corrected: --")
+        self.lbl_raw.config(text="Raw: --")
+        self.lbl_next.config(text="Next word: --")
 
     def speak_word(self):
-        self.speaker.speak(lesson_state["word"])
+        if SENTENCE_MODE:
+            text = self._last_full_sentence or getattr(self, '_last_result', "") or "Write any word to start your sentence."
+            self.speaker.speak(text)
+        else:
+            self.speaker.speak(lesson_state["word"])
 
     def _finalize_stroke(self):
         if not self._current_segments and not self._stroke_first_point:
@@ -653,7 +1129,10 @@ class HandwritingApp:
             return
         group = self._stroke_groups.pop()
         self._undone_strokes.append(group)
+        self._word_gen += 1
+        self._last_result = ""
         self._rebuild_from_strokes()
+        self._schedule_prediction(0.15)
         log.debug("Undo: %d strokes remaining", len(self._stroke_groups))
 
     def redo(self):
@@ -662,7 +1141,10 @@ class HandwritingApp:
             return
         group = self._undone_strokes.pop()
         self._stroke_groups.append(group)
+        self._word_gen += 1
+        self._last_result = ""
         self._rebuild_from_strokes()
+        self._schedule_prediction(0.15)
         log.debug("Redo")
 
     def _rebuild_from_strokes(self):
@@ -690,6 +1172,19 @@ class HandwritingApp:
         log.info("Eraser toggled %s", status)
 
     def next_word(self):
+        if SENTENCE_MODE:
+            self.sentence_words = []
+            self._last_full_sentence = ""
+            self.lbl_sentence.config(text="Sentence: --")
+            self.lbl_next.config(text="Next word: --")
+            self._last_result = ""
+            self.clear()
+            self.speaker.speak("Write a word to start your sentence.")
+            send_to_mobile_sync({
+                "type": "clear_sentence",
+                "state": progress_state(),
+            })
+            return
         word = get_next_lesson(lesson_state["level"])
         self.lbl_lesson.config(text=f"Lesson: {word} (Level {lesson_state['level']})")
         self.lbl_score.config(text=f"Score: {lesson_state['score']}")
@@ -704,7 +1199,6 @@ class HandwritingApp:
         self._undone_strokes.clear()
         self._current_segments = []
         self._stroke_first_point = None
-        self.lbl_raw.config(text="Raw: --")
         self.lbl_cor.config(text="Corrected: --")
         self.clear()
         self.speaker.speak(f"Write the word {word}")
@@ -717,8 +1211,9 @@ class HandwritingApp:
         })
 
 if __name__ == "__main__":
-    word = get_next_lesson(1)
-    print(f"[ScriboGenie] Lesson: {word}")
+    if not SENTENCE_MODE:
+        word = get_next_lesson(1)
+        print(f"[ScriboGenie] Lesson: {word}")
 
     ws_thread = threading.Thread(target=start_websocket_server, daemon=True)
     ws_thread.start()
@@ -730,6 +1225,21 @@ if __name__ == "__main__":
     print(f"[ScriboGenie] WebSocket: ws://0.0.0.0:8765")
     print(f"[ScriboGenie] Mobile PWA: http://192.168.4.1:8000/")
 
+    def _preload_lm_sessions():
+        try:
+            context_lm._get_session()
+            log.info("Preloaded char-LM session")
+        except Exception as e:
+            log.warning("char-LM preload failed: %s", e)
+        try:
+            context_lm.get_causal()
+            log.info("Preloaded causal-LM session")
+        except Exception as e:
+            log.warning("causal-LM preload failed: %s", e)
+
+    threading.Thread(target=_preload_lm_sessions, daemon=True).start()
+
+    _install_exception_hooks()
     root = tk.Tk()
     app = HandwritingApp(root)
     root.mainloop()

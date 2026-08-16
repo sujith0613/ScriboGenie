@@ -106,24 +106,24 @@ def render_sentence(sentence: str, rng: random.Random) -> np.ndarray:
 def pipeline(gray: np.ndarray):
     """Run the full segmentation + recognition + recommendation pipeline.
 
-    Returns dict with per-component top-K, x_boxes, and recommend.recommend_all
+    Returns dict with per-component top-K, boxes, and recommend.recommend_all
     output.
     """
     import cv2
     thr = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                 cv2.THRESH_BINARY_INV, 15, 8)
     num, _l, stats, _c = cv2.connectedComponentsWithStats(thr)
-    indices = [i for i in range(1, num) if stats[i][4] >= MIN_AREA]
-    indices.sort(key=lambda i: stats[i][0])
     crops = []
-    x_boxes = []
-    for i in indices:
+    boxes = []
+    for i in range(1, num):
+        if stats[i][4] < MIN_AREA:
+            continue
         x, y, w, h = stats[i][:4]
         crops.append(gray[y:y + h, x:x + w].astype(np.float32))
-        x_boxes.append((int(x), int(x + w)))
+        boxes.append((int(x), int(y), int(x + w), int(y + h)))
     per_letter = rec.recognize_crops(crops, TOP_K)
-    rec_all = recommend.recommend_all(per_letter, x_boxes, top_k=TOP_K)
-    return {"per_letter": per_letter, "x_boxes": x_boxes, "rec": rec_all}
+    rec_all = recommend.recommend_all(per_letter, boxes, top_k=TOP_K)
+    return {"per_letter": per_letter, "boxes": boxes, "rec": rec_all}
 
 
 def word_containing(offsets, char_pos):

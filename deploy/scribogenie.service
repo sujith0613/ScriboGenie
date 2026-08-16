@@ -1,0 +1,13 @@
+[Unit]
+Description=ScriboGenie Handwriting App
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/start_scribogenie.sh
+Restart=always
+RestartSec=10
+User=pi
+
+[Install]
+WantedBy=graphical.target

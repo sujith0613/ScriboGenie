@@ -14,17 +14,25 @@ Kept in sync with the backend copy in pi-learn-station.
 
 TIER_A = [("b", "d"), ("p", "q"), ("b", "p"), ("d", "q")]
 TIER_B = [("d", "t"), ("g", "k"), ("f", "v"), ("s", "z")]
-TIER_C = [("m", "n")]
+# Visual similarity (dyslexia research): mirror/rotation + shape look-alikes.
+TIER_C = [("m", "n"), ("u", "n"), ("m", "w"), ("h", "n"), ("i", "l"),
+          ("r", "n"), ("v", "w"), ("c", "s")]
+# Handwriting look-alikes: lowercase letters a child may write so small/messy
+# that the EMNIST recognizer confuses them (most commonly e misread as r).
+TIER_D = [("e", "r"), ("e", "c"), ("e", "o"), ("e", "u"),
+          ("a", "o"), ("o", "u"), ("i", "j"), ("u", "v"),
+          ("c", "o"), ("o", "e"), ("n", "r")]
 
 
-def all_pairs(include_tier_c: bool = False) -> list[tuple[str, str]]:
+def all_pairs(include_tier_c: bool = True) -> list[tuple[str, str]]:
     pairs = list(TIER_A) + list(TIER_B)
     if include_tier_c:
         pairs += TIER_C
+    pairs += TIER_D
     return pairs
 
 
-def neighbours(letter: str, include_tier_c: bool = False) -> list[str]:
+def neighbours(letter: str, include_tier_c: bool = True) -> list[str]:
     pairs = all_pairs(include_tier_c)
     out = []
     for a, b in pairs:
