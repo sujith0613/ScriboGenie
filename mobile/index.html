@@ -292,6 +292,32 @@
             color: var(--text-secondary);
         }
 
+        .lesson-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .lesson-word {
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--accent-purple);
+        }
+
+        .lesson-level {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            background: var(--navy-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
         #sentenceText {
             font-size: 28px;
             font-weight: 800;
@@ -672,6 +698,10 @@
     <!-- Main Content -->
     <main>
         <div class="sentence-card">
+            <div class="lesson-line">
+                <span class="lesson-word" id="lessonWord">—</span>
+                <span class="lesson-level" id="lessonLevel">Level 1</span>
+            </div>
             <div class="card-label">What I've written</div>
             <div id="sentenceText" class="empty">Write anything on the big screen!</div>
             <div id="nextWordHint" class="empty">Next word will appear here...</div>
@@ -755,7 +785,9 @@
             badges: [],
             activeDays: [],
             ratings: [],
-            ratingPending: false
+            ratingPending: false,
+            lessonWord: "",
+            lessonLevel: 1
         };
 
         const els = {
@@ -780,7 +812,9 @@
             openStats: document.getElementById('openStats'),
             closeStats: document.getElementById('closeStats'),
             activityGrid: document.getElementById('activityGrid'),
-            badgeGrid: document.getElementById('badgeGrid')
+            badgeGrid: document.getElementById('badgeGrid'),
+            lessonWord: document.getElementById('lessonWord'),
+            lessonLevel: document.getElementById('lessonLevel')
         };
 
         // --- Connection Logic ---
@@ -853,6 +887,14 @@
                 }
             } else if (data.type === 'badge') {
                 showBadge(data.badge);
+            } else if (data.type === 'lesson') {
+                state.lessonWord = (data.word || "").toUpperCase();
+                state.lessonLevel = data.level || 1;
+                renderLesson();
+            } else if (data.type === 'level_up') {
+                if (data.new_level) state.lessonLevel = data.new_level;
+                renderLesson();
+                showBanner(`Level ${state.lessonLevel} unlocked! 🎉`);
             } else if (data.type === 'clear_sentence') {
                 setSentence("");
                 state.nextWords = [];
@@ -888,6 +930,15 @@
         function updateUI() {
             els.streakCount.textContent = state.streak;
             els.scoreVal.textContent = state.totalScore;
+        }
+
+        function renderLesson() {
+            if (state.lessonWord) {
+                els.lessonWord.textContent = state.lessonWord;
+            } else {
+                els.lessonWord.textContent = "—";
+            }
+            els.lessonLevel.textContent = "Level " + (state.lessonLevel || 1);
         }
 
         // --- Rating ---
