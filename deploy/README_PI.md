@@ -39,7 +39,7 @@ The arm64 image is pre-built and hosted publicly at
 ```bash
 # Clone the repo (small — models are baked into the image, not in git)
 git clone -b context-brain https://github.com/sujith0613/ScriboGenie.git
-cd ScriboGenie
+cd scribo
 
 # Run the master menu and pick option 1 (Full Setup):
 #   podman install → get code → pull GHCR image → hotspot → autostart service → reboot
@@ -110,8 +110,8 @@ Then connect the phone to the **ScriboGenie** WiFi and open
 | `/tmp/.X11-unix` + `$XAUTHORITY` | display | 800x480 GUI |
 | `/dev/snd` | audio | KittenTTS playback |
 | `/dev/input` | input | Wacom evdev |
-| `$HOME/ScriboGenie/logs` | `/app/logs` | persistence |
-| `$HOME/ScriboGenie/data` | `/app/data` | progress + corpus |
+| `$HOME/scribo/logs` | `/app/logs` | persistence |
+| `$HOME/scribo/data` | `/app/data` | progress + corpus |
 | `--network host` | — | phone reaches `192.168.4.1:8765/8000` |
 
 ## Troubleshooting

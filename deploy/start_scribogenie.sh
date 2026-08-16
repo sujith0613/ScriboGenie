@@ -8,8 +8,8 @@
 
 IMAGE=${SCRIBOGENIE_IMAGE:-scribogenie:latest}
 DISPLAY_NUM=${DISPLAY:-:0}
-LOG_DIR="${HOME}/ScriboGenie/logs"
-DATA_DIR="${HOME}/ScriboGenie/data"
+LOG_DIR="${HOME}/scribo/logs"
+DATA_DIR="${HOME}/scribo/data"
 
 mkdir -p "$LOG_DIR" "$DATA_DIR"
 

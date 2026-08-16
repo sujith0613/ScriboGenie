@@ -9,6 +9,7 @@
 # Repo/image identifiers
 REPO_URL="https://github.com/sujith0613/ScriboGenie.git"
 REPO_BRANCH="context-brain"
+REPO_DIR="scribo"                # canonical checkout dir on the Pi (~/$REPO_DIR)
 IMAGE_NAME="ghcr.io/sujith0613/scribogenie:arm64"
 IMAGE_TAG="scribogenie:latest"   # local alias the service/launcher uses
 
@@ -57,14 +58,14 @@ show_menu() {
 }
 
 get_code() {
-    echo "Fetching ScriboGenie code..."
+    echo "Fetching ScriboGenie code into ~/$REPO_DIR..."
     cd "$HOME"
-    if [ -d ScriboGenie ]; then
+    if [ -d "$REPO_DIR" ]; then
         echo "   Repo exists — pulling latest..."
-        cd ScriboGenie && git pull --rebase origin "$REPO_BRANCH"
+        cd "$REPO_DIR" && git pull --rebase origin "$REPO_BRANCH"
     else
-        git clone -b "$REPO_BRANCH" "$REPO_URL" ScriboGenie
-        cd ScriboGenie
+        git clone -b "$REPO_BRANCH" "$REPO_URL" "$REPO_DIR"
+        cd "$REPO_DIR"
     fi
     if [ $? -ne 0 ]; then
         echo "ERROR: failed to fetch code. Is the Pi online?"
@@ -151,10 +152,9 @@ full_setup() {
 
     echo "Setup Complete!"
     echo "--------------------------------------------------"
-    echo "HOTSPOT CREDENTIALS:"
-    echo "   Network: ScriboGenie"
-    echo "   Password: scribogenie"
-    echo "   Pi IP: 192.168.4.1"
+    echo "   Code:     ~/$REPO_DIR"
+    echo "   Image:    $IMAGE_NAME"
+    echo "   Hotspot:  ScriboGenie / scribogenie @ 192.168.4.1"
     echo "--------------------------------------------------"
     echo "A REBOOT IS REQUIRED to activate the hotspot and service."
     read -p "Reboot now? (y/n) " -n 1 -r

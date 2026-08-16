@@ -53,7 +53,7 @@ git lfs install
 ```bash
 # Clone
 git clone https://github.com/sujith0613/ScriboGenie.git
-cd ScriboGenie
+cd scribo
 
 # Pull model via LFS
 git lfs pull
