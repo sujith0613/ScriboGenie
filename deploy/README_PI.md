@@ -12,6 +12,27 @@ no Python venv, no TensorFlow, no apt `espeak`, no manual model download.
   system espeak, so the image needs no TF and no apt espeak.
 - **Reproducible**: identical runtime on Pi, laptop, or server (amd64/arm64).
 
+## Quick Start (first time)
+
+```bash
+# 1. Clone
+git clone -b context-brain https://github.com/sujith0613/ScriboGenie.git ~/scribo
+cd ~/scribo
+
+# 2. Run the menu
+./deploy/install_and_run.sh
+
+# 3. Press 1 → Enter   (Full Setup — does everything automatically:
+#    install podman → pull image → hotspot → autostart → asks to reboot)
+
+# 4. When asked "Reboot now?" press y → Enter
+```
+
+Done. After reboot ScriboGenie starts automatically.
+Connect your phone to the **ScriboGenie** WiFi and open `http://192.168.4.1:8000/`.
+
+For later updates, run the menu again and use **option 2** (code) or **option 3** (image).
+
 ## Files
 
 | File | Purpose |
