@@ -6,7 +6,7 @@
 # Requires: podman, an X display (Waveshare 5" LCD), /dev/snd (audio),
 #           and /dev/input (Wacom). See deploy/podmansetup.py + deploy/Containerfile.
 
-IMAGE=${SCRIbOGENIE_IMAGE:-scribogenie:latest}
+IMAGE=${SCRIBOGENIE_IMAGE:-scribogenie:latest}
 DISPLAY_NUM=${DISPLAY:-:0}
 LOG_DIR="${HOME}/ScriboGenie/logs"
 DATA_DIR="${HOME}/ScriboGenie/data"
