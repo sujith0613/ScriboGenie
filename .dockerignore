@@ -1,0 +1,11 @@
+.git
+.venv
+.venv-app
+logs
+*.npz
+eval_suggestions.py
+__pycache__
+*.pyc
+.gitignore
+models/myCnn.h5
+models/lm-causal/model_fp32.onnx

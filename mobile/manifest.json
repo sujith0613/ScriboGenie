@@ -1,7 +1,7 @@
 {
   "name": "ScriboGenie",
   "short_name": "Scribo",
-  "description": "Educational Handwriting App",
+  "description": "ScriboGenie companion — sentence progress and recognitions",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#0F0F1A",

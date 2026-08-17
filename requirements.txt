@@ -1,6 +1,11 @@
-tensorflow>=2.10.0
-numpy>=1.24.0
-opencv-python>=4.7.0
+# ScriboGenie runtime deps (modern ONNX + KittenTTS path).
+# Mirrors the pinned set in deploy/Containerfile.
+numpy>=1.24.0,<2.3
+opencv-python-headless>=4.7.0
 pillow>=9.5.0
-pyspellchecker>=0.7.0
-websockets>=11.0
+pyspellchecker>=0.8.0
+websockets>=12.0
+onnxruntime>=1.18.0
+sounddevice>=0.5.0
+soundfile>=0.14.0
+kittentts @ https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py3-none-any.whl

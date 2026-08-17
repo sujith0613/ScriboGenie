@@ -3,3 +3,9 @@ __pycache__/
 scribogenie_env/
 logs/
 temp.ps
+
+# Large model weights (baked into the container image at build time; not kept in git).
+# Present on the build machine (laptop) so `podman build .` still works.
+models/lm-causal/model.onnx
+models/lm-causal/model_fp32.onnx
+models/recog/model.onnx

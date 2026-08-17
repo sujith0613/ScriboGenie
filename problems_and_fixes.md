@@ -230,3 +230,17 @@ def send_to_mobile_sync(data):
 **Root cause**: Two independent paths (auto-prediction in `_check_results` and manual submission in `ws_handler` → `analyze_attempt`) both score the same recognition result.
 
 **Fix**: Not yet fixed. Requires either: (a) making mobile view-only by removing the Finish button's `attempt` handler, or (b) adding a completion flag to prevent `analyze_attempt` from scoring an already-correct word.
+
+## 30. `merge_letters` Over-Merges Close Different-Height Letters ("w"/"m" confusion)
+
+**Problem**: Child wrote "i am happy"; app predicted "iawwpy". Debug geometry (logs/debug/run_1786774742/1786776102355_prediction.json) showed 8 components for 8 letters, but `merge_letters` merged two DIFFERENT-letter pairs into single boxes:
+- h (ascender, h=65) + a (x-height, h=39) at a 6px gap → ratio 1.67 → read as "w"
+- p (h=66) + y (deep descender, h=118) at a 6px gap → ratio 1.79 → read as "y"
+
+The old rule merged any gap'd pair with y-overlap, so near-touching letters of different heights collapsed into one box, inflating "w"/"m"-looking shapes.
+
+**Root cause**: merge condition (`gap <= merge_gap and (gap <= 0 or y_overlap)`) ignored height similarity. A 6px inter-letter gap is far below merge_gap (~7px at median letter width 47), so distinct letters merged.
+
+**Fix**: Added a height-similarity cap applied ONLY when components do not overlap in x (gap > 0): a gap'd pair now merges only when its height ratio ≤ 1.5. Overlapping x (gap <= 0) still always merges, so dot+stem i's (ratio ~4.75) and two-stroke w/y (ratio ~1.05) are preserved. Verified across all 89 debug fixtures: the only remaining near-touch merges are legit same-x-height strokes (ratio ≤ 1.33, e.g. 'thassa' family); "i am happy" → 8 boxes → words ["i","am","happy"]; "i have cats" h/a/v/e stay separate. Eval gate unchanged/pass (overall 91.7%).
+
+**Tests**: `test_no_merge_different_heights_close_x`, `test_i_am_happy_all_eight_letters`, `test_i_have_cats_strokes_stay_separate`, `test_dot_stem_still_merges` in tests/test_segmentation.py.
