@@ -223,10 +223,86 @@ full_setup() {
     fi
 }
 
+# Pre-flight checks for launching the container. Prints each missing item
+# with the exact fix. Returns 0 if all hard requirements pass.
+check_launch_prereqs() {
+    local ok=0
+
+    echo "Checking launch prerequisites..."
+
+    if ! command -v podman >/dev/null 2>&1; then
+        echo "  [x] podman is NOT installed."
+        echo "      Fix: choose option 1, or run:  sudo python3 $SCRIPT_DIR/podmansetup.py"
+        ok=1
+    elif ! podman image exists "$IMAGE_TAG" >/dev/null 2>&1; then
+        echo "  [x] container image '$IMAGE_TAG' is not present."
+        echo "      Fix: choose option 3 (pull from GHCR) or option 4 (load from file)."
+        ok=1
+    fi
+
+    if command -v podman >/dev/null 2>&1 && podman ps --format '{{.Names}}' 2>/dev/null | grep -qx 'scribogenie'; then
+        echo "  [x] container 'scribogenie' is already running (started by the autostart service?)."
+        echo "      Fix:  podman stop scribogenie"
+        echo "      Then choose option 5 again."
+        ok=1
+    fi
+
+    if [ ! -d /tmp/.X11-unix ]; then
+        echo "  [x] no X server socket found at /tmp/.X11-unix."
+        echo "      Fix: launch from the graphical desktop session (DISPLAY=:0), not a plain SSH shell."
+        ok=1
+    fi
+
+    if [ ! -f "$HOME/.Xauthority" ]; then
+        echo "  [x] XAUTHORITY file missing at $HOME/.Xauthority."
+        echo "      Fix: run from the graphical session so the file exists, or copy it from a logged-in desktop."
+        ok=1
+    fi
+
+    if [ ! -e /dev/snd ]; then
+        echo "  [w] /dev/snd missing — audio / TTS will not work."
+    fi
+
+    if [ ! -e /dev/input ]; then
+        echo "  [w] /dev/input missing — drawing input may not work."
+    fi
+
+    return $ok
+}
+
 manual_launch() {
     echo "Launching ScriboGenie (podman)..."
     export DISPLAY=:0
-    "$SCRIPT_DIR/start_scribogenie.sh"
+
+    if ! check_launch_prereqs; then
+        echo
+        echo "  Some prerequisites are missing — nothing was launched."
+        echo "  Fix the items above, then try option 5 again."
+        return 1
+    fi
+
+    echo "  All prerequisites OK. Starting container (Ctrl+C to stop)..."
+    "$SCRIPT_DIR/start_scribogenie.sh" 2>&1 | tee -a "$SCRIPT_DIR/launch.log"
+    local rc=${PIPESTATUS[0]}
+    if [ "$rc" -ne 0 ]; then
+        echo
+        echo "ERROR: container failed to start (exit $rc)."
+        echo "  Last log lines:"
+        tail -n 20 "$SCRIPT_DIR/launch.log" | sed 's/^/    /'
+        echo
+        echo "  Likely fixes:"
+        grep -qi "already in use\|name.*scribogenie" "$SCRIPT_DIR/launch.log" \
+            && echo "    - container name in use  ->  podman stop scribogenie"
+        grep -qi "unable to find image\|short-name\|No such image" "$SCRIPT_DIR/launch.log" \
+            && echo "    - image missing  ->  choose option 3 or 4 first"
+        grep -qi "cannot find UID/GID\|subuid" "$SCRIPT_DIR/launch.log" \
+            && echo "    - rootless subuid issue  ->  sudo python3 $SCRIPT_DIR/podmansetup.py"
+        grep -qi "display\|XOpenDisplay\|no display\|XAUTHORITY" "$SCRIPT_DIR/launch.log" \
+            && echo "    - display/XAUTHORITY issue  ->  launch from the graphical session"
+        grep -qi "permission denied" "$SCRIPT_DIR/launch.log" \
+            && echo "    - device mount permission issue  ->  check /dev/snd and /dev/input"
+    fi
+    return "$rc"
 }
 
 setup_hotspot_only() {
@@ -259,7 +335,7 @@ while true; do
         2) get_code; read -p "Press Enter to continue..." ;;
         3) pull_image; read -p "Press Enter to continue..." ;;
         4) load_image; read -p "Press Enter to continue..." ;;
-        5) manual_launch ;;
+        5) manual_launch; read -p "Press Enter to continue..." ;;
         6) setup_hotspot_only ;;
         7) install_service; read -p "Press Enter to continue..." ;;
         8) check_status; read -p "Press Enter to continue..." ;;
