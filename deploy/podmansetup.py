@@ -238,14 +238,20 @@ def main():
         sys.exit(0)
 
     # ---- 4. Install ---------------------------------------------------------
-    log()
-    log("[install]")
-    packages = ["podman", "uidmap", "slirp4netns", "fuse-overlayfs"]
-    # Debian 13 Trixie / Raspberry Pi OS ships Podman 5 (pasta networking).
-    if os_info["codename"] in ("trixie", "forky", "kingfisher", None):
-        packages.append("passt")
-    apt_install(packages, apt_ok=True)
-    log(f"  installed: {' '.join(packages)}")
+    # Skip the apt install entirely when a compatible podman is already present
+    # (avoids a silent multi-minute `apt-get update`+install on every re-run).
+    if installed_ver and installed_ver >= MIN_PODMAN:
+        log("[install]")
+        log(f"  podman {'.'.join(map(str, installed_ver))} already installed — skipping apt install")
+    else:
+        log()
+        log("[install]")
+        packages = ["podman", "uidmap", "slirp4netns", "fuse-overlayfs"]
+        # Debian 13 Trixie / Raspberry Pi OS ships Podman 5 (pasta networking).
+        if os_info["codename"] in ("trixie", "forky", "kingfisher", None):
+            packages.append("passt")
+        apt_install(packages, apt_ok=True)
+        log(f"  installed: {' '.join(packages)}")
 
     # ---- 5. Rootless config ------------------------------------------------
     log()

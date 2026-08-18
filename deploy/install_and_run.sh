@@ -38,7 +38,8 @@ chmod +x *.sh 2>/dev/null
 # --- FUNCTIONS ---
 
 show_menu() {
-    clear
+    # No `clear` here: it would erase the previous option's output before the
+    # user can read it. The screen is scrolled instead so errors stay visible.
     echo "=================================================="
     echo "         SCRIBOGENIE MASTER CONTROL"
     echo "=================================================="
@@ -104,14 +105,14 @@ load_image() {
 
 install_service() {
     echo "Installing autostart service..."
-    if [ ! -f scribogenie.service ]; then
+    if [ ! -f "$SCRIPT_DIR/scribogenie.service" ]; then
         echo "ERROR: scribogenie.service not found in $SCRIPT_DIR"
         return 1
     fi
     # The service ExecStart points at /usr/local/bin/start_scribogenie.sh
-    sudo cp start_scribogenie.sh /usr/local/bin/start_scribogenie.sh
+    sudo cp "$SCRIPT_DIR/start_scribogenie.sh" /usr/local/bin/start_scribogenie.sh
     sudo chmod +x /usr/local/bin/start_scribogenie.sh
-    sudo cp scribogenie.service /etc/systemd/system/
+    sudo cp "$SCRIPT_DIR/scribogenie.service" /etc/systemd/system/
     sudo systemctl daemon-reload
     sudo systemctl enable scribogenie.service
     echo "Service enabled. It will start on next boot."
@@ -126,10 +127,10 @@ full_setup() {
     echo "Starting Full Setup..."
 
     echo "Installing/verifying podman..."
-    sudo python3 ./podmansetup.py
+    sudo python3 "$SCRIPT_DIR/podmansetup.py"
     if [ $? -ne 0 ]; then
         echo "ERROR: podmansetup.py failed."
-        echo "   Run 'sudo python3 ./podmansetup.py --check' to diagnose."
+        echo "   Run 'sudo python3 $SCRIPT_DIR/podmansetup.py --check' to diagnose."
         return 1
     fi
 
@@ -142,7 +143,7 @@ full_setup() {
     fi
 
     echo "Configuring WiFi Hotspot..."
-    ./setup_hotspot.sh
+    "$SCRIPT_DIR/setup_hotspot.sh"
     if [ $? -ne 0 ]; then
         echo "ERROR: setup_hotspot.sh failed."
         return 1
@@ -167,12 +168,12 @@ full_setup() {
 manual_launch() {
     echo "Launching ScriboGenie (podman)..."
     export DISPLAY=:0
-    ./start_scribogenie.sh
+    "$SCRIPT_DIR/start_scribogenie.sh"
 }
 
 setup_hotspot_only() {
     echo "Configuring WiFi Hotspot..."
-    ./setup_hotspot.sh
+    "$SCRIPT_DIR/setup_hotspot.sh"
 }
 
 check_status() {
@@ -182,7 +183,7 @@ check_status() {
 
 restore_wifi() {
     echo "Restoring normal WiFi (removing hotspot)..."
-    ./setup_hotspot.sh restore
+    "$SCRIPT_DIR/setup_hotspot.sh" restore
     read -p "Press Enter to continue..."
 }
 
@@ -196,7 +197,7 @@ view_logs() {
 while true; do
     show_menu
     case $choice in
-        1) full_setup ;;
+        1) full_setup 2>&1 | tee -a "$SCRIPT_DIR/setup.log"; read -p "Press Enter to continue..." ;;
         2) get_code; read -p "Press Enter to continue..." ;;
         3) pull_image; read -p "Press Enter to continue..." ;;
         4) load_image; read -p "Press Enter to continue..." ;;
