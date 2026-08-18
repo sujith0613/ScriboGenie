@@ -123,35 +123,93 @@ install_service() {
     fi
 }
 
+ts() {
+    echo "[$(date +%H:%M:%S)]"
+}
+
+# Returns the installed podman version (e.g. "4.9.3"), or empty if absent.
+podman_version() {
+    command -v podman >/dev/null 2>&1 || return 1
+    podman --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1
+}
+
+# True if the container image is already present (either remote ref or local tag).
+image_exists() {
+    podman image exists "$IMAGE_NAME" 2>/dev/null && return 0
+    podman image exists "$IMAGE_TAG" 2>/dev/null
+}
+
 full_setup() {
-    echo "Starting Full Setup..."
+    echo "=================================================="
+    echo "  ScriboGenie — Full Setup"
+    echo "=================================================="
 
-    echo "Installing/verifying podman..."
-    sudo python3 "$SCRIPT_DIR/podmansetup.py"
-    if [ $? -ne 0 ]; then
-        echo "ERROR: podmansetup.py failed."
-        echo "   Run 'sudo python3 $SCRIPT_DIR/podmansetup.py --check' to diagnose."
-        return 1
+    # ---- 1/5: Podman ---------------------------------------------------
+    echo "$(ts) [Step 1/5] Checking podman..."
+    local pv
+    pv="$(podman_version)"
+    if [ -n "$pv" ] && [ "$(printf '%s\n%s\n' "$pv" "4.3.0" | sort -V | head -1)" = "4.3.0" ]; then
+        echo "$(ts)   podman $pv already installed — skipping install"
+    else
+        echo "$(ts)   podman not installed (or too old) — installing via apt..."
+        sudo python3 "$SCRIPT_DIR/podmansetup.py" --verbose
+        if [ $? -ne 0 ]; then
+            echo "$(ts) ERROR: podmansetup.py failed."
+            echo "   Run 'sudo python3 $SCRIPT_DIR/podmansetup.py --check' to diagnose."
+            return 1
+        fi
+        echo "$(ts)   podman installed OK"
     fi
+    echo
 
+    # ---- 2/5: Code -----------------------------------------------------
+    echo "$(ts) [Step 2/5] Fetching code..."
+    if [ -d "$HOME/$REPO_DIR/.git" ]; then
+        echo "$(ts)   ~/$REPO_DIR exists — pulling latest from $REPO_BRANCH..."
+    else
+        echo "$(ts)   no checkout yet — cloning $REPO_BRANCH..."
+    fi
     get_code
+    echo
 
-    pull_image
-    if [ $? -ne 0 ]; then
-        echo "ERROR: image pull failed. Aborting setup."
-        return 1
+    # ---- 3/5: Image ----------------------------------------------------
+    echo "$(ts) [Step 3/5] Container image (~1GB)..."
+    if image_exists; then
+        echo "$(ts)   image already present — skipping pull"
+    else
+        echo "$(ts)   pulling from $IMAGE_NAME (may take 10-30 min on first run)..."
+        pull_image
+        if [ $? -ne 0 ]; then
+            echo "$(ts) ERROR: image pull failed. Aborting setup."
+            return 1
+        fi
     fi
+    echo
 
-    echo "Configuring WiFi Hotspot..."
-    "$SCRIPT_DIR/setup_hotspot.sh"
-    if [ $? -ne 0 ]; then
-        echo "ERROR: setup_hotspot.sh failed."
-        return 1
+    # ---- 4/5: Hotspot --------------------------------------------------
+    echo "$(ts) [Step 4/5] WiFi hotspot..."
+    if [ -f /etc/hostapd/hostapd.conf ] && grep -q "ssid=ScriboGenie" /etc/hostapd/hostapd.conf 2>/dev/null; then
+        echo "$(ts)   hotspot already configured — skipping"
+    else
+        echo "$(ts)   configuring hotspot (SSID: ScriboGenie / pass: scribogenie)..."
+        "$SCRIPT_DIR/setup_hotspot.sh"
+        if [ $? -ne 0 ]; then
+            echo "$(ts) ERROR: setup_hotspot.sh failed."
+            return 1
+        fi
     fi
+    echo
 
-    install_service
+    # ---- 5/5: Service --------------------------------------------------
+    echo "$(ts) [Step 5/5] Autostart service..."
+    if systemctl is-enabled scribogenie.service >/dev/null 2>&1; then
+        echo "$(ts)   service already enabled — skipping"
+    else
+        install_service
+    fi
+    echo
 
-    echo "Setup Complete!"
+    echo "$(ts) Setup Complete!"
     echo "--------------------------------------------------"
     echo "   Code:     ~/$REPO_DIR"
     echo "   Image:    $IMAGE_NAME"
